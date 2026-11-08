@@ -105,7 +105,7 @@ export const compliancePage = {
       try { await api('/api/denuncias/responder', { id: +f.dataset.id, state: b.dataset.st, resposta: f.resposta.value }); toast('Registrado.'); } catch (err) { toast(err.message, 'err'); } ctx.rerender();
     }));
     root.querySelectorAll('[data-lvl]').forEach((b) => b.addEventListener('click', () => { st.lvl = b.dataset.lvl === st.lvl ? '' : b.dataset.lvl; ctx.rerender(); }));
-    root.querySelectorAll('[data-aid]').forEach((b) => b.addEventListener('click', () => { st.sel = b.dataset.aid; ctx.rerender(); }));
+    root.querySelectorAll('[data-aid]').forEach((b) => b.addEventListener('click', () => { st.sel = b.dataset.aid; if (window.matchMedia('(max-width:800px)').matches) state.scrollSel = 'article.cp-alert'; ctx.rerender(); }));
     root.querySelector('#cp-scan')?.addEventListener('click', async () => { try { const r = await api('/api/compliance/scan', { go: 1 }); toast(`Agente de compliance: ${r.novos} novo(s), ${r.escalados} escalado(s).`); } catch (err) { toast(err.message, 'err'); } ctx.rerender(); });
     root.querySelectorAll('.cp-tr [data-to]').forEach((b) => b.addEventListener('click', async (ev) => {
       ev.preventDefault(); const f = b.closest('form');

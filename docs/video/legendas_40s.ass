@@ -1,0 +1,21 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Arial,46,&H00FFFFFF,&H00FFFFFF,&H08401E0A,&H08401E0A,-1,0,0,0,100,100,0,0,3,14,0,2,260,260,70,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.1,0:00:04.4,Leg,,0,0,0,,Uma plataforma, quatro frentes: mineração, energia, saneamento e nuclear.
+Dialogue: 0,0:00:04.4,0:00:08.1,Leg,,0,0,0,,O cidadão conta o problema como uma história, até anônimo.
+Dialogue: 0,0:00:08.1,0:00:11.9,Leg,,0,0,0,,A IA transforma em relato formal e já mostra as normas e quanto isso pode custar para a empresa.
+Dialogue: 0,0:00:11.9,0:00:17.4,Leg,,0,0,0,,Tudo sobre dados oficiais reais: aqui, quase oito mil barragens sem dono identificado.
+Dialogue: 0,0:00:17.4,0:00:21.9,Leg,,0,0,0,,Troco de frente, e a mesma plataforma avalia quase duas mil usinas pela outorga.
+Dialogue: 0,0:00:21.9,0:00:28.4,Leg,,0,0,0,,A empresa recebe um dossiê com checklist para resolver, e repassa para a área certa com um clique.
+Dialogue: 0,0:00:28.4,0:00:33.6,Leg,,0,0,0,,E quando a norma muda, a LexIA mostra quais sistemas são afetados, o arquivo, a linha e a alteração de código.
+Dialogue: 0,0:00:33.6,0:00:35.4,Leg,,0,0,0,,Uma pessoa aprova.
+Dialogue: 0,0:00:35.5,0:00:43.2,Leg,,0,0,0,,Dado real, IA verificada e uma pessoa decidindo.

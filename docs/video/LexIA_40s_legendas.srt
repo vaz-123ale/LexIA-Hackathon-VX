@@ -1,0 +1,36 @@
+1
+00:00:00,150 --> 00:00:04,400
+Uma plataforma, quatro frentes: mineração, energia, saneamento e nuclear.
+
+2
+00:00:04,400 --> 00:00:08,100
+O cidadão conta o problema como uma história, até anônimo.
+
+3
+00:00:08,100 --> 00:00:11,930
+A IA transforma em relato formal e já mostra as normas e quanto isso pode custar para a empresa.
+
+4
+00:00:11,930 --> 00:00:17,400
+Tudo sobre dados oficiais reais: aqui, quase oito mil barragens sem dono identificado.
+
+5
+00:00:17,400 --> 00:00:21,930
+Troco de frente, e a mesma plataforma avalia quase duas mil usinas pela outorga.
+
+6
+00:00:21,930 --> 00:00:28,430
+A empresa recebe um dossiê com checklist para resolver, e repassa para a área certa com um clique.
+
+7
+00:00:28,430 --> 00:00:33,600
+E quando a norma muda, a LexIA mostra quais sistemas são afetados, o arquivo, a linha e a alteração de código.
+
+8
+00:00:33,600 --> 00:00:35,430
+Uma pessoa aprova.
+
+9
+00:00:35,530 --> 00:00:43,200
+Dado real, IA verificada e uma pessoa decidindo.
+

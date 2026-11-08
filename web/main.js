@@ -9,7 +9,7 @@ import { openDrawer, closeDrawer } from './js/drawer.js';
 import { radar } from './js/ws_radar.js';
 import { ia } from './js/ws_ia.js?v=65';
 import { negocio } from './js/ws_business.js';
-import { compliancePage } from './js/ws_compliance.js?v=73';
+import { compliancePage } from './js/ws_compliance.js?v=m75';
 import { denunciaPage, denunciaAnonimaPage } from './js/ws_denuncia.js?v=72';
 import { hidroPage } from './js/ws_hidro.js';
 import { ativosPage } from './js/ws_ativos.js';
@@ -21,12 +21,13 @@ import { equipePage, convitePage } from './js/ws_equipe.js?v=67';
 import { extratorPage } from './js/ws_extrator.js';
 import { relatorioPage } from './js/ws_relatorio.js?v=67';
 import { sistemasPage } from './js/ws_sistemas.js?v=72';
-import { transparencia } from './js/ws_transparencia.js?v=63';
+import { transparencia } from './js/ws_transparencia.js?v=m78';
 import { mountBubble } from './js/bubble.js';
+import { hojePage, aprovarPage } from './js/ws_hoje.js?v=m1';
 
-const ROUTES = { inicio, sobre, entrar, cadastro, cidadao, exec, atlas, radar, impact, decision, gov, ia, negocio, compliance: compliancePage, denuncia: denunciaPage, 'denuncia-anonima': denunciaAnonimaPage, hidro: hidroPage, ativos: ativosPage, minas: minasPage, fechamento: fechamentoPage, outorgas: outorgasPage, abastecimento: abastecimentoPage, radiologico: radiologicoPage, contas: contasPage, perfil: perfilPage, equipe: equipePage, convite: convitePage, extrator: extratorPage, sistemas: sistemasPage, relatorio: relatorioPage, transparencia };
+const ROUTES = { inicio, sobre, entrar, cadastro, cidadao, exec, atlas, radar, impact, decision, gov, ia, negocio, compliance: compliancePage, denuncia: denunciaPage, 'denuncia-anonima': denunciaAnonimaPage, hidro: hidroPage, ativos: ativosPage, minas: minasPage, fechamento: fechamentoPage, outorgas: outorgasPage, abastecimento: abastecimentoPage, radiologico: radiologicoPage, contas: contasPage, perfil: perfilPage, equipe: equipePage, convite: convitePage, extrator: extratorPage, sistemas: sistemasPage, relatorio: relatorioPage, transparencia, hoje: hojePage, aprovar: aprovarPage };
 // Menu da empresa em GRUPOS; dentro de cada grupo, abas. O perfil da empresa decide quais abas aparecem.
-const GROUPS = [['exec', 'Visão Executiva', 'home', ['exec']],
+const GROUPS = [['exec', 'Visão Executiva', 'home', ['exec', 'hoje', 'aprovar']],
   ['operacao', 'Operação & Ativos', 'pin', ['ativos', 'radiologico', 'minas', 'fechamento', 'radar', 'atlas', 'outorgas', 'hidro', 'abastecimento']],
   ['conformidade', 'Conformidade', 'shield', ['compliance', 'impact', 'extrator', 'sistemas', 'decision', 'denuncia', 'gov']],
   ['ia', 'Central de IA', 'spark', ['ia']],
@@ -40,10 +41,10 @@ const ADMIN = ['gestor', 'compliance', 'juridico'];
 export const podeModulo = (m) => { const u = currentUser(); if (!u || u.kind !== 'empresa' || !Array.isArray(u.modulos)) return true;
   return m === 'conformidade-tela' ? ['conformidade', 'denuncias', 'documentos'].some((x) => u.modulos.includes(x)) : u.modulos.includes(m); };
 // Negócio & impacto e Contas-alvo são material da equipe para a banca: saem do menu (continuam em #/negocio e #/contas).
-const SUB = { ativos: 'Mapa de ativos', minas: 'Minas', fechamento: 'Fechamento de minas', radar: 'Barragens de mineração', atlas: 'Atlas ANM',
+const SUB = { exec: 'Panorama', hoje: 'Hoje', aprovar: 'Aprovar', ativos: 'Mapa de ativos', minas: 'Minas', fechamento: 'Fechamento de minas', radar: 'Barragens de mineração', atlas: 'Atlas ANM',
   outorgas: 'Usinas e outorgas', hidro: 'Reservatórios (ONS)', abastecimento: 'Barragens de abastecimento', radiologico: 'Instalações radiológicas', compliance: 'Alertas', extrator: 'Norma → obrigação', sistemas: 'Impacto em sistemas', impact: 'Mudanças normativas',
   decision: 'Decisão & execução', denuncia: 'Denúncias', negocio: 'Negócio & impacto', contas: 'Contas-alvo', gov: 'Fontes & governança' };
-const ALWAYS = ['exec', 'ia', 'negocio', 'contas', 'gov', 'perfil', 'equipe'];
+const ALWAYS = ['exec', 'hoje', 'aprovar', 'ia', 'negocio', 'contas', 'gov', 'perfil', 'equipe'];
 const perfilAtual = () => (data.empresas || []).find((c) => c.id === state.perfil) || (data.empresas || [])[0];
 const ocultos = () => { try { return JSON.parse(localStorage.getItem('lexia.ocultos.' + state.perfil) || '[]'); } catch { return []; } };
 function visible(id) {
@@ -69,6 +70,7 @@ const ctx = { rerender, go, setDate, onLeave: (fn) => leaveHooks.push(fn) };
 window.addEventListener('beforeinstallprompt', (ev) => { ev.preventDefault(); installPrompt = ev; });
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 
+const isMobile = () => window.matchMedia('(max-width:800px)').matches;
 const navFor = () => (currentUser()?.kind === 'cidadao' ? CITIZEN : COMPANY);
 
 function renderPublicChrome() {
@@ -99,10 +101,15 @@ function renderAppChrome() {
     const first = (g) => { const r = groupRoutes(g); return r.includes(state.last?.[g[0]]) ? state.last[g[0]] : r[0]; };
     document.getElementById('nav').innerHTML = gs.map((g) => { const n = groupRoutes(g).length, on = cur === g[0];
       return `<a class="nav-item ${on ? 'active' : ''}" href="#/${first(g)}" ${on ? 'aria-current="page"' : ''}>${icon(g[2])}<span>${g[1]}</span>${g[0] === 'conformidade' && pending ? `<b class="badge" title="Avaliações pendentes">${pending}</b>` : n > 1 ? `<span class="nav-n">${n}</span>` : ''}</a>`; }).join('');
-    document.getElementById('bottom-nav').innerHTML = gs.map((g) => `<a href="#/${first(g)}" class="${cur === g[0] ? 'active' : ''}" aria-label="${g[1]}">${icon(g[2])}${g[1].split(' ')[0]}</a>`).join('');
+    // Celular: as 5 ações do dia (protótipo LexIA Mobile). O resto fica no menu (☰).
+    const op = groupRoutes(GROUPS[1])[0], r = state.route;
+    const mob = [['hoje', 'Hoje', 'home', r === 'hoje'], ['compliance', 'Alertas', 'alert', r === 'compliance'], [op, 'Ativos', 'pin', cur === 'operacao'],
+      ['aprovar', 'Aprovar', 'check', ['aprovar', 'decision'].includes(r), pending], ['ia', 'Perguntar', 'spark', r === 'ia']].filter(([id]) => id && visible(id));
+    document.getElementById('bottom-nav').innerHTML = mob.map(([id, l, ic, on, n]) => `<a href="#/${id}" class="${on ? 'active' : ''}" ${on ? 'aria-current="page"' : ''}>${icon(ic)}<span>${l}</span>${n ? '<b class="bn-badge" title="Há decisões pendentes"></b>' : ''}</a>`).join('');
   } else {
   document.getElementById('nav').innerHTML = items.map(([id, label, ic]) => `<a class="nav-item ${state.route === id ? 'active' : ''}" href="#/${id}" ${state.route === id ? 'aria-current="page"' : ''}>${icon(ic)}<span>${label}</span>${id === 'decision' && pending ? `<b class="badge" title="Avaliações pendentes">${pending}</b>` : ''}</a>`).join('');
-  document.getElementById('bottom-nav').innerHTML = items.map(([id, label, ic]) => `<a href="#/${id}" class="${state.route === id ? 'active' : ''}" aria-label="${label}">${icon(ic)}${SHORT[id]}</a>`).join('');
+  const CMOB = [['cidadao', 'Início', 'home'], ['denuncia', 'Denunciar', 'doc'], ['radar', 'Barragens', 'alert'], ['transparencia', 'Transparência', 'chart'], ['ia', 'Perguntar', 'spark']];
+  document.getElementById('bottom-nav').innerHTML = CMOB.map(([id, label, ic]) => `<a href="#/${id}" class="${state.route === id ? 'active' : ''}" ${state.route === id ? 'aria-current="page"' : ''}>${icon(ic)}<span>${label}</span></a>`).join('');
   }
   document.getElementById('side-mode-t').textContent = cid ? 'LexIA Cidadão' : 'Modo: Demonstração';
   document.getElementById('side-mode-s').textContent = cid ? 'Informação pública da ANM' : 'Dados oficiais + cenários controlados';
@@ -111,6 +118,7 @@ function renderAppChrome() {
   document.getElementById('assistant-rail')?.remove(); // substituído pela bolinha (mini-chat) e pela página Central de IA
   const initials = u.name.split(' ').map((p) => p[0]).filter((c) => /[A-ZÁ-Ú]/i.test(c)).slice(0, 2).join('').toUpperCase();
   document.getElementById('topbar-ctx').innerHTML = `
+    <a class="tb-logo" href="#/${cid ? 'cidadao' : (isMobile() ? 'hoje' : 'exec')}" aria-label="LexIA, início"><img src="/img/brand/logo-lexia-v6.png" alt="LexIA"></a>
     <form id="gsearch" class="gsearch" role="search">${icon('search')}<input id="gq" placeholder="Buscar estrutura, norma, empresa, CNPJ ou município…" aria-label="Busca global"><kbd>Ctrl + K</kbd></form>
     <span class="tb-div"></span>
     <label class="tb-pill tb-date" title="Data-base da análise (vigência por dispositivo)">${icon('cal')}<span class="tb-2"><small>Data-base</small><input type="date" id="asof" value="${state.asOf}" min="2020-01-01" max="2035-12-31" aria-label="Data-base"></span>${icon('chevron','chev')}</label>
@@ -184,6 +192,7 @@ async function rerender() {
     content.dataset.page = state.route;
     content.innerHTML = subtabs() + html;
     await page.mount?.(content, ctx);
+    if (state.scrollSel) { const sel = state.scrollSel; requestAnimationFrame(() => { content.querySelector(sel)?.scrollIntoView({ block: 'start', behavior: 'smooth' }); state.scrollSel = null; }); }   // celular: leva ao detalhe aberto
     mountBubble(!pub && podeModulo('ia'));
   } catch (err) {
     console.error(err);
@@ -204,7 +213,9 @@ async function route() {
   let id = location.hash.replace('#/', '').split('?')[0] || 'inicio';
   id = ROUTES[id] ? id : (LEGACY[id] || 'inicio');
   const u0 = currentUser();
-  if (u0 && id === 'inicio') { id = u0.kind === 'cidadao' ? 'cidadao' : 'exec'; history.replaceState(null, '', '#/' + id); }   // logado: o logo leva ao início da conta, não ao site
+  if (u0 && id === 'inicio') { id = u0.kind === 'cidadao' ? 'cidadao' : 'exec'; history.replaceState(null, '', '#/' + id); }
+  if (u0 && u0.kind === 'empresa' && id === 'exec' && isMobile() && !state.mobLanded) { id = 'hoje'; history.replaceState(null, '', '#/hoje'); }   // celular: entra em "Hoje"
+  if (u0) state.mobLanded = true;   // logado: o logo leva ao início da conta, não ao site
   const u = u0, page = ROUTES[id];
   if (!page.public && !u) { state.authTab = 'empresa'; toast('Entre para acessar o painel.'); id = 'entrar'; history.replaceState(null, '', '#/entrar'); }
   else if (u && u.kind === 'cidadao' && !page.public && !page.citizen) { id = 'cidadao'; history.replaceState(null, '', '#/cidadao'); }
@@ -220,10 +231,11 @@ async function route() {
     state.perfil = data.empresas.some((c) => c.id === saved) ? saved : data.empresas[0]?.id;
     if (state.perfil) { state.atv = { ...(state.atv || {}), empresa: state.perfil }; state.comp = { ...(state.comp || {}), org: state.perfil }; }
   }
-  await rerender(); content.focus({ preventScroll: true }); window.scrollTo(0, 0);
+  await rerender(); content.focus({ preventScroll: true }); if (!state.scrollSel) window.scrollTo(0, 0);
 }
 
 document.addEventListener('click', (ev) => {
+  if (document.body.classList.contains('nav-open') && !ev.target.closest('.sidebar, #menu-btn')) { document.body.classList.remove('nav-open'); ev.preventDefault(); return; }   // celular: toque fora fecha o menu
   if (ev.target.closest('[data-project-open]')) { closeDrawer();state.projectOpen = true; state.projectScroll=true; go('impact'); return; }
   if (!ev.target.closest('.dd')) document.querySelectorAll('.dd-panel').forEach((x) => { x.hidden = true; });
   const assistant = ev.target.closest('[data-assistant-tab]'); if (assistant) { openDrawer(assistant.dataset.assistantTab); return; }

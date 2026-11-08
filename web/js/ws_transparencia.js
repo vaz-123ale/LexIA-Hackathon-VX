@@ -50,7 +50,7 @@ export const transparencia = {
     <div class="tp-grid">
       <section class="card flush"><div class="rd-maph"><b>Mapa das barragens de mineração</b>
         <label class="chip-btn ${st.so ? 'on' : ''}"><input type="checkbox" id="tp-so" ${st.so ? 'checked' : ''}> mostrar só crítica e alta</label></div>
-        <div id="tp-map" class="tp-map"></div>
+        <div id="tp-map" class="tp-map map-frame"></div>
         <div class="tp-leg">${Object.entries(ATT).map(([k, [c, , d]]) => `<span><i style="background:${c}"></i><b>${k}</b> ${n(D.atencao[k])}<small>${d}</small></span>`).join('')}</div></section>
       <section class="card"><header class="card-h"><h3>${icon('alert', 'h-ic')}Casos com atenção crítica ou alta</h3><select id="tp-uf" aria-label="Estado"><option value="">Todo o Brasil</option>${D.por_uf.map((u) => `<option ${st.uf === u.uf ? 'selected' : ''}>${e(u.uf)}</option>`).join('')}</select></header>
         <div class="tp-cases">${casos.slice(0, 14).map((c) => `<article><span class="lx-chip ${ATT[c.atencao][1]}">${e(c.atencao)}</span><b>${e(c.nome)}</b><small>${e(c.municipio)}/${e(c.uf)} · ${e(c.empresa)}${c.dpa ? ` · dano potencial ${e(c.dpa).toLowerCase()}` : ''}</small>
