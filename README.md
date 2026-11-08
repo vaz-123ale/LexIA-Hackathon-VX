@@ -136,6 +136,7 @@ node scripts/e2e_crawl.mjs saida            # varredura de todas as telas no Chr
 - [Modelo de dados e APIs](docs/MODELO_DE_DADOS_E_APIS.md)
 - [Guia de uso](docs/GUIA_DE_USO.md)
 - [Decisões de arquitetura](docs/adr/)
+- [Como seria o sistema mobile proposto (protótipo feito no Figma em HTML)](<docs/Como seria o sistema mobile proposto - Feito no Figma em HTML/>): vídeo e protótipo navegável. Conceito de interface; o sistema principal é a plataforma web acima.
 
 ## Limitações conhecidas
 
