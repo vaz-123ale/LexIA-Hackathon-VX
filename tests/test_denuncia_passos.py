@@ -11,6 +11,21 @@ HOJE = date(2026, 11, 7)  # sábado
 
 
 class OrganizaTests(unittest.TestCase):
+    def test_endereco_informado_entra_no_resumo_sem_inventar_coordenadas(self):
+        r = organizar('Vi água barrenta perto da ponte.\n(Endereço informado: Rua das Flores, 42, Centro, Cidade/MG)', HOJE)
+        self.assertEqual(r['onde'], 'Rua das Flores, 42, Centro, Cidade/MG')
+        self.assertNotIn('lat', r)
+
+    def test_endereco_nao_vira_data_da_ocorrencia(self):
+        r = organizar('Vi um fio caído na calçada.\n(Endereço informado: Rua 12/10, Centro)', HOJE)
+        self.assertIsNone(r['quando'])
+
+    def test_endereco_preserva_estrutura_escolhida(self):
+        r = organizar('Vi vazamento no local.\n(Endereço informado: Perto da ponte)', HOJE,
+                      {'id': 'DEMO-1', 'name': 'Estrutura fictícia', 'municipio': 'Cidade', 'uf': 'MG'})
+        self.assertIn('Perto da ponte', r['onde'])
+        self.assertIn('DEMO-1', r['onde'])
+
     def test_datas_relativas(self):
         self.assertEqual(quando('Ontem vi uma trinca', HOJE)['data'], '2026-11-06')
         self.assertEqual(quando('Anteontem passei lá', HOJE)['data'], '2026-11-05')

@@ -63,6 +63,10 @@ function passo2(st) {
   if (!st.cat) return '';
   const c = catInfo(st.cat), N = st.near;
   return `<section class="card dn-step" id="dn-passo2"><header class="card-h"><h3><span class="dn-sn">2</span> Onde? <small class="muted">${e(c[1])}</small></h3></header>
+    <label class="field" for="dn-address"><span>Endereço do ocorrido (opcional)</span>
+      <input id="dn-address" type="text" maxlength="300" value="${e(st.endereco || '')}" placeholder="Rua, número, bairro, cidade/UF ou ponto de referência" aria-describedby="dn-address-hint"></label>
+    <p class="hint" id="dn-address-hint">Informe o local da ocorrência, mesmo que seja diferente de onde você está. O endereço será incluído na denúncia para revisão; não é localizado automaticamente no mapa. Evite informar seu endereço pessoal se não for necessário.</p>
+    <button class="btn mt8" id="dn-address-use" type="button">Usar endereço informado e continuar</button>
     <div class="row gap wrap"><button class="btn primary" id="dn-geo" type="button">${icon('pin')} Usar minha localização</button>
       <button class="btn" id="dn-ex" type="button">Usar local de exemplo (Itabirito/MG)</button>
       <button class="btn ghost" id="dn-skip" type="button">Não sei / vou descrever o local</button></div>
@@ -151,7 +155,7 @@ async function renderDen() {
 function mountDen(root, ctx) {
     const st = DS();
     if (st.rolar) { const el = root.querySelector(st.rolar); st.rolar = null; el?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    const keep = () => { const r = root.querySelector('#dn-rel'); if (r) st.relato = r.value; const q = root.querySelector('#dn-q'); if (q) st.quando = q.value; const d = root.querySelector('#dn-d'); if (d) st.data = d.value; };
+    const keep = () => { const a = root.querySelector('#dn-address'); if (a) st.endereco = a.value; const r = root.querySelector('#dn-rel'); if (r) st.relato = r.value; const q = root.querySelector('#dn-q'); if (q) st.quando = q.value; const d = root.querySelector('#dn-d'); if (d) st.data = d.value; };
     const buscar = async (lat, lon, nome) => {
       try { st.me = { lat, lon, nome }; st.near = await api('/api/proximos', { lat, lon, categoria: st.cat }); st.sel = null; st.rolar = '#dn-passo2'; } catch (err) { toast(err.message, 'err'); }
       ctx.rerender();
@@ -165,6 +169,12 @@ function mountDen(root, ctx) {
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
     });
     root.querySelector('#dn-ex')?.addEventListener('click', () => { keep(); buscar(EXEMPLO.lat, EXEMPLO.lon, EXEMPLO.nome); });
+    root.querySelector('#dn-address')?.addEventListener('input', (ev) => { st.endereco = ev.target.value; });
+    root.querySelector('#dn-address-use')?.addEventListener('click', () => {
+      keep();
+      if (!st.endereco?.trim()) { toast('Digite o endereço ou um ponto de referência.', 'err'); root.querySelector('#dn-address')?.focus(); return; }
+      st.sel = false; st.near = null; st.rolar = '#dn-rel'; ctx.rerender();
+    });
     root.querySelector('#dn-skip')?.addEventListener('click', () => { keep(); st.sel = false; st.near = null; st.rolar = '#dn-rel'; ctx.rerender(); });
     root.querySelectorAll('[data-pick]').forEach((b) => b.addEventListener('click', () => { keep(); st.sel = st.near.items.find((x) => x.id === b.dataset.pick) || null; st.rolar = '.dm-det'; ctx.rerender(); }));
     root.querySelector('#dn-q')?.addEventListener('change', () => { keep(); ctx.rerender(); });
@@ -181,7 +191,8 @@ function mountDen(root, ctx) {
     root.querySelector('#dn-go')?.addEventListener('click', async (ev) => {
       keep(); if (st.relato.trim().length < 15) return toast('Conte um pouco mais do que você viu.', 'err');
       const qd = st.quando === 'data' && st.data ? st.data.split('-').reverse().join('/') : st.quando && st.quando !== 'nao lembro' ? st.quando : '';
-      const relato = st.relato.trim() + (qd ? `\n(Quando: ${qd})` : '');
+      const endereco = (st.endereco || '').replace(/[\r\n]+/g, ' ').trim().slice(0, 300);
+      const relato = st.relato.trim() + (qd ? `\n(Quando: ${qd})` : '') + (endereco ? `\n(Endereço informado: ${endereco})` : '');
       ev.target.disabled = true; ev.target.textContent = 'Organizando a denúncia…';
       try {
         const r = await api('/api/denuncia', { dam_id: st.sel?.id || '', categoria: st.cat, relato, evidence_ids: st.ev.map((x) => x.id), anonimo: ANON });

@@ -1,4 +1,4 @@
-"""Organiza o relato do cidadão em campos (regra organiza-v1).
+"""Organiza o relato do cidadão em campos (regra organiza-v2-endereco).
 
 Determinístico primeiro: datas relativas ("ontem", "outro dia", "sexta passada", "há 3 dias", "desde março") são
 resolvidas por regra a partir da data do registro; cada campo guarda o TRECHO literal do relato que o sustenta.
@@ -12,7 +12,7 @@ from datetime import date, timedelta
 
 from .ai import norm
 
-RULE_VERSION = 'organiza-v1'
+RULE_VERSION = 'organiza-v2-endereco'
 MESES = ['janeiro', 'fevereiro', 'marco', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 DIAS = {'segunda': 0, 'terca': 1, 'quarta': 2, 'quinta': 3, 'sexta': 4, 'sabado': 5, 'domingo': 6}
 NUM = {'um': 1, 'uma': 1, 'dois': 2, 'duas': 2, 'tres': 3, 'quatro': 4, 'cinco': 5, 'seis': 6, 'sete': 7, 'oito': 8, 'nove': 9, 'dez': 10, 'quinze': 15}
@@ -98,8 +98,11 @@ def recorrente(relato: str) -> bool:
 
 
 def organizar(relato: str, hoje: date, alvo: dict | None = None, categoria: str | None = None) -> dict:
+    endereco = re.search(r'^\(Endereço informado: ([^\r\n]{1,300})\)\s*$', relato or '', re.M)
+    local_informado = endereco.group(1).strip() if endereco else ''
+    texto_ocorrencia = re.sub(r'^\(Endereço informado: [^\r\n]*\)\s*$', '', relato or '', flags=re.M)
     frases = [s.strip() for s in re.split(r'(?<=[.!?])\s+|\n+', (relato or '').strip()) if len(s.strip()) > 3 and not s.strip().startswith('(Quando:')][:8]
-    q = quando(relato, hoje)
+    q = quando(texto_ocorrencia, hoje)
     faltando = []
     if not q or q.get('precisao') == 'vaga':
         faltando.append('quando aconteceu')
@@ -109,7 +112,7 @@ def organizar(relato: str, hoje: date, alvo: dict | None = None, categoria: str 
         faltando.append('mais detalhes do que foi visto')
     return {'rule_version': RULE_VERSION, 'quando': q, 'desde': desde(relato, hoje), 'periodo': periodo(relato), 'afetados': afetados(relato),
             'recorrente': recorrente(relato), 'fatos': frases, 'faltando': faltando, 'registrado_em': _fmt(hoje),
-            'onde': (f"{alvo.get('name')} ({alvo.get('id')}) — {alvo.get('municipio') or ''}{'/' + alvo['uf'] if alvo.get('uf') else ''}".strip(' —') if alvo else None),
+            'onde': ' · '.join(x for x in [local_informado, (f"{alvo.get('name')} ({alvo.get('id')}) — {alvo.get('municipio') or ''}{'/' + alvo['uf'] if alvo.get('uf') else ''}".strip(' —') if alvo else '')] if x) or None,
             'categoria': categoria}
 
 
