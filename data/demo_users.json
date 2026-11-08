@@ -1,0 +1,197 @@
+{
+  "warning": "CONTAS DE DEMONSTRAÇÃO. Senha pública (LexIA2026demo) e tokens fixos — nunca usar em produção. A organização \"Grupo Exemplo S.A.\" é fictício.",
+  "users": [
+    {
+      "id": "u-juridico",
+      "name": "Ana (jurídico, demo)",
+      "role": "juridico",
+      "function": "juridico",
+      "token": "demo-juridico",
+      "email": "ana@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "juridico"
+    },
+    {
+      "id": "u-compliance",
+      "name": "Bruno (compliance, demo)",
+      "role": "compliance",
+      "function": "compliance",
+      "token": "demo-compliance",
+      "email": "bruno@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "compliance"
+    },
+    {
+      "id": "u-engenharia",
+      "name": "Carla (engenharia/geotecnia, demo)",
+      "role": "especialista",
+      "function": "engenharia",
+      "token": "demo-engenharia",
+      "email": "carla@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "engenharia"
+    },
+    {
+      "id": "u-operacao",
+      "name": "Diego (operação, demo)",
+      "role": "operacao",
+      "function": "operacao",
+      "token": "demo-operacao",
+      "email": "diego@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "operacao"
+    },
+    {
+      "id": "u-financas",
+      "name": "Elisa (finanças, demo)",
+      "role": "gestor",
+      "function": "financas",
+      "token": "demo-financas",
+      "email": "elisa@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "financas"
+    },
+    {
+      "id": "u-auditor",
+      "name": "Fábio (auditoria, demo)",
+      "role": "auditor",
+      "function": "auditoria",
+      "token": "demo-auditor",
+      "email": "fabio@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "auditoria"
+    },
+    {
+      "id": "u-curador",
+      "name": "Gabi (curadoria de dados, demo)",
+      "role": "curador",
+      "function": "curadoria",
+      "token": "demo-curador",
+      "email": "gabi@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "empresa",
+      "org_name": "Grupo Exemplo S.A. (fictício)",
+      "cnpj": "11222333000181",
+      "function_signup": "regulatorio"
+    },
+    {
+      "id": "u-cidadao",
+      "name": "Joana (cidadã, demo)",
+      "role": "cidadao",
+      "function": "cidadao",
+      "token": "demo-cidadao",
+      "email": "joana@demo.lexia.app",
+      "password": "LexIA2026demo",
+      "kind": "cidadao",
+      "uf": "MG",
+      "municipio": "ITABIRITO"
+    }
+  ],
+  "permissions": {
+    "juridico": [
+      "review.open",
+      "review.transition",
+      "review.decide",
+      "evidence.add",
+      "dispatch",
+      "finance.save",
+      "entity.confirm",
+      "watch",
+      "contingency.edit",
+      "draft.create",
+      "draft.decide",
+      "model.feedback",
+      "agent.run",
+      "agent.decide"
+    ],
+    "compliance": [
+      "review.open",
+      "review.transition",
+      "review.decide",
+      "evidence.add",
+      "dispatch",
+      "finance.save",
+      "entity.confirm",
+      "watch",
+      "contingency.edit",
+      "draft.create",
+      "draft.decide",
+      "model.feedback",
+      "model.train",
+      "model.promote",
+      "agent.run",
+      "agent.decide"
+    ],
+    "especialista": [
+      "review.open",
+      "review.transition",
+      "review.decide",
+      "evidence.add",
+      "finance.save",
+      "watch",
+      "contingency.edit",
+      "draft.create",
+      "model.feedback",
+      "model.train",
+      "model.promote",
+      "agent.run",
+      "agent.decide"
+    ],
+    "operacao": [
+      "review.open",
+      "review.transition",
+      "evidence.add",
+      "watch",
+      "contingency.edit",
+      "draft.create",
+      "model.feedback",
+      "agent.decide"
+    ],
+    "gestor": [
+      "review.open",
+      "finance.save",
+      "watch",
+      "contingency.edit",
+      "agent.run",
+      "agent.decide"
+    ],
+    "auditor": [
+      "watch"
+    ],
+    "curador": [
+      "connector.sync",
+      "ingest",
+      "demo.reset",
+      "entity.confirm",
+      "review.open",
+      "watch",
+      "monitor.run",
+      "contingency.edit",
+      "draft.create",
+      "model.train",
+      "model.promote",
+      "agent.run"
+    ],
+    "cidadao": [
+      "watch"
+    ]
+  }
+}

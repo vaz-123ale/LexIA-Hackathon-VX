@@ -1,0 +1,1043 @@
+{
+ "aviso": "Empresas, ativos, coordenadas, documentos e leituras de sensores FICTÍCIOS para demonstrar a configuração multissetorial. Nenhum vínculo com empresa real.",
+ "empresas": [
+  {
+   "id": "demo-mineracao",
+   "nome": "Grupo Exemplo — Mineração (fictícia)",
+   "setor": "mineracao",
+   "cnpj_root": "11222333",
+   "uf": [
+    "MG",
+    "BA",
+    "PA"
+   ],
+   "abas_ativas": [
+    "minas",
+    "barragens",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "usuarios_por_papel": {
+    "compliance": "compliance",
+    "juridico": "juridico",
+    "engenharia": "engenharia",
+    "geotecnia": "engenharia",
+    "seguranca": "operacao",
+    "manutencao": "operacao",
+    "radioprotecao": "engenharia",
+    "meio_ambiente": "compliance",
+    "gestor": "financas",
+    "dono_do_documento": "engenharia",
+    "sst": "seguranca_trabalho"
+   },
+   "ativos": [
+    {
+     "id": "M-01",
+     "tipo": "mina",
+     "nome": "Mina de Ferro Serra Exemplo",
+     "lat": -20.12,
+     "lon": -43.92,
+     "municipio": "(ilustrativo) MG",
+     "substancia": "MINÉRIO DE FERRO",
+     "documentos": {
+      "titulo_lavra": {
+       "vence": null,
+       "status": "vigente"
+      },
+      "ral": {
+       "vence": "2027-03-15",
+       "ultimo": "2026-03-10"
+      },
+      "licenca": {
+       "vence": "2026-12-20",
+       "ultimo": "2022-12-20"
+      },
+      "pgr_nr22": {
+       "vence": "2027-06-30",
+       "ultimo": "2025-06-30"
+      }
+     }
+    },
+    {
+     "id": "M-02",
+     "tipo": "mina",
+     "nome": "Mina de Areia Monazítica Exemplo",
+     "lat": -14.85,
+     "lon": -39.05,
+     "municipio": "(ilustrativo) BA",
+     "substancia": "AREIA MONAZÍTICA (TERRAS RARAS)",
+     "radiologico": true,
+     "documentos": {
+      "titulo_lavra": {
+       "vence": null,
+       "status": "vigente"
+      },
+      "ral": {
+       "vence": "2027-03-15",
+       "ultimo": "2026-03-12"
+      },
+      "licenca": {
+       "vence": "2027-08-01",
+       "ultimo": "2023-08-01"
+      },
+      "pgr_nr22": {
+       "vence": "2026-10-31",
+       "ultimo": "2024-10-31"
+      }
+     }
+    },
+    {
+     "id": "R-01",
+     "tipo": "radiativo",
+     "nome": "Galpão de concentrado de monazita",
+     "lat": -14.87,
+     "lon": -39.07,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "autorizacao_cnen": {
+       "vence": "2026-11-28",
+       "ultimo": "2021-11-28"
+      },
+      "plano_radioprotecao": {
+       "vence": "2027-05-01",
+       "ultimo": "2025-05-01"
+      }
+     },
+     "leituras": {
+      "dose": [
+       0.21,
+       0.22,
+       0.2,
+       0.23,
+       0.22,
+       0.24,
+       0.23,
+       0.25,
+       0.31,
+       0.38,
+       0.47,
+       0.58
+      ]
+     }
+    },
+    {
+     "id": "B-01",
+     "tipo": "barragem",
+     "nome": "Barragem de mineração fictícia",
+     "lat": -20.18,
+     "lon": -43.95,
+     "municipio": "(ilustrativo) MG",
+     "documentos": {
+      "dce": {
+       "vence": "2027-03-31",
+       "ultimo": "2026-09-28"
+      },
+      "rpsb": {
+       "vence": "2026-09-10",
+       "ultimo": "2021-09-10"
+      },
+      "paebm": {
+       "vence": "2027-01-15",
+       "ultimo": "2026-01-15"
+      }
+     },
+     "leituras": {
+      "piezometro": [
+       10.2,
+       10.3,
+       10.2,
+       10.4,
+       10.5,
+       10.4,
+       10.6,
+       10.8,
+       11.1,
+       11.6,
+       12.2,
+       12.6
+      ],
+      "nivel_reservatorio": [
+       93.1,
+       93.2,
+       93.0,
+       93.4,
+       93.5,
+       93.3,
+       93.6,
+       93.8,
+       94.0,
+       94.2,
+       94.5,
+       94.7
+      ]
+     }
+    },
+    {
+     "id": "B-02",
+     "tipo": "barragem",
+     "nome": "Barragem de rejeitos fictícia",
+     "lat": -6.05,
+     "lon": -50.15,
+     "municipio": "(ilustrativo) PA",
+     "documentos": {
+      "dce": {
+       "vence": "2027-03-31",
+       "ultimo": "2026-09-25"
+      },
+      "rpsb": {
+       "vence": "2028-05-10",
+       "ultimo": "2023-05-10"
+      },
+      "paebm": {
+       "vence": "2026-11-20",
+       "ultimo": "2024-05-15"
+      }
+     },
+     "leituras": {
+      "piezometro": [
+       8.1,
+       8.0,
+       8.2,
+       8.1,
+       8.3,
+       8.2,
+       8.1,
+       8.2,
+       8.3,
+       8.2,
+       8.3,
+       8.2
+      ],
+      "nivel_reservatorio": [
+       90.1,
+       90.2,
+       90.0,
+       90.1,
+       90.3,
+       90.2,
+       90.1,
+       90.2,
+       90.4,
+       90.3,
+       90.2,
+       90.3
+      ]
+     }
+    },
+    {
+     "id": "E-01",
+     "tipo": "equipamento",
+     "nome": "Britador primário",
+     "lat": -20.1,
+     "lon": -43.9,
+     "municipio": "(ilustrativo) MG",
+     "documentos": {
+      "manutencao": {
+       "vence": "2026-12-05",
+       "ultimo": "2026-06-05"
+      }
+     },
+     "leituras": {
+      "vibracao": [
+       3.1,
+       3.2,
+       3.0,
+       3.3,
+       3.4,
+       3.2,
+       3.5,
+       3.9,
+       4.6,
+       5.8,
+       7.4,
+       8.2
+      ],
+      "temperatura": [
+       62,
+       63,
+       61,
+       64,
+       65,
+       63,
+       66,
+       68,
+       71,
+       74,
+       79,
+       83
+      ]
+     }
+    },
+    {
+     "id": "E-02",
+     "tipo": "equipamento",
+     "nome": "Correia transportadora TC-03",
+     "lat": -20.14,
+     "lon": -43.91,
+     "municipio": "(ilustrativo) MG",
+     "documentos": {
+      "manutencao": {
+       "vence": "2027-02-10",
+       "ultimo": "2026-08-10"
+      }
+     },
+     "leituras": {
+      "vibracao": [
+       2.1,
+       2.2,
+       2.0,
+       2.3,
+       2.1,
+       2.2,
+       2.0,
+       2.1,
+       2.2,
+       2.3,
+       2.1,
+       2.2
+      ],
+      "temperatura": [
+       55,
+       56,
+       54,
+       55,
+       57,
+       56,
+       55,
+       56,
+       57,
+       55,
+       56,
+       56
+      ]
+     }
+    },
+    {
+     "id": "SST-01",
+     "tipo": "unidade_sst",
+     "nome": "Unidade Serra Exemplo (SST)",
+     "lat": -20.1,
+     "lon": -43.9,
+     "municipio": "(ilustrativo) MG",
+     "documentos": {
+      "pgr": {
+       "vence": "2027-03-01",
+       "ultimo": "2025-03-01",
+       "inclui_psicossociais": false
+      },
+      "pcmso": {
+       "vence": "2026-11-30",
+       "ultimo": "2025-11-30"
+      },
+      "trein_altura": {
+       "vence": "2027-08-01",
+       "ultimo": "2024-10-15"
+      },
+      "nr13": {
+       "vence": "2027-02-01",
+       "ultimo": "2025-02-01"
+      }
+     },
+     "leituras": {
+      "acidentes": [
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       2
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "demo-energia",
+   "nome": "Energia Exemplo S.A. (fictícia)",
+   "setor": "energia",
+   "cnpj_root": "99888777",
+   "uf": [
+    "PR",
+    "SC"
+   ],
+   "abas_ativas": [
+    "usinas",
+    "barragens",
+    "subestacoes",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "usuarios_por_papel": {
+    "compliance": "compliance",
+    "juridico": "juridico",
+    "engenharia": "engenharia",
+    "geotecnia": "engenharia",
+    "seguranca": "operacao",
+    "manutencao": "operacao",
+    "meio_ambiente": "compliance",
+    "gestor": "financas",
+    "dono_do_documento": "engenharia",
+    "sst": "seguranca_trabalho"
+   },
+   "ativos": [
+    {
+     "id": "U-01",
+     "tipo": "usina",
+     "nome": "UHE Rio Exemplo",
+     "lat": -25.55,
+     "lon": -52.1,
+     "municipio": "(ilustrativo) PR",
+     "documentos": {
+      "outorga": {
+       "vence": "2041-01-01",
+       "ultimo": "2011-01-01"
+      },
+      "licenca": {
+       "vence": "2026-12-12",
+       "ultimo": "2020-12-12"
+      }
+     },
+     "leituras": {
+      "vazao_afluente": [
+       410,
+       395,
+       420,
+       405,
+       398,
+       415,
+       430,
+       422,
+       640,
+       980,
+       1350,
+       1720
+      ]
+     }
+    },
+    {
+     "id": "UB-01",
+     "tipo": "barragem",
+     "nome": "Barragem da UHE Rio Exemplo",
+     "lat": -25.56,
+     "lon": -52.11,
+     "municipio": "(ilustrativo) PR",
+     "documentos": {
+      "psb": {
+       "vence": "2027-04-30",
+       "ultimo": "2025-04-30"
+      },
+      "inspecao": {
+       "vence": "2026-10-15",
+       "ultimo": "2026-04-15"
+      }
+     },
+     "leituras": {
+      "nivel_reservatorio": [
+       450.2,
+       450.4,
+       450.1,
+       450.6,
+       450.8,
+       451.0,
+       451.4,
+       452.0,
+       453.1,
+       454.2,
+       455.4,
+       456.3
+      ]
+     }
+    },
+    {
+     "id": "S-01",
+     "tipo": "subestacao",
+     "nome": "Subestação Exemplo 230 kV",
+     "lat": -25.5,
+     "lon": -52.0,
+     "municipio": "(ilustrativo) PR",
+     "documentos": {
+      "nr10": {
+       "vence": "2027-09-01",
+       "ultimo": "2025-09-01"
+      }
+     },
+     "leituras": {
+      "temp_trafo": [
+       68,
+       70,
+       69,
+       71,
+       72,
+       70,
+       71,
+       73,
+       72,
+       74,
+       73,
+       75
+      ]
+     }
+    },
+    {
+     "id": "T-01",
+     "tipo": "equipamento",
+     "nome": "Turbina Francis UG-2",
+     "lat": -25.555,
+     "lon": -52.105,
+     "municipio": "(ilustrativo) PR",
+     "documentos": {
+      "manutencao": {
+       "vence": "2026-11-25",
+       "ultimo": "2026-05-25"
+      }
+     },
+     "leituras": {
+      "vibracao": [
+       1.8,
+       1.9,
+       1.8,
+       2.0,
+       1.9,
+       2.1,
+       2.0,
+       2.2,
+       2.1,
+       2.3,
+       2.2,
+       2.4
+      ]
+     }
+    },
+    {
+     "id": "SST-01",
+     "tipo": "unidade_sst",
+     "nome": "Unidade UHE Rio Exemplo (SST)",
+     "lat": -25.5,
+     "lon": -52.05,
+     "municipio": "(ilustrativo) PR",
+     "documentos": {
+      "pgr": {
+       "vence": "2027-03-01",
+       "ultimo": "2025-03-01",
+       "inclui_psicossociais": true
+      },
+      "pcmso": {
+       "vence": "2027-06-30",
+       "ultimo": "2025-11-30"
+      },
+      "trein_altura": {
+       "vence": "2026-10-15",
+       "ultimo": "2024-10-15"
+      },
+      "nr13": {
+       "vence": "2027-02-01",
+       "ultimo": "2025-02-01"
+      }
+     },
+     "leituras": {
+      "acidentes": [
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "demo-saneamento",
+   "nome": "Saneamento Exemplo (fictícia)",
+   "setor": "saneamento",
+   "cnpj_root": "55444333",
+   "uf": [
+    "SP"
+   ],
+   "abas_ativas": [
+    "estacoes",
+    "reservatorios",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "usuarios_por_papel": {
+    "compliance": "compliance",
+    "juridico": "juridico",
+    "engenharia": "engenharia",
+    "seguranca": "operacao",
+    "manutencao": "operacao",
+    "qualidade": "engenharia",
+    "meio_ambiente": "compliance",
+    "gestor": "financas",
+    "dono_do_documento": "engenharia",
+    "sst": "seguranca_trabalho"
+   },
+   "ativos": [
+    {
+     "id": "ETA-01",
+     "tipo": "eta",
+     "nome": "ETA Exemplo",
+     "lat": -22.9,
+     "lon": -47.06,
+     "municipio": "(ilustrativo) SP",
+     "documentos": {
+      "outorga_agua": {
+       "vence": "2030-06-30",
+       "ultimo": "2020-06-30"
+      },
+      "potabilidade": {
+       "vence": "2026-12-31",
+       "ultimo": "2026-01-02"
+      },
+      "licenca": {
+       "vence": "2026-11-30",
+       "ultimo": "2022-11-30"
+      }
+     },
+     "leituras": {
+      "turbidez": [
+       0.18,
+       0.2,
+       0.19,
+       0.21,
+       0.22,
+       0.2,
+       0.24,
+       0.31,
+       0.42,
+       0.55,
+       0.61,
+       0.68
+      ],
+      "cloro": [
+       1.1,
+       1.0,
+       1.1,
+       0.9,
+       1.0,
+       0.9,
+       0.8,
+       0.7,
+       0.6,
+       0.5,
+       0.4,
+       0.35
+      ]
+     }
+    },
+    {
+     "id": "RS-01",
+     "tipo": "reservatorio",
+     "nome": "Reservatório Exemplo",
+     "lat": -22.86,
+     "lon": -47.02,
+     "municipio": "(ilustrativo) SP",
+     "documentos": {
+      "inspecao": {
+       "vence": "2027-03-01",
+       "ultimo": "2026-03-01"
+      }
+     },
+     "leituras": {
+      "nivel": [
+       72,
+       70,
+       69,
+       67,
+       66,
+       64,
+       61,
+       58,
+       55,
+       52,
+       49,
+       47
+      ]
+     }
+    },
+    {
+     "id": "EE-01",
+     "tipo": "equipamento",
+     "nome": "Elevatória Exemplo",
+     "lat": -22.92,
+     "lon": -47.09,
+     "municipio": "(ilustrativo) SP",
+     "documentos": {
+      "manutencao": {
+       "vence": "2027-01-20",
+       "ultimo": "2026-07-20"
+      }
+     },
+     "leituras": {
+      "pressao": [
+       62,
+       63,
+       61,
+       64,
+       63,
+       65,
+       64,
+       66,
+       65,
+       67,
+       66,
+       68
+      ]
+     }
+    },
+    {
+     "id": "SST-01",
+     "tipo": "unidade_sst",
+     "nome": "Unidade ETA Exemplo (SST)",
+     "lat": -19.95,
+     "lon": -44.0,
+     "municipio": "(ilustrativo) MG",
+     "documentos": {
+      "pgr": {
+       "vence": "2027-03-01",
+       "ultimo": "2025-03-01",
+       "inclui_psicossociais": false
+      },
+      "pcmso": {
+       "vence": "2027-06-30",
+       "ultimo": "2025-11-30"
+      },
+      "trein_altura": {
+       "vence": "2027-08-01",
+       "ultimo": "2024-10-15"
+      },
+      "nr13": {
+       "vence": "2027-02-01",
+       "ultimo": "2025-02-01"
+      }
+     },
+     "leituras": {
+      "acidentes": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "demo-nuclear",
+   "nome": "Nuclear Exemplo S.A. (fictícia)",
+   "setor": "nuclear",
+   "cnpj_root": "77666555",
+   "uf": [
+    "BA",
+    "MG"
+   ],
+   "abas_ativas": [
+    "minas",
+    "instalacoes",
+    "rejeitos",
+    "barragens",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "usuarios_por_papel": {
+    "compliance": "compliance",
+    "juridico": "juridico",
+    "engenharia": "engenharia",
+    "geotecnia": "engenharia",
+    "seguranca": "operacao",
+    "manutencao": "operacao",
+    "radioprotecao": "engenharia",
+    "meio_ambiente": "compliance",
+    "gestor": "financas",
+    "dono_do_documento": "engenharia",
+    "sst": "seguranca_trabalho"
+   },
+   "ativos": [
+    {
+     "id": "NU-M1",
+     "tipo": "mina_uranio",
+     "nome": "Mina de urânio Exemplo",
+     "lat": -14.05,
+     "lon": -42.45,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "titulo_anm": {
+       "vence": "2035-06-30",
+       "ultimo": "2015-06-30"
+      },
+      "autorizacao_cnen": {
+       "vence": "2027-01-20",
+       "ultimo": "2022-01-20"
+      },
+      "plano_radioprotecao": {
+       "vence": "2026-12-01",
+       "ultimo": "2024-12-01"
+      },
+      "licenca": {
+       "vence": "2028-03-10",
+       "ultimo": "2022-03-10"
+      }
+     },
+     "leituras": {
+      "dose": [
+       0.18,
+       0.19,
+       0.2,
+       0.18,
+       0.19,
+       0.2,
+       0.18,
+       0.19,
+       0.2,
+       0.19,
+       0.2,
+       0.21
+      ]
+     }
+    },
+    {
+     "id": "NU-I1",
+     "tipo": "instalacao_radiativa",
+     "nome": "Unidade de beneficiamento de concentrado de urânio Exemplo",
+     "lat": -14.08,
+     "lon": -42.4,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "autorizacao_cnen": {
+       "vence": "2026-10-31",
+       "ultimo": "2021-10-31"
+      },
+      "plano_radioprotecao": {
+       "vence": "2027-05-01",
+       "ultimo": "2025-05-01"
+      },
+      "plano_emergencia": {
+       "vence": "2027-08-01",
+       "ultimo": "2024-08-01"
+      }
+     },
+     "leituras": {
+      "dose": [
+       0.22,
+       0.23,
+       0.24,
+       0.22,
+       0.23,
+       0.24,
+       0.22,
+       0.23,
+       0.24,
+       0.3,
+       0.46,
+       0.62
+      ],
+      "contaminacao": [
+       0.05,
+       0.06,
+       0.05,
+       0.07,
+       0.06,
+       0.05,
+       0.06,
+       0.07,
+       0.06,
+       0.08,
+       0.09,
+       0.1
+      ]
+     }
+    },
+    {
+     "id": "NU-D1",
+     "tipo": "deposito_rejeitos",
+     "nome": "Depósito inicial de rejeitos Exemplo",
+     "lat": -14.1,
+     "lon": -42.38,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "autorizacao_cnen": {
+       "vence": "2029-02-01",
+       "ultimo": "2024-02-01"
+      },
+      "inventario_rejeitos": {
+       "vence": "2026-11-30",
+       "ultimo": "2025-11-30"
+      }
+     },
+     "leituras": {
+      "dose": [
+       0.25,
+       0.26,
+       0.27,
+       0.25,
+       0.26,
+       0.27,
+       0.25,
+       0.26,
+       0.27,
+       0.26,
+       0.25,
+       0.27
+      ]
+     }
+    },
+    {
+     "id": "NU-B1",
+     "tipo": "barragem",
+     "nome": "Barragem de rejeitos com urânio (fictícia)",
+     "lat": -14.12,
+     "lon": -42.43,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "dce": {
+       "vence": "2027-03-31",
+       "ultimo": "2026-03-31"
+      },
+      "plano_radioprotecao": {
+       "vence": "2027-01-15",
+       "ultimo": "2025-01-15"
+      }
+     },
+     "leituras": {
+      "nivel": [
+       10.1,
+       10.2,
+       10.1,
+       10.3,
+       10.2,
+       10.2,
+       10.3,
+       10.4,
+       10.3,
+       10.5,
+       10.6,
+       10.7
+      ],
+      "dose": [
+       0.15,
+       0.16,
+       0.17,
+       0.15,
+       0.16,
+       0.17,
+       0.15,
+       0.16,
+       0.17,
+       0.16,
+       0.15,
+       0.17
+      ]
+     }
+    },
+    {
+     "id": "NU-F1",
+     "tipo": "fonte_radioativa",
+     "nome": "Densímetro nuclear da unidade de beneficiamento",
+     "lat": -14.07,
+     "lon": -42.41,
+     "municipio": "(ilustrativo) BA",
+     "radiologico": true,
+     "documentos": {
+      "autorizacao_cnen": {
+       "vence": "2028-04-01",
+       "ultimo": "2023-04-01"
+      }
+     },
+     "leituras": {
+      "dose": [
+       0.12,
+       0.13,
+       0.14,
+       0.12,
+       0.13,
+       0.14,
+       0.12,
+       0.13,
+       0.14,
+       0.12,
+       0.13,
+       0.12
+      ]
+     }
+    },
+    {
+     "id": "SST-01",
+     "tipo": "unidade_sst",
+     "nome": "Unidade de beneficiamento (SST)",
+     "lat": -14.09,
+     "lon": -42.39,
+     "municipio": "(ilustrativo) BA",
+     "documentos": {
+      "pgr": {
+       "vence": "2027-03-01",
+       "ultimo": "2025-03-01",
+       "inclui_psicossociais": true
+      },
+      "pcmso": {
+       "vence": "2027-06-30",
+       "ultimo": "2025-11-30"
+      },
+      "trein_altura": {
+       "vence": "2027-08-01",
+       "ultimo": "2024-10-15"
+      },
+      "nr13": {
+       "vence": "2027-02-01",
+       "ultimo": "2025-02-01"
+      }
+     },
+     "leituras": {
+      "acidentes": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       1
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

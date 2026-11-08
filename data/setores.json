@@ -1,0 +1,950 @@
+{
+ "aviso": "Módulos setoriais: configuração, não código. Documentos e periodicidades listados são TÍPICOS do tipo de atividade e devem ser confirmados para cada ativo; a LexIA não infere obrigação automaticamente.",
+ "simbolos": {
+  "triangulo": "▲",
+  "quadrado": "■",
+  "circulo": "●",
+  "losango": "◆",
+  "hexagono": "⬢",
+  "radiacao": "☢",
+  "gota": "💧",
+  "estrela": "★"
+ },
+ "papeis": {
+  "compliance": "Compliance",
+  "juridico": "Jurídico",
+  "engenharia": "Engenharia",
+  "geotecnia": "Geotecnia",
+  "seguranca": "Segurança operacional",
+  "manutencao": "Manutenção",
+  "meio_ambiente": "Meio ambiente",
+  "radioprotecao": "Proteção radiológica",
+  "qualidade": "Qualidade",
+  "gestor": "Gestão",
+  "sst": "Segurança do trabalho (SESMT)"
+ },
+ "roteamento_padrao": {
+  "documento_vencendo": [
+   "compliance",
+   "dono_do_documento"
+  ],
+  "documento_vencido": [
+   "compliance",
+   "juridico",
+   "dono_do_documento"
+  ],
+  "anomalia_operacional": [
+   "engenharia",
+   "seguranca"
+  ],
+  "possivel_infracao": [
+   "juridico",
+   "compliance"
+  ],
+  "denuncia_recebida": [
+   "compliance",
+   "juridico"
+  ],
+  "radiologico": [
+   "radioprotecao",
+   "seguranca",
+   "compliance"
+  ],
+  "sst": [
+   "sst",
+   "seguranca",
+   "compliance"
+  ]
+ },
+ "setores": {
+  "mineracao": {
+   "nome": "Mineração",
+   "reguladores": [
+    "ANM",
+    "Órgão ambiental estadual",
+    "MTE (NR-22)",
+    "CNEN/ANSN (se houver material radioativo)"
+   ],
+   "abas": [
+    "minas",
+    "barragens",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "ativos": {
+    "mina": {
+     "rotulo": "Mina",
+     "simbolo": "quadrado",
+     "aba": "minas",
+     "documentos": [
+      {
+       "tipo": "titulo_lavra",
+       "nome": "Título de lavra (concessão / licenciamento)",
+       "base": "Código de Mineração (Decreto-Lei 227/1967)"
+      },
+      {
+       "tipo": "ral",
+       "nome": "Relatório Anual de Lavra (RAL)",
+       "base": "ANM — obrigação anual do titular"
+      },
+      {
+       "tipo": "licenca",
+       "nome": "Licença ambiental de operação",
+       "base": "Órgão ambiental competente"
+      },
+      {
+       "tipo": "pgr_nr22",
+       "nome": "Programa de Gerenciamento de Riscos (NR-22)",
+       "base": "NR-22 (MTE)"
+      }
+     ],
+     "indicadores": []
+    },
+    "barragem": {
+     "rotulo": "Barragem",
+     "simbolo": "triangulo",
+     "aba": "barragens",
+     "documentos": [
+      {
+       "tipo": "dce",
+       "nome": "Declaração de Condição de Estabilidade (DCE)",
+       "base": "Res. ANM 95/2022"
+      },
+      {
+       "tipo": "rpsb",
+       "nome": "Revisão Periódica de Segurança",
+       "base": "Res. ANM 95/2022"
+      },
+      {
+       "tipo": "paebm",
+       "nome": "PAEBM atualizado e cópias à Defesa Civil",
+       "base": "Res. ANM 95/2022; Lei 12.334/2010"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "piezometro",
+       "nome": "Nível piezométrico",
+       "unidade": "m",
+       "limite_alerta": 12.0,
+       "limite_critico": 13.5,
+       "sentido": "acima"
+      },
+      {
+       "id": "nivel_reservatorio",
+       "nome": "Nível do reservatório",
+       "unidade": "m",
+       "limite_alerta": 96.0,
+       "limite_critico": 98.0,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "equipamento": {
+     "rotulo": "Equipamento",
+     "simbolo": "circulo",
+     "aba": "equipamentos",
+     "documentos": [
+      {
+       "tipo": "manutencao",
+       "nome": "Plano de manutenção preventiva",
+       "base": "NR-12 / NR-22 (MTE)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "vibracao",
+       "nome": "Vibração",
+       "unidade": "mm/s",
+       "limite_alerta": 7.1,
+       "limite_critico": 11.0,
+       "sentido": "acima"
+      },
+      {
+       "id": "temperatura",
+       "nome": "Temperatura do mancal",
+       "unidade": "°C",
+       "limite_alerta": 85,
+       "limite_critico": 95,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "radiativo": {
+     "rotulo": "Instalação com material radioativo",
+     "simbolo": "radiacao",
+     "aba": "minas",
+     "documentos": [
+      {
+       "tipo": "autorizacao_cnen",
+       "nome": "Autorização / licença da autoridade nuclear (CNEN/ANSN)",
+       "base": "Lei 14.222/2021 (ANSN); normas CNEN"
+      },
+      {
+       "tipo": "plano_radioprotecao",
+       "nome": "Plano de proteção radiológica",
+       "base": "Norma CNEN NN 4.01 (instalações mínero-industriais)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "unidade_sst": {
+     "rotulo": "Unidade operacional (SST)",
+     "simbolo": "estrela",
+     "aba": "sst",
+     "documentos": [
+      {
+       "tipo": "pgr",
+       "nome": "PGR — Programa de Gerenciamento de Riscos",
+       "base": "NR-1 (cap. 1.5; riscos psicossociais pela Portaria MTE 1.419/2024, vigência 26/05/2026)",
+       "sst": true,
+       "exige": {
+        "campo": "inclui_psicossociais",
+        "desde": "2026-05-26",
+        "texto": "não inclui a avaliação de riscos psicossociais (exigida desde 26/05/2026)",
+        "acao": "Revisar o PGR incluindo os fatores de risco psicossociais (NR-1 e NR-17) e registrar a nova versão como evidência."
+       }
+      },
+      {
+       "tipo": "pcmso",
+       "nome": "PCMSO — Programa de Controle Médico de Saúde Ocupacional",
+       "base": "NR-7",
+       "sst": true
+      },
+      {
+       "tipo": "trein_altura",
+       "nome": "Treinamento de trabalho em altura (equipe)",
+       "base": "NR-35",
+       "sst": true
+      },
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vasos de pressão/caldeiras",
+       "base": "NR-13",
+       "sst": true
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "acidentes",
+       "nome": "Acidentes com afastamento (mês)",
+       "unidade": "ocorr.",
+       "limite_alerta": 1,
+       "limite_critico": 3,
+       "sentido": "acima",
+       "zscore": false
+      }
+     ]
+    }
+   },
+   "rotas_operacao": [
+    "ativos",
+    "minas",
+    "fechamento",
+    "radar",
+    "atlas"
+   ]
+  },
+  "energia": {
+   "nome": "Energia",
+   "reguladores": [
+    "ANEEL",
+    "ONS",
+    "Órgão ambiental",
+    "ANEEL como fiscalizadora de barragens de hidrelétricas (Lei 12.334/2010)"
+   ],
+   "abas": [
+    "usinas",
+    "barragens",
+    "subestacoes",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "ativos": {
+    "usina": {
+     "rotulo": "Usina",
+     "simbolo": "losango",
+     "aba": "usinas",
+     "documentos": [
+      {
+       "tipo": "outorga",
+       "nome": "Outorga / autorização ANEEL",
+       "base": "ANEEL"
+      },
+      {
+       "tipo": "licenca",
+       "nome": "Licença ambiental de operação",
+       "base": "Órgão ambiental competente"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "vazao_afluente",
+       "nome": "Vazão afluente",
+       "unidade": "m³/s",
+       "limite_alerta": null,
+       "limite_critico": null,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "barragem": {
+     "rotulo": "Barragem de usina",
+     "simbolo": "triangulo",
+     "aba": "barragens",
+     "documentos": [
+      {
+       "tipo": "psb",
+       "nome": "Plano de Segurança da Barragem",
+       "base": "Lei 12.334/2010; fiscalização ANEEL"
+      },
+      {
+       "tipo": "inspecao",
+       "nome": "Inspeção de segurança regular",
+       "base": "Lei 12.334/2010; fiscalização ANEEL"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "nivel_reservatorio",
+       "nome": "Nível do reservatório",
+       "unidade": "m",
+       "limite_alerta": 455.0,
+       "limite_critico": 457.0,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "subestacao": {
+     "rotulo": "Subestação",
+     "simbolo": "hexagono",
+     "aba": "subestacoes",
+     "documentos": [
+      {
+       "tipo": "nr10",
+       "nome": "Prontuário de instalações elétricas (NR-10)",
+       "base": "NR-10 (MTE)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "temp_trafo",
+       "nome": "Temperatura do óleo do transformador",
+       "unidade": "°C",
+       "limite_alerta": 90,
+       "limite_critico": 105,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "equipamento": {
+     "rotulo": "Equipamento",
+     "simbolo": "circulo",
+     "aba": "equipamentos",
+     "documentos": [
+      {
+       "tipo": "manutencao",
+       "nome": "Plano de manutenção preventiva",
+       "base": "NR-12 (MTE)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "vibracao",
+       "nome": "Vibração da turbina",
+       "unidade": "mm/s",
+       "limite_alerta": 4.5,
+       "limite_critico": 7.1,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "unidade_sst": {
+     "rotulo": "Unidade operacional (SST)",
+     "simbolo": "estrela",
+     "aba": "sst",
+     "documentos": [
+      {
+       "tipo": "pgr",
+       "nome": "PGR — Programa de Gerenciamento de Riscos",
+       "base": "NR-1 (cap. 1.5; riscos psicossociais pela Portaria MTE 1.419/2024, vigência 26/05/2026)",
+       "sst": true,
+       "exige": {
+        "campo": "inclui_psicossociais",
+        "desde": "2026-05-26",
+        "texto": "não inclui a avaliação de riscos psicossociais (exigida desde 26/05/2026)",
+        "acao": "Revisar o PGR incluindo os fatores de risco psicossociais (NR-1 e NR-17) e registrar a nova versão como evidência."
+       }
+      },
+      {
+       "tipo": "pcmso",
+       "nome": "PCMSO — Programa de Controle Médico de Saúde Ocupacional",
+       "base": "NR-7",
+       "sst": true
+      },
+      {
+       "tipo": "trein_altura",
+       "nome": "Treinamento de trabalho em altura (equipe)",
+       "base": "NR-35",
+       "sst": true
+      },
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vasos de pressão/caldeiras",
+       "base": "NR-13",
+       "sst": true
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "acidentes",
+       "nome": "Acidentes com afastamento (mês)",
+       "unidade": "ocorr.",
+       "limite_alerta": 1,
+       "limite_critico": 3,
+       "sentido": "acima",
+       "zscore": false
+      }
+     ]
+    }
+   },
+   "rotas_operacao": [
+    "ativos",
+    "outorgas",
+    "hidro"
+   ]
+  },
+  "saneamento": {
+   "nome": "Saneamento",
+   "reguladores": [
+    "Agência reguladora infranacional",
+    "ANA (normas de referência)",
+    "Vigilância sanitária (potabilidade)",
+    "Órgão ambiental"
+   ],
+   "abas": [
+    "estacoes",
+    "reservatorios",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "ativos": {
+    "eta": {
+     "rotulo": "Estação de tratamento",
+     "simbolo": "gota",
+     "aba": "estacoes",
+     "documentos": [
+      {
+       "tipo": "outorga_agua",
+       "nome": "Outorga de direito de uso de recursos hídricos",
+       "base": "Lei 9.433/1997"
+      },
+      {
+       "tipo": "potabilidade",
+       "nome": "Plano de amostragem de potabilidade",
+       "base": "Portaria GM/MS 888/2021"
+      },
+      {
+       "tipo": "licenca",
+       "nome": "Licença ambiental de operação",
+       "base": "Órgão ambiental competente"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "turbidez",
+       "nome": "Turbidez da água tratada",
+       "unidade": "uT",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima"
+      },
+      {
+       "id": "cloro",
+       "nome": "Cloro residual livre",
+       "unidade": "mg/L",
+       "limite_alerta": 0.3,
+       "limite_critico": 0.2,
+       "sentido": "abaixo"
+      }
+     ]
+    },
+    "reservatorio": {
+     "rotulo": "Reservatório",
+     "simbolo": "triangulo",
+     "aba": "reservatorios",
+     "documentos": [
+      {
+       "tipo": "inspecao",
+       "nome": "Inspeção estrutural",
+       "base": "Rotina da empresa"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "nivel",
+       "nome": "Nível",
+       "unidade": "%",
+       "limite_alerta": 25,
+       "limite_critico": 15,
+       "sentido": "abaixo"
+      }
+     ]
+    },
+    "equipamento": {
+     "rotulo": "Estação elevatória / bomba",
+     "simbolo": "circulo",
+     "aba": "equipamentos",
+     "documentos": [
+      {
+       "tipo": "manutencao",
+       "nome": "Plano de manutenção preventiva",
+       "base": "Rotina da empresa"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "pressao",
+       "nome": "Pressão de recalque",
+       "unidade": "mca",
+       "limite_alerta": 85,
+       "limite_critico": 95,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "unidade_sst": {
+     "rotulo": "Unidade operacional (SST)",
+     "simbolo": "estrela",
+     "aba": "sst",
+     "documentos": [
+      {
+       "tipo": "pgr",
+       "nome": "PGR — Programa de Gerenciamento de Riscos",
+       "base": "NR-1 (cap. 1.5; riscos psicossociais pela Portaria MTE 1.419/2024, vigência 26/05/2026)",
+       "sst": true,
+       "exige": {
+        "campo": "inclui_psicossociais",
+        "desde": "2026-05-26",
+        "texto": "não inclui a avaliação de riscos psicossociais (exigida desde 26/05/2026)",
+        "acao": "Revisar o PGR incluindo os fatores de risco psicossociais (NR-1 e NR-17) e registrar a nova versão como evidência."
+       }
+      },
+      {
+       "tipo": "pcmso",
+       "nome": "PCMSO — Programa de Controle Médico de Saúde Ocupacional",
+       "base": "NR-7",
+       "sst": true
+      },
+      {
+       "tipo": "trein_altura",
+       "nome": "Treinamento de trabalho em altura (equipe)",
+       "base": "NR-35",
+       "sst": true
+      },
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vasos de pressão/caldeiras",
+       "base": "NR-13",
+       "sst": true
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "acidentes",
+       "nome": "Acidentes com afastamento (mês)",
+       "unidade": "ocorr.",
+       "limite_alerta": 1,
+       "limite_critico": 3,
+       "sentido": "acima",
+       "zscore": false
+      }
+     ]
+    }
+   },
+   "rotas_operacao": [
+    "ativos",
+    "abastecimento"
+   ]
+  },
+  "industria": {
+   "nome": "Indústria",
+   "reguladores": [
+    "MTE (NR-12, NR-13)",
+    "Órgão ambiental",
+    "Corpo de Bombeiros"
+   ],
+   "abas": [
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "ativos": {
+    "equipamento": {
+     "rotulo": "Máquina / vaso de pressão",
+     "simbolo": "circulo",
+     "aba": "equipamentos",
+     "documentos": [
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vaso de pressão (NR-13)",
+       "base": "NR-13 (MTE)"
+      },
+      {
+       "tipo": "nr12",
+       "nome": "Apreciação de riscos de máquinas (NR-12)",
+       "base": "NR-12 (MTE)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "pressao",
+       "nome": "Pressão de operação",
+       "unidade": "bar",
+       "limite_alerta": 9,
+       "limite_critico": 10,
+       "sentido": "acima"
+      }
+     ]
+    },
+    "unidade_sst": {
+     "rotulo": "Unidade operacional (SST)",
+     "simbolo": "estrela",
+     "aba": "sst",
+     "documentos": [
+      {
+       "tipo": "pgr",
+       "nome": "PGR — Programa de Gerenciamento de Riscos",
+       "base": "NR-1 (cap. 1.5; riscos psicossociais pela Portaria MTE 1.419/2024, vigência 26/05/2026)",
+       "sst": true,
+       "exige": {
+        "campo": "inclui_psicossociais",
+        "desde": "2026-05-26",
+        "texto": "não inclui a avaliação de riscos psicossociais (exigida desde 26/05/2026)",
+        "acao": "Revisar o PGR incluindo os fatores de risco psicossociais (NR-1 e NR-17) e registrar a nova versão como evidência."
+       }
+      },
+      {
+       "tipo": "pcmso",
+       "nome": "PCMSO — Programa de Controle Médico de Saúde Ocupacional",
+       "base": "NR-7",
+       "sst": true
+      },
+      {
+       "tipo": "trein_altura",
+       "nome": "Treinamento de trabalho em altura (equipe)",
+       "base": "NR-35",
+       "sst": true
+      },
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vasos de pressão/caldeiras",
+       "base": "NR-13",
+       "sst": true
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "acidentes",
+       "nome": "Acidentes com afastamento (mês)",
+       "unidade": "ocorr.",
+       "limite_alerta": 1,
+       "limite_critico": 3,
+       "sentido": "acima",
+       "zscore": false
+      }
+     ]
+    }
+   },
+   "rotas_operacao": [
+    "ativos"
+   ]
+  },
+  "nuclear": {
+   "nome": "Nuclear",
+   "reguladores": [
+    "ANSN (Autoridade Nacional de Segurança Nuclear)",
+    "CNEN (normas em transição para a ANSN)",
+    "IBAMA (licenciamento ambiental federal)",
+    "ANM (lavra de minério nuclear)"
+   ],
+   "abas": [
+    "minas",
+    "instalacoes",
+    "rejeitos",
+    "barragens",
+    "equipamentos",
+    "sst",
+    "documentos",
+    "juridico"
+   ],
+   "ativos": {
+    "mina_uranio": {
+     "rotulo": "Mina de urânio",
+     "simbolo": "quadrado",
+     "aba": "minas",
+     "documentos": [
+      {
+       "tipo": "titulo_anm",
+       "nome": "Título minerário (lavra de minério nuclear)",
+       "base": "ANM; CF art. 21, XXIII e art. 177, V"
+      },
+      {
+       "tipo": "autorizacao_cnen",
+       "nome": "Autorização/licença da autoridade nuclear (ANSN/CNEN)",
+       "base": "Lei 14.222/2021; Norma CNEN NN 6.02 (instalações radiativas)"
+      },
+      {
+       "tipo": "plano_radioprotecao",
+       "nome": "Plano de proteção radiológica",
+       "base": "Norma CNEN NN 3.01 (Res. CNEN 323/2024); Norma ANSN 3.02"
+      },
+      {
+       "tipo": "licenca",
+       "nome": "Licença ambiental de operação",
+       "base": "IBAMA"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "instalacao_radiativa": {
+     "rotulo": "Instalação radiativa / beneficiamento",
+     "simbolo": "radiacao",
+     "aba": "instalacoes",
+     "documentos": [
+      {
+       "tipo": "autorizacao_cnen",
+       "nome": "Autorização/licença da autoridade nuclear (ANSN/CNEN)",
+       "base": "Lei 14.222/2021; Norma CNEN NN 6.02 (instalações radiativas)"
+      },
+      {
+       "tipo": "plano_radioprotecao",
+       "nome": "Plano de proteção radiológica",
+       "base": "Norma CNEN NN 3.01 (Res. CNEN 323/2024); Norma ANSN 3.02"
+      },
+      {
+       "tipo": "plano_emergencia",
+       "nome": "Plano de emergência radiológica",
+       "base": "Norma CNEN NN 3.01; Lei 14.222/2021"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima",
+       "zscore": true
+      },
+      {
+       "id": "contaminacao",
+       "nome": "Contaminação de superfície",
+       "unidade": "Bq/cm²",
+       "limite_alerta": 0.4,
+       "limite_critico": 4.0,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "deposito_rejeitos": {
+     "rotulo": "Depósito de rejeitos radioativos",
+     "simbolo": "hexagono",
+     "aba": "rejeitos",
+     "documentos": [
+      {
+       "tipo": "autorizacao_cnen",
+       "nome": "Autorização/licença da autoridade nuclear (ANSN/CNEN)",
+       "base": "Lei 14.222/2021; Norma CNEN NN 6.02 (instalações radiativas)"
+      },
+      {
+       "tipo": "inventario_rejeitos",
+       "nome": "Inventário e gerência de rejeitos radioativos",
+       "base": "Norma CNEN NN 8.01 (alt. Res. CNEN 343/2025); Lei 10.308/2001"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "barragem": {
+     "rotulo": "Barragem de rejeitos com material radioativo",
+     "simbolo": "triangulo",
+     "aba": "barragens",
+     "documentos": [
+      {
+       "tipo": "dce",
+       "nome": "Declaração de Condição de Estabilidade",
+       "base": "Lei 12.334/2010; Res. ANM 95/2022"
+      },
+      {
+       "tipo": "plano_radioprotecao",
+       "nome": "Plano de proteção radiológica",
+       "base": "Norma CNEN NN 3.01 (Res. CNEN 323/2024); Norma ANSN 3.02"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "nivel",
+       "nome": "Nível do reservatório",
+       "unidade": "m",
+       "limite_alerta": 12.0,
+       "limite_critico": 13.0,
+       "sentido": "acima",
+       "zscore": true
+      },
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "fonte_radioativa": {
+     "rotulo": "Fonte radioativa em equipamento",
+     "simbolo": "circulo",
+     "aba": "equipamentos",
+     "documentos": [
+      {
+       "tipo": "autorizacao_cnen",
+       "nome": "Autorização/licença da autoridade nuclear (ANSN/CNEN)",
+       "base": "Lei 14.222/2021; Norma CNEN NN 6.02 (instalações radiativas)"
+      },
+      {
+       "tipo": "transporte",
+       "nome": "Plano de transporte de material radioativo",
+       "base": "Norma CNEN NN 5.01 (Res. CNEN 271/2021)"
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "dose",
+       "nome": "Taxa de dose ambiental",
+       "unidade": "µSv/h",
+       "limite_alerta": 0.5,
+       "limite_critico": 1.0,
+       "sentido": "acima",
+       "zscore": true
+      }
+     ]
+    },
+    "unidade_sst": {
+     "rotulo": "Unidade operacional (SST)",
+     "simbolo": "estrela",
+     "aba": "sst",
+     "documentos": [
+      {
+       "tipo": "pgr",
+       "nome": "PGR — Programa de Gerenciamento de Riscos",
+       "base": "NR-1 (cap. 1.5; riscos psicossociais pela Portaria MTE 1.419/2024, vigência 26/05/2026)",
+       "sst": true,
+       "exige": {
+        "campo": "inclui_psicossociais",
+        "desde": "2026-05-26",
+        "texto": "não inclui a avaliação de riscos psicossociais (exigida desde 26/05/2026)",
+        "acao": "Revisar o PGR incluindo os fatores de risco psicossociais (NR-1 e NR-17) e registrar a nova versão como evidência."
+       }
+      },
+      {
+       "tipo": "pcmso",
+       "nome": "PCMSO — Programa de Controle Médico de Saúde Ocupacional",
+       "base": "NR-7",
+       "sst": true
+      },
+      {
+       "tipo": "trein_altura",
+       "nome": "Treinamento de trabalho em altura (equipe)",
+       "base": "NR-35",
+       "sst": true
+      },
+      {
+       "tipo": "nr13",
+       "nome": "Inspeção de segurança de vasos de pressão/caldeiras",
+       "base": "NR-13",
+       "sst": true
+      }
+     ],
+     "indicadores": [
+      {
+       "id": "acidentes",
+       "nome": "Acidentes com afastamento (mês)",
+       "unidade": "ocorr.",
+       "limite_alerta": 1,
+       "limite_critico": 3,
+       "sentido": "acima",
+       "zscore": false
+      }
+     ]
+    }
+   },
+   "rotas_operacao": [
+    "ativos",
+    "radiologico",
+    "minas"
+   ]
+  }
+ },
+ "rotulos_abas": {
+  "minas": "Minas",
+  "barragens": "Barragens",
+  "equipamentos": "Equipamentos",
+  "documentos": "Documentos e licenças",
+  "juridico": "Jurídico e Compliance",
+  "usinas": "Usinas",
+  "subestacoes": "Subestações",
+  "estacoes": "Estações de tratamento",
+  "reservatorios": "Reservatórios",
+  "instalacoes": "Instalações radiativas",
+  "rejeitos": "Rejeitos radioativos",
+  "sst": "Segurança do trabalho"
+ },
+ "rotas_conformidade": [
+  "compliance",
+  "impact",
+  "extrator",
+  "sistemas",
+  "decision",
+  "denuncia"
+ ]
+}

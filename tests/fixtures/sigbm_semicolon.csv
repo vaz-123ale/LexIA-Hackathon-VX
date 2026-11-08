@@ -1,0 +1,3 @@
+"ID";"Nome";"Empreendedor";"CPF_CNPJ";"Nome da mina";"UF";"Município";"Latitude";"Longitude";"Posicionamento";"Categoria de Risco - CRI";"Dano Potencial Associado - DPA";"Necessita de PAEBM";"Inserido na PNSB";"Nível de Emergência";"Situação Operacional";"Tipo de Barragem de Mineração";"Unidade Gestora"
+"1001";"Barragem Teste A";"MINERADORA EXEMPLO S.A.";"11222333000181";"Mina X";"MG";"CIDADE A";"-20°10'00.000''";"-43°50'00.000''";"Sul do Equador";"Baixa";"Alta";"Sim";"Sim";"Sem emergência";"Ativa";"Barragem/Barramento/Dique";"CORBS"
+"1002";"Barragem Teste B";"MINERADORA EXEMPLO S.A.";"11222333000262";"";"PA";"CIDADE B";"-06°00'00.000''";"-50°00'00.000''";"Sul do Equador";"Média";"Baixa";"Não";"Não";"Sem emergência";"Inativa";"Barragem/Barramento/Dique";"CORBN"

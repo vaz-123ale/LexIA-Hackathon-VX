@@ -1,0 +1,22 @@
+{
+  "snapshot_id": "snisb-20261107T015755",
+  "connector": "ANA_SNISB",
+  "fetched_at": "2026-11-07T01:57:55+00:00",
+  "service": "https://portal1.snirh.gov.br/server/rest/services/SRE/Barragens_SNISB/MapServer/0",
+  "user_agent": "Torre360-monitor/0.4 (hackathon; coleta de dados abertos)",
+  "orphans": {
+    "raw": 7937,
+    "accepted": 7937,
+    "rejected_coordinates": 0,
+    "sha256": "c00d06120586eac837359295609db3a1520393f8bd66d1f7aa10e0d92dbb1f30",
+    "filter": "NM_EMPREENDEDOR IS NULL"
+  },
+  "mining": {
+    "raw": 908,
+    "indexed": 908,
+    "sha256": "632a996ace51970e186f82ec7f301d9bef5c8b0d602d93d8071fcf0958071783",
+    "filter": "ORG_NM_ORGANIZACAO LIKE '%Minera%'",
+    "join_key": "BAR_CD_BAR_ENT_FISCALIZADORA = ID do SIGBM"
+  },
+  "privacy": "Nome do empreendedor não coletado."
+}

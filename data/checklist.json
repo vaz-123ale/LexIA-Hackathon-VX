@@ -1,0 +1,617 @@
+{
+ "legend": {
+  "actors": {
+   "IA": "IA propõe (extrai, classifica, sugere, redige)",
+   "REGRA": "Regra versionada verifica (determinística, testável)",
+   "HUMANO": "Humano competente decide e responde",
+   "SISTEMA": "Sistema registra, guarda e integra"
+  },
+  "status": {
+   "FEITO": "Implementado e testado nesta versão",
+   "SIMULADO": "Funciona na demo com dados ou conectores simulados",
+   "PLANEJADO": "Projetado; ainda não implementado"
+  }
+ },
+ "items": [
+  {
+   "area": "00. v4 — site e contas",
+   "item": "Site público: início, sobre (LGPD), entrar e cadastro",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "#/inicio, #/sobre, #/entrar, #/cadastro",
+   "verify": "E2E: 01_inicio, 02_sobre"
+  },
+  {
+   "area": "00. v4 — site e contas",
+   "item": "Duas contas separadas: cidadão e empresa, com experiências diferentes",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/accounts.py · web/js/site.js",
+   "verify": "test_company_role_from_function_and_login_kind; E2E portal do cidadão"
+  },
+  {
+   "area": "00. v4 — site e contas",
+   "item": "Senha com PBKDF2 (200 mil iterações), sessão em cookie HttpOnly, proteção de origem",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/accounts.py · app/server.py",
+   "verify": "test_password_is_hashed; test_cross_origin_post_blocked"
+  },
+  {
+   "area": "00. v4 — site e contas",
+   "item": "Validação de CNPJ por dígito verificador e consentimento LGPD",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/accounts.py",
+   "verify": "test_cnpj_validation; test_register_validations"
+  },
+  {
+   "area": "00. v4 — site e contas",
+   "item": "Carteira da empresa / acompanhamento do cidadão alimentam indicadores e avisos",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "/api/watchlist",
+   "verify": "E2E: carteira 9 → 10"
+  },
+  {
+   "area": "00. v4 — monitor",
+   "item": "Monitor de fontes oficiais com robots.txt, intervalo e alerta no sino",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/monitor.py · Governança › Monitor",
+   "verify": "test_robots_respected; test_change_detection_ignores_scripts_and_notifies"
+  },
+  {
+   "area": "00. v4 — monitor",
+   "item": "SIGBM atualizado automaticamente quando a ANM publica nova versão",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/monitor.py",
+   "verify": "test_sigbm_new_version_triggers_sync"
+  },
+  {
+   "area": "00. v4 — monitor",
+   "item": "DOU (site) e LexML declarados como bloqueados, sem contornar proteção",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "BLOCKED_CHANNELS",
+   "verify": "test_monitor_endpoint_lists_blocked_channels"
+  },
+  {
+   "area": "00. v4 — monitor",
+   "item": "Diário Oficial via INLABS",
+   "actor": "SISTEMA",
+   "status": "PLANEJADO",
+   "where": "Conector a criar",
+   "verify": "Exige credencial da Imprensa Nacional"
+  },
+  {
+   "area": "00. v4 — visual",
+   "item": "Identidade visual da referência: navy + azul, 4 indicadores, mapa por UF, fila, marcos e insight",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Visão Executiva",
+   "verify": "E2E: 04_exec"
+  },
+  {
+   "area": "00. v4 — visual",
+   "item": "Globo sem corte e com ficha ao clicar",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Atlas › Globo",
+   "verify": "E2E: globo ocupa o quadro; ficha visível"
+  },
+  {
+   "area": "00. v4 — visual",
+   "item": "Insight rotulado como “Regras” quando a IA está desligada",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "/api/insight",
+   "verify": "test_executive_insight_and_portfolio"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Conector real ANM SIGBM com snapshot imutável (SHA-256, horário, Last-Modified)",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Fontes & Governança › Conectores · app/connectors/sigbm.py",
+   "verify": "test_snapshot_roundtrip_offline / snapshot real 902 aceitas"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Detecção de encoding/delimitador e divergência com o dicionário oficial",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/connectors/sigbm.py",
+   "verify": "test_encoding_and_delimiter_detection"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Schema drift interrompe a importação",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "SchemaDriftError",
+   "verify": "test_schema_drift_is_detected"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Coordenadas inválidas rejeitadas com motivo (sem correção por adivinhação)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "Relatório de qualidade",
+   "verify": "test_counts_rejections_and_duplicates"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "CPF de pessoa física ocultado",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/connectors/sigbm.py",
+   "verify": "test_personal_data_hidden"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Registro de organizações por CNPJ; correspondência por nome nunca vira vínculo",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/entities.py · Atlas",
+   "verify": "test_textual_match_is_not_a_link"
+  },
+  {
+   "area": "0. v3 — dados oficiais",
+   "item": "Camadas DADO OFICIAL e CENÁRIO HIPOTÉTICO separadas (forma e rótulo)",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Atlas",
+   "verify": "E2E: ficha com rótulo de origem"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Quatro eixos independentes: ciclo normativo, aplicabilidade, fluxo, prioridade",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/assessment.py",
+   "verify": "test_axes_are_independent"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Prioridade com fórmula e justificativa, sem usar CRI/DPA",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/assessment.py",
+   "verify": "test_priority_does_not_use_cri"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Atributos atuais não apresentados como históricos",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "analyze_official_anm",
+   "verify": "test_current_attributes_not_presented_as_historical"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Permissões por papel nas mutações; ator vem do token",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/server.py · data/demo_users.json",
+   "verify": "test_rbac_on_mutations"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Decision Pack imprimível",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "/api/export/decision-pack",
+   "verify": "test_full_flow_and_decision_pack"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Decision Lab com premissas mín/base/máx, memória e sensibilidade",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/finance.py · Decisão & Execução",
+   "verify": "test_finance_reproducible"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Diff por dispositivo (metadados e resumo curado)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/diff.py · Laboratório",
+   "verify": "test_diff_nr20"
+  },
+  {
+   "area": "0. v3 — decisão",
+   "item": "Extrator LLM de obrigações com JSON validado",
+   "actor": "IA",
+   "status": "PLANEJADO",
+   "where": "Etapa E",
+   "verify": "Não implementado nesta versão"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Catálogo de 42 fontes com URL, nível T/C/I e data de verificação",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Fontes · data/sources.json",
+   "verify": "Teste test_catalog_42"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Classificar fonte por órgão, tipo, jurisdição e direito de uso",
+   "actor": "IA",
+   "status": "PLANEJADO",
+   "where": "Agente Curador",
+   "verify": "Comparar com rótulos humanos em amostra"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Ingestão curada com SHA-256, data de coleta e status",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Fontes › Ingestão · app/ingest.py",
+   "verify": "Testes de ingestão"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Bloquear documento marcado INTERNA/CONFIDENCIAL",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/ingest.py",
+   "verify": "test_ingest_blocks_internal"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Quarentena para domínio não oficial ou URL redirecionada a outro emissor",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/ingest.py",
+   "verify": "test_ingest_redirect_quarantine"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Bloquear norma técnica protegida (ABNT/ISO)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/ingest.py",
+   "verify": "test_ingest_license_block"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Detectar instruções dirigidas à IA dentro do documento (prompt injection)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/ingest.py + prompt do sistema",
+   "verify": "test_ingest_injection"
+  },
+  {
+   "area": "1. Fontes e curadoria",
+   "item": "Vigilância automática do DOU e portais (sem scraping agressivo)",
+   "actor": "SISTEMA",
+   "status": "PLANEJADO",
+   "where": "Conector SRC-DOU",
+   "verify": "Respeitar robots/termos; log de coleta"
+  },
+  {
+   "area": "2. Versão e vigência",
+   "item": "Vigência por DISPOSITIVO (não por norma inteira)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/temporal.py · Máquina do tempo",
+   "verify": "Testes em 06/11/2026, 22/04/2027, 02/08/2027, 26/12/2029"
+  },
+  {
+   "area": "2. Versão e vigência",
+   "item": "Estados: em consulta, vigente, histórica, futura, revogada, a conferir",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/temporal.py",
+   "verify": "test_temporal_states"
+  },
+  {
+   "area": "2. Versão e vigência",
+   "item": "Detectar mudança entre versões (diff por artigo/item/alínea)",
+   "actor": "IA",
+   "status": "PLANEJADO",
+   "where": "Agente Versionador",
+   "verify": "Casos com ato modificador conhecido"
+  },
+  {
+   "area": "2. Versão e vigência",
+   "item": "Data não conferida nunca vira 'vigente' (A_CONFERIR)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/temporal.py",
+   "verify": "test_temporal_states"
+  },
+  {
+   "area": "3. Extração de obrigações",
+   "item": "Extrair sujeito, ação, condição, exceção, prazo expresso e evidência",
+   "actor": "IA",
+   "status": "SIMULADO",
+   "where": "Cadeia de decisão (extrações de referência curadas)",
+   "verify": "Fidelidade campo a campo vs. anotação humana"
+  },
+  {
+   "area": "3. Extração de obrigações",
+   "item": "Prazo só quando expresso na fonte (senão null)",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/engine.py · agente Crítico",
+   "verify": "test_nr20_case (legal_deadline None)"
+  },
+  {
+   "area": "4. Aplicabilidade",
+   "item": "Triagem determinística: REVIEW, INSUFFICIENT, OUT_OF_SCOPE, NO_LINK, FUTURE_REVIEW, MONITOR",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/engine.py",
+   "verify": "Testes de motor (12 ativos × 4 cenários)"
+  },
+  {
+   "area": "4. Aplicabilidade",
+   "item": "Propor vínculo norma ↔ ativo a partir de atributos",
+   "actor": "IA",
+   "status": "PLANEJADO",
+   "where": "Agente Aplicabilidade",
+   "verify": "Nunca pelo nome da organização"
+  },
+  {
+   "area": "4. Aplicabilidade",
+   "item": "Agente Crítico procura exclusões, fontes fracas, datas futuras e prazos inventados",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/chain.py · Cadeia de decisão",
+   "verify": "Painel do Crítico em cada achado"
+  },
+  {
+   "area": "4. Aplicabilidade",
+   "item": "Pedir somente os dados faltantes",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "Achado INSUFFICIENT",
+   "verify": "test_missing_info"
+  },
+  {
+   "area": "5. Visual e geocontexto",
+   "item": "Centro de comando com KPIs, radar e próximos marcos",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Centro de comando",
+   "verify": "Abrir a tela"
+  },
+  {
+   "area": "5. Visual e geocontexto",
+   "item": "Mapa operacional com camadas, filtros, zoom e data simulada",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Mapa operacional",
+   "verify": "Selecionar ativos e mudar data"
+  },
+  {
+   "area": "5. Visual e geocontexto",
+   "item": "Globo 3D interativo (arrastar, girar, clicar ativo)",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Globo 3D",
+   "verify": "Arrastar o globo; clicar em um ativo"
+  },
+  {
+   "area": "5. Visual e geocontexto",
+   "item": "Geocercas e jurisdições reais",
+   "actor": "SISTEMA",
+   "status": "PLANEJADO",
+   "where": "Conector GIS",
+   "verify": "Somente dados licenciados e autorizados"
+  },
+  {
+   "area": "6. Simulação (What-if)",
+   "item": "Alterar atributos do ativo e ver o estado mudar",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "Tela Simulador",
+   "verify": "Preencher dados de A-02 → muda de INSUFFICIENT"
+  },
+  {
+   "area": "6. Simulação (What-if)",
+   "item": "Máquina do tempo: carteira e dispositivos em qualquer data",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "Tela Máquina do tempo",
+   "verify": "Arrastar para 2027/2029"
+  },
+  {
+   "area": "7. RegulaGraph",
+   "item": "Grafo tipado fonte–documento–dispositivo–achado–ativo–revisão–evidência",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela RegulaGraph · /api/graph",
+   "verify": "Clicar nó abre proveniência"
+  },
+  {
+   "area": "7. RegulaGraph",
+   "item": "Toda aresta com source_id e review_status",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/chain.py",
+   "verify": "test_graph_edges_have_provenance"
+  },
+  {
+   "area": "8. Revisão humana",
+   "item": "Fluxo DRAFT → REVIEW_PENDING → CONFIRMED/REJECTED → ACTION_TRACKING → CLOSED",
+   "actor": "HUMANO",
+   "status": "FEITO",
+   "where": "Tela Revisão humana · app/store.py",
+   "verify": "Testes de workflow"
+  },
+  {
+   "area": "8. Revisão humana",
+   "item": "Toda transição registra quem, papel, quando, motivo e versão da fonte",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/store.py",
+   "verify": "test_transition_requires_reason"
+  },
+  {
+   "area": "8. Revisão humana",
+   "item": "Somente jurídico/compliance/especialista confirma ou rejeita",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/store.py",
+   "verify": "test_operacao_cannot_confirm"
+  },
+  {
+   "area": "8. Revisão humana",
+   "item": "Autenticação real / SSO e RBAC",
+   "actor": "SISTEMA",
+   "status": "PLANEJADO",
+   "where": "Conector IAM",
+   "verify": "Na demo o papel é declarado"
+  },
+  {
+   "area": "9. Evidência e auditoria",
+   "item": "Evidence Gap: evidências exigidas × registradas por achado",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Evidências",
+   "verify": "Registrar evidência e ver lacuna fechar"
+  },
+  {
+   "area": "9. Evidência e auditoria",
+   "item": "Trilha de auditoria encadeada por hash (detecção de adulteração)",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Revisão › Auditoria · /api/audit/verify",
+   "verify": "test_audit_chain_detects_tampering"
+  },
+  {
+   "area": "9. Evidência e auditoria",
+   "item": "Encerrar achado exige evidência registrada",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/store.py",
+   "verify": "test_close_requires_evidence"
+  },
+  {
+   "area": "10. Assistente de IA",
+   "item": "Recuperação local (BM25) sobre dispositivos e fontes curadas",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/ai.py",
+   "verify": "test_retrieval_nr20"
+  },
+  {
+   "area": "10. Assistente de IA",
+   "item": "Geração com Claude (opcional, por variável de ambiente) com saída JSON estruturada",
+   "actor": "IA",
+   "status": "SIMULADO",
+   "where": "app/ai.py · ANTHROPIC_API_KEY",
+   "verify": "Desligado por padrão; ligar e repetir perguntas"
+  },
+  {
+   "area": "10. Assistente de IA",
+   "item": "Verificador: citação precisa existir literalmente no trecho recuperado",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/ai.py › verify",
+   "verify": "test_verifier_rejects_fake_quote"
+  },
+  {
+   "area": "10. Assistente de IA",
+   "item": "Abstenção fora da base / pedido de multa",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "Assistente",
+   "verify": "test_non_observed_question_abstains"
+  },
+  {
+   "area": "10. Assistente de IA",
+   "item": "Dois perfis (simples/técnico) com os mesmos fatos e fontes (pré-redigidos no modo controlado; gerados pela IA quando conectada)",
+   "actor": "IA",
+   "status": "SIMULADO",
+   "where": "Assistente",
+   "verify": "test_two_profiles_preserve_sources"
+  },
+  {
+   "area": "11. Integrações",
+   "item": "Catálogo de conectores com contrato de dados e status honesto",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "Tela Integrações · data/connectors.json",
+   "verify": "Status SIMULADO/PLANEJADO visível"
+  },
+  {
+   "area": "11. Integrações",
+   "item": "Envio a GRC/tarefas só após CONFIRMED (caixa de saída local)",
+   "actor": "REGRA",
+   "status": "SIMULADO",
+   "where": "Tela Integrações · /api/integrations/dispatch",
+   "verify": "test_dispatch_requires_confirmed"
+  },
+  {
+   "area": "11. Integrações",
+   "item": "Exportação CSV/JSON de achados e auditoria",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "/api/export/*",
+   "verify": "Baixar pela tela Integrações"
+  },
+  {
+   "area": "11. Integrações",
+   "item": "Barramento de eventos (regulatory.change → triage → review → task)",
+   "actor": "SISTEMA",
+   "status": "SIMULADO",
+   "where": "Tela Integrações › Fluxo",
+   "verify": "Eventos vêm da trilha de auditoria real"
+  },
+  {
+   "area": "11. Integrações",
+   "item": "Conexão real com ERP, GRC, GED, tarefas",
+   "actor": "SISTEMA",
+   "status": "PLANEJADO",
+   "where": "Conectores",
+   "verify": "Exige autorização, credenciais e contrato"
+  },
+  {
+   "area": "12. Segurança e ética",
+   "item": "Ativos 100% fictícios; nenhuma marca real como cliente",
+   "actor": "HUMANO",
+   "status": "FEITO",
+   "where": "data/assets.json",
+   "verify": "Revisão de conteúdo"
+  },
+  {
+   "area": "12. Segurança e ética",
+   "item": "Nenhuma ação externa automática",
+   "actor": "REGRA",
+   "status": "FEITO",
+   "where": "app/store.py › dispatch",
+   "verify": "Sem chamadas de rede no envio"
+  },
+  {
+   "area": "12. Segurança e ética",
+   "item": "Chave de IA só por variável de ambiente, nunca no código",
+   "actor": "SISTEMA",
+   "status": "FEITO",
+   "where": "app/ai.py",
+   "verify": "grep por chaves"
+  },
+  {
+   "area": "13. Avaliação",
+   "item": "12 casos base do dossiê + 10 adversariais com numerador/denominador",
+   "actor": "HUMANO",
+   "status": "PLANEJADO",
+   "where": "Tarefa 09",
+   "verify": "Não inventar métricas"
+  },
+  {
+   "area": "13. Avaliação",
+   "item": "Medir tempo de triagem antes/depois com usuários reais",
+   "actor": "HUMANO",
+   "status": "PLANEJADO",
+   "where": "Pesquisa com profissionais",
+   "verify": "Sem ROI até medir"
+  }
+ ]
+}

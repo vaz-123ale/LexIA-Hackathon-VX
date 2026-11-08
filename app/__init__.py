@@ -1,0 +1,1 @@
+"""LexIA - demonstrador determinístico."""

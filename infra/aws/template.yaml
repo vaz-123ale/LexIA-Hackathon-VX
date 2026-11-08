@@ -1,0 +1,135 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  LexIA Regulatoria 360 - cofre de provas imutavel (S3 Object Lock, modo COMPLIANCE) e permissao minima para o servidor.
+  O servidor grava snapshots oficiais, versoes de modelo, decisoes humanas e selos da trilha de auditoria; ninguem apaga antes do prazo.
+
+Parameters:
+  RetentionDays:
+    Type: Number
+    Default: 1825
+    MinValue: 1
+    Description: Retencao minima de cada prova (dias). 1825 = 5 anos.
+  BucketPrefix:
+    Type: String
+    Default: torre360-cofre
+
+Resources:
+  VaultKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: Chave do cofre de provas da LexIA
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: RootAdmin
+            Effect: Allow
+            Principal: { AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root' }
+            Action: 'kms:*'
+            Resource: '*'
+
+  VaultBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Sub '${BucketPrefix}-${AWS::AccountId}-${AWS::Region}'
+      ObjectLockEnabled: true
+      ObjectLockConfiguration:
+        ObjectLockEnabled: Enabled
+        Rule:
+          DefaultRetention:
+            Mode: COMPLIANCE
+            Days: !Ref RetentionDays
+      VersioningConfiguration: { Status: Enabled }
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: !GetAtt VaultKey.Arn
+            BucketKeyEnabled: true
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  VaultBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref VaultBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: SomenteHTTPS
+            Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource: [!GetAtt VaultBucket.Arn, !Sub '${VaultBucket.Arn}/*']
+            Condition: { Bool: { 'aws:SecureTransport': 'false' } }
+
+  ServerWritePolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: Servidor da LexIA pode gravar e ler provas; nao pode apagar nem encurtar retencao.
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: GravarELer
+            Effect: Allow
+            Action: ['s3:PutObject', 's3:PutObjectRetention', 's3:GetObject', 's3:GetObjectRetention', 's3:ListBucket']
+            Resource: [!GetAtt VaultBucket.Arn, !Sub '${VaultBucket.Arn}/*']
+          - Sid: Criptografia
+            Effect: Allow
+            Action: ['kms:GenerateDataKey', 'kms:Decrypt']
+            Resource: !GetAtt VaultKey.Arn
+          - Sid: NuncaApagar
+            Effect: Deny
+            Action: ['s3:DeleteObject', 's3:DeleteObjectVersion', 's3:BypassGovernanceRetention', 's3:PutBucketObjectLockConfiguration']
+            Resource: [!GetAtt VaultBucket.Arn, !Sub '${VaultBucket.Arn}/*']
+
+  TenantScopedPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: >
+        Exemplo de isolamento por cliente. O papel assumido em nome de um cliente recebe a tag de sessao customer_id
+        e so le e grava no proprio prefixo clientes/<customer_id>/. Revogar = deixar de emitir a sessao com essa tag.
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: SoOProprioPrefixo
+            Effect: Allow
+            Action: ['s3:GetObject', 's3:PutObject']
+            Resource: !Sub '${VaultBucket.Arn}/torre360/clientes/${!aws:PrincipalTag/customer_id}/*'
+          - Sid: ListarSoOProprioPrefixo
+            Effect: Allow
+            Action: 's3:ListBucket'
+            Resource: !GetAtt VaultBucket.Arn
+            Condition:
+              StringLike:
+                's3:prefix': !Sub 'torre360/clientes/${!aws:PrincipalTag/customer_id}/*'
+          - Sid: Criptografia
+            Effect: Allow
+            Action: ['kms:GenerateDataKey', 'kms:Decrypt']
+            Resource: !GetAtt VaultKey.Arn
+
+  BedrockInvokePolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: Opcional - permite ao servidor chamar a Claude pelo Amazon Bedrock na propria conta do cliente.
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action: ['bedrock:InvokeModel', 'bedrock:InvokeModelWithResponseStream']
+            Resource: '*'
+
+Outputs:
+  BucketName:
+    Value: !Ref VaultBucket
+    Description: Use em TORRE_S3_BUCKET
+  ServerPolicyArn:
+    Value: !Ref ServerWritePolicy
+    Description: Anexe ao papel IAM do servidor (App Runner, ECS ou EC2)
+  BedrockPolicyArn:
+    Value: !Ref BedrockInvokePolicy

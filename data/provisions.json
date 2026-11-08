@@ -1,0 +1,403 @@
+[
+ {
+  "id": "NR20-AIII-2.1.1@2024",
+  "document": "NR-20",
+  "regulator": "MTE",
+  "jurisdiction": "BR · federal",
+  "provision": "Anexo III, item 2.1.1 (redação anterior)",
+  "version": "Texto de 2024",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": null,
+  "effective_to": "2025-01-21",
+  "superseded_by": "NR20-AIII-2.1.1@2025",
+  "sources": [
+   "F42"
+  ],
+  "summary": "Redação anterior à Portaria MTE 60/2025 para o item 2.1.1 do Anexo III da NR-20, sobre tanques de consumo ligados a grupos geradores. Serve como base de comparação histórica.",
+  "conditions": [
+   "building",
+   "generator",
+   "fuel",
+   "tank_config"
+  ],
+  "exceptions": [
+   "Escopo do item 20.2.2(a)"
+  ],
+  "verification": "T",
+  "valid_from": null,
+  "valid_to": "2025-01-21",
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "rectifications": []
+ },
+ {
+  "id": "NR20-AIII-2.1.1@2025",
+  "document": "NR-20",
+  "regulator": "MTE",
+  "jurisdiction": "BR · federal",
+  "provision": "Anexo III, item 2.1.1",
+  "version": "Portaria MTE 60/2025",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": "2025-01-22",
+  "effective_to": null,
+  "supersedes": "NR20-AIII-2.1.1@2024",
+  "sources": [
+   "F02",
+   "F41"
+  ],
+  "summary": "A Portaria MTE 60/2025 alterou o item 2.1.1 do Anexo III da NR-20. A alteração abrange as alíneas d e f do item 2.1 para tanques de consumo separados ou integrados à base do grupo gerador a diesel ou biodiesel em edificações. Não é dispensa geral.",
+  "conditions": [
+   "building",
+   "generator",
+   "fuel",
+   "tank_config"
+  ],
+  "exceptions": [
+   "Escopo do item 20.2.2(a)",
+   "Demais condições do Anexo III"
+  ],
+  "verification": "T",
+  "valid_from": "2025-01-22",
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-20-atualizada-2025.pdf",
+  "rectifications": []
+ },
+ {
+  "id": "NR20-20.2.2a",
+  "document": "NR-20",
+  "regulator": "MTE",
+  "jurisdiction": "BR · federal",
+  "provision": "Item 20.2.2(a) — exclusões de escopo",
+  "version": "Texto atualizado 2025",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": null,
+  "effective_to": null,
+  "sources": [
+   "F02"
+  ],
+  "summary": "O item 20.2.2(a) da NR-20 registra hipóteses excluídas do escopo, incluindo plataformas marítimas cadastradas no cenário. A exclusão precisa ser confirmada caso a caso.",
+  "conditions": [
+   "offshore_excluded"
+  ],
+  "exceptions": [],
+  "verification": "T",
+  "valid_from": null,
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-20-atualizada-2025.pdf",
+  "rectifications": []
+ },
+ {
+  "id": "ANM245-art1",
+  "document": "Resolução ANM 245/2026",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Art. 1º (nova redação do art. 87 da Res. ANM 220/2025)",
+  "version": "Publicação 2026",
+  "kind": "ato_modificador",
+  "published_at": "2026-08-04",
+  "effective_from": null,
+  "effective_to": null,
+  "sources": [
+   "F40"
+  ],
+  "summary": "A Resolução ANM 245/2026 deu nova redação ao art. 87 da Resolução ANM 220/2025, escalonando a vigência por dispositivo. A data de efeito do próprio ato não foi conferida no dossiê.",
+  "conditions": [
+   "dam"
+  ],
+  "exceptions": [],
+  "verification": "T",
+  "valid_from": null,
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": "2026-08-04",
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://anmlegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=8731&cod_modulo=351&link=S&numeroAto=00000245&orgao=ANM%2FMME&seqAto=000&tipo=RES&valorAno=2026",
+  "rectifications": []
+ },
+ {
+  "id": "ANM220-arts76-77",
+  "document": "Resolução ANM 220/2025",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Arts. 76 e 77",
+  "version": "Redação dada pela Res. ANM 245/2026",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": "2027-04-22",
+  "effective_to": null,
+  "sources": [
+   "F09",
+   "F40"
+  ],
+  "summary": "Os arts. 76 e 77 da Resolução ANM 220/2025 passam a vigorar em 22/04/2027, conforme o escalonamento do art. 87 com redação da Res. ANM 245/2026.",
+  "conditions": [
+   "dam"
+  ],
+  "exceptions": [],
+  "verification": "C",
+  "valid_from": "2027-04-22",
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://anmlegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=8731&cod_modulo=351&link=S&numeroAto=00000245&orgao=ANM%2FMME&seqAto=000&tipo=RES&valorAno=2026",
+  "rectifications": []
+ },
+ {
+  "id": "ANM220-geral",
+  "document": "Resolução ANM 220/2025",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Demais dispositivos (regra geral)",
+  "version": "Redação dada pela Res. ANM 245/2026",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": "2027-08-02",
+  "effective_to": null,
+  "sources": [
+   "F09",
+   "F40"
+  ],
+  "summary": "A regra geral de vigência dos demais dispositivos da Resolução ANM 220/2025 é 02/08/2027, ressalvadas as exceções com datas próprias.",
+  "conditions": [
+   "dam"
+  ],
+  "exceptions": [
+   "Arts. 76 e 77",
+   "§1º do art. 7º"
+  ],
+  "verification": "C",
+  "valid_from": "2027-08-02",
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://anmlegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=8731&cod_modulo=351&link=S&numeroAto=00000245&orgao=ANM%2FMME&seqAto=000&tipo=RES&valorAno=2026",
+  "rectifications": []
+ },
+ {
+  "id": "ANM220-art7-p1",
+  "document": "Resolução ANM 220/2025",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Art. 7º, §1º",
+  "version": "Redação dada pela Res. ANM 245/2026",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": "2029-12-26",
+  "effective_to": null,
+  "sources": [
+   "F09",
+   "F40"
+  ],
+  "summary": "O §1º do art. 7º da Resolução ANM 220/2025 tem vigência em 26/12/2029, segundo o escalonamento do art. 87.",
+  "conditions": [
+   "dam"
+  ],
+  "exceptions": [],
+  "verification": "C",
+  "valid_from": "2029-12-26",
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "official_text_url": "https://anmlegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=8731&cod_modulo=351&link=S&numeroAto=00000245&orgao=ANM%2FMME&seqAto=000&tipo=RES&valorAno=2026",
+  "rectifications": []
+ },
+ {
+  "id": "ANP-CP21-2026",
+  "document": "ANP · Consulta e Audiência Públicas nº 21/2026",
+  "regulator": "ANP",
+  "jurisdiction": "BR · federal",
+  "provision": "Minuta em consulta (conteúdo não auditado)",
+  "version": "Consulta 07/10/2026–05/01/2027",
+  "kind": "consulta",
+  "published_at": "2026-10-07",
+  "consultation_from": "2026-10-07",
+  "consultation_to": "2027-01-05",
+  "effective_from": null,
+  "effective_to": null,
+  "sources": [
+   "F04"
+  ],
+  "summary": "A ANP abriu a Consulta e Audiência Públicas nº 21/2026, de 07/10/2026 a 05/01/2027. Texto em consulta não cria obrigação vigente; o conteúdo da minuta não foi auditado no dossiê.",
+  "conditions": [
+   "anp_regulated"
+  ],
+  "exceptions": [],
+  "verification": "T",
+  "valid_from": null,
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": "2026-10-07",
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "rectifications": []
+ },
+ {
+  "id": "ANSN-RES1-2025",
+  "document": "Resolução ANSN 1/2025",
+  "regulator": "ANSN",
+  "jurisdiction": "BR · federal",
+  "provision": "Redesignação de normas CNEN como ANSN",
+  "version": "Catálogo ANSN",
+  "kind": "ato_modificador",
+  "published_at": null,
+  "effective_from": null,
+  "effective_to": null,
+  "sources": [
+   "F18",
+   "F19",
+   "F20",
+   "F21"
+  ],
+  "summary": "O catálogo da ANSN registra a redesignação de normas antes identificadas como CNEN pela Resolução ANSN 1/2025, preservando número e título. Atos posteriores podem alterar edição e conteúdo.",
+  "conditions": [
+   "radiative"
+  ],
+  "exceptions": [],
+  "verification": "C",
+  "valid_from": null,
+  "valid_to": null,
+  "observed_at": "2026-11-05",
+  "source_published_at": null,
+  "ingested_at": "2026-11-05",
+  "superseded_by": null,
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "rectifications": []
+ },
+ {
+  "id": "ANM95-art21",
+  "document": "Resolução ANM 95/2022",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Art. 21 — Extrato de Inspeção Regular (EIR)",
+  "version": "Texto consolidado",
+  "kind": "norma",
+  "published_at": null,
+  "effective_from": null,
+  "effective_to": null,
+  "superseded_by": null,
+  "sources": [
+   "F44"
+  ],
+  "summary": "Regra recorrente: o empreendedor envia pelo SIGBM o Extrato de Inspeção Regular de cada barragem, no prazo do ciclo correspondente. A regra não muda com avisos excepcionais.",
+  "conditions": [
+   "dam",
+   "pnsb",
+   "inspection_date"
+  ],
+  "exceptions": [
+   "Prorrogações excepcionais comunicadas pela ANM valem só para o ciclo indicado"
+  ],
+  "verification": "I",
+  "valid_from": null,
+  "valid_to": null,
+  "observed_at": "2026-11-07",
+  "source_published_at": null,
+  "ingested_at": "2026-11-07",
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "rectifications": []
+ },
+ {
+  "id": "ANM-EIR-PRORROG-2026",
+  "document": "Aviso ANM de 16/04/2026",
+  "regulator": "ANM",
+  "jurisdiction": "BR · federal",
+  "provision": "Prazo excepcional do EIR — inspeções de 16 a 31/03/2026",
+  "version": "Aviso de 16/04/2026",
+  "kind": "aviso",
+  "published_at": "2026-04-16",
+  "effective_from": "2026-04-16",
+  "effective_to": "2026-04-23",
+  "superseded_by": null,
+  "sources": [
+   "F43"
+  ],
+  "summary": "Para as inspeções realizadas de 16 a 31/03/2026, o prazo de envio do EIR passou, excepcionalmente, de 15/04/2026 para 23/04/2026 (indisponibilidade temporária do SIGBM após alteração de domínio). Demais ciclos seguem a regra do art. 21.",
+  "conditions": [
+   "dam",
+   "pnsb",
+   "inspection_date"
+  ],
+  "exceptions": [
+   "Não altera ciclos fora de 16–31/03/2026"
+  ],
+  "verification": "I",
+  "valid_from": "2026-04-16",
+  "valid_to": "2026-04-23",
+  "observed_at": "2026-11-07",
+  "source_published_at": "2026-04-16",
+  "ingested_at": "2026-11-07",
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado do dossiê; texto integral não armazenado (sem snapshot do documento).",
+  "rectifications": []
+ },
+ {
+  "id": "NR1-1.5-PSICO@2026",
+  "document": "NR-1",
+  "regulator": "MTE",
+  "jurisdiction": "BR · federal",
+  "provision": "Capítulo 1.5 (GRO/PGR) — fatores de risco psicossociais",
+  "version": "Portaria MTE 1.419/2024 (vigência prorrogada pela Portaria MTE 765/2025)",
+  "kind": "norma",
+  "published_at": "2024-08-27",
+  "effective_from": "2026-05-26",
+  "effective_to": null,
+  "supersedes": null,
+  "superseded_by": null,
+  "sources": [
+   "F45"
+  ],
+  "summary": "A NR-1 passou a exigir que o Programa de Gerenciamento de Riscos (PGR) identifique, avalie e controle também os fatores de risco psicossociais relacionados ao trabalho (ex.: sobrecarga, metas abusivas, assédio), em conjunto com a NR-17. Vigência desde 26/05/2026; fiscalização inicial orientativa por 90 dias.",
+  "conditions": [
+   "empregados",
+   "pgr"
+  ],
+  "exceptions": [
+   "Regras específicas para MEI, ME e EPP de graus de risco 1 e 2 previstas na NR-1"
+  ],
+  "verification": "C",
+  "valid_from": "2026-05-26",
+  "valid_to": null,
+  "observed_at": "2026-11-07",
+  "source_published_at": null,
+  "ingested_at": "2026-11-07",
+  "source_snapshot_id": null,
+  "text_status": "Resumo curado; texto integral não armazenado"
+ }
+]

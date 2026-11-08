@@ -1,0 +1,12 @@
+{
+ "snapshot_id": "sigmine-20261107T142304",
+ "connector": "ANM_SIGMINE",
+ "fetched_at": "2026-11-07T14:23:04+00:00",
+ "service": "https://geo.anm.gov.br/arcgis/rest/services/SIGMINE/dados_anm/MapServer/0",
+ "where": "(FASE LIKE 'CONCESS%' AND FASE LIKE '%LAVRA') OR FASE = 'LAVRA GARIMPEIRA'",
+ "raw": 18900,
+ "accepted": 18899,
+ "sha256": "9e209a2b9bb9ea3cc20efef26a8e4ff8c9476366d7926aef92c1486f10f950a3",
+ "rule_version": "sigmine-v1",
+ "privacy": "Nome do titular só quando pessoa jurídica; polígono não armazenado (só o centro aproximado)."
+}

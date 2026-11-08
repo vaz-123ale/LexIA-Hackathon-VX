@@ -1,0 +1,232 @@
+{
+  "connector": "ANM_SIGBM",
+  "schema_version": "2026-11-07b",
+  "listing_url": "https://dadosabertos.anm.gov.br/SIGBM/",
+  "file_name": "Barragens.csv",
+  "metadata_file": "metadados-sigbm.ods",
+  "declared_metadata": {
+    "delimiter": ";",
+    "encoding": "cp1252",
+    "note": "O dicionário oficial declara ponto e vírgula e CP-1252; o arquivo de 06/11/2026 usa vírgula. O conector detecta o delimitador e registra a divergência."
+  },
+  "required": [
+    "official_id",
+    "name",
+    "owner_name",
+    "uf",
+    "municipio",
+    "lat_dms",
+    "lon_dms"
+  ],
+  "fields": {
+    "official_id": [
+      "ID"
+    ],
+    "name": [
+      "Nome"
+    ],
+    "owner_name": [
+      "Empreendedor"
+    ],
+    "owner_doc": [
+      "CPF_CNPJ"
+    ],
+    "mine_name": [
+      "Nome da mina"
+    ],
+    "uf": [
+      "UF"
+    ],
+    "municipio": [
+      "Município"
+    ],
+    "lat_dms": [
+      "Latitude"
+    ],
+    "lon_dms": [
+      "Longitude"
+    ],
+    "hemisphere": [
+      "Posicionamento"
+    ],
+    "cri": [
+      "Categoria de Risco - CRI",
+      "Categoria de Risco – CRI"
+    ],
+    "dpa": [
+      "Dano Potencial Associado - DPA",
+      "Dano Potencial Associado – DPA"
+    ],
+    "paebm_required": [
+      "Necessita de PAEBM"
+    ],
+    "pnsb": [
+      "Inserido na PNSB"
+    ],
+    "emergency_level": [
+      "Nível de Emergência"
+    ],
+    "dce_risr": [
+      "Status DCE RISR"
+    ],
+    "dce_rpsb": [
+      "Status DCE RPSB"
+    ],
+    "dco": [
+      "Status da DCO Atual"
+    ],
+    "dam_type": [
+      "Tipo de Barragem de Mineração"
+    ],
+    "operational_status": [
+      "Situação Operacional"
+    ],
+    "main_ore": [
+      "Minério principal presente no reservatório"
+    ],
+    "managing_unit": [
+      "Unidade Gestora"
+    ],
+    "containment": [
+      "Estrutura com o Objetivo de Contenção"
+    ],
+    "build_method": [
+      "Método construtivo da barragem"
+    ],
+    "op_start": [
+      "Data de Início de Operação"
+    ],
+    "cyanide": [
+      "A Barragem armazena rejeitos/residuos que contenham Cianeto"
+    ],
+    "height_project_m": [
+      "Altura máxima do projeto licenciado (m)"
+    ],
+    "height_current_m": [
+      "Altura máxima atual (m)"
+    ],
+    "volume_project_m3": [
+      "Volume de projeto licenciado do Reservatório (m³)"
+    ],
+    "volume_current_m3": [
+      "Volume atual do Reservatório (m³)"
+    ],
+    "capacity_m3": [
+      "Capacidade Total do Reservatório (m³)"
+    ],
+    "downstream_population": [
+      "Existência de população a jusante"
+    ],
+    "people_affected": [
+      "Número de pessoas possivelmente afetadas a jusante em caso de rompimento da barragem"
+    ],
+    "socioeconomic_impact": [
+      "Impacto sócio-econômico"
+    ],
+    "instrumentation": [
+      "Instrumentação"
+    ],
+    "spillway": [
+      "Confiabilidade das estruturas extravasora"
+    ],
+    "percolation": [
+      "Percolação"
+    ],
+    "deformation": [
+      "Deformações e recalque"
+    ],
+    "slope_deterioration": [
+      "Deteriorização dos taludes / paramentos"
+    ],
+    "project_docs": [
+      "Documentação de projeto"
+    ],
+    "safety_team": [
+      "Estrutura organizacional e qualificação técnica dos profissionais na equipe de Segurança da Barragem"
+    ],
+    "pae_status": [
+      "PAE - Plano de Ação Emergencial (quando exigido pelo órgão fiscalizador)"
+    ],
+    "pae_copies": [
+      "As cópias físicas do PAEBM foram entregues para as Prefeituras e Defesas Civis municipais e estaduais"
+    ],
+    "dce_finished": [
+      "Data da Finalização da DCE"
+    ],
+    "dce_reason": [
+      "Motivo de Envio"
+    ],
+    "decom_phase": [
+      "Fase Atual do projeto de Descaracterização"
+    ],
+    "decom_solution": [
+      "Qual foi a solução adotada para a descaracterização?"
+    ],
+    "decom_works_start": [
+      "Data de início das obras de estabilização ou descaracterização"
+    ],
+    "decom_works_end": [
+      "Data de conclusão das obras de estabilização ou descaracterização"
+    ],
+    "will_operate_again": [
+      "A barragem voltará a operar?"
+    ],
+    "active_monitoring_start": [
+      "Data de Início do Monitoramento Ativo"
+    ]
+  },
+  "field_labels": {
+    "official_id": "ID SIGBM",
+    "name": "Nome da estrutura",
+    "owner_name": "Empreendedor (como na fonte)",
+    "mine_name": "Mina",
+    "uf": "UF",
+    "municipio": "Município",
+    "cri": "Categoria de Risco (CRI) — categoria oficial",
+    "dpa": "Dano Potencial Associado (DPA) — categoria oficial",
+    "paebm_required": "Necessita de PAEBM",
+    "pnsb": "Inserida na PNSB",
+    "emergency_level": "Nível de emergência declarado",
+    "dce_risr": "Status DCE RISR",
+    "dce_rpsb": "Status DCE RPSB",
+    "dco": "Status da DCO atual",
+    "dam_type": "Tipo de barragem",
+    "operational_status": "Situação operacional",
+    "main_ore": "Minério principal",
+    "managing_unit": "Unidade gestora ANM",
+    "containment": "Contenção",
+    "build_method": "Método construtivo",
+    "op_start": "Início de operação",
+    "cyanide": "Armazena cianeto",
+    "height_project_m": "Altura licenciada (m)",
+    "height_current_m": "Altura atual (m)",
+    "volume_project_m3": "Volume licenciado (m³)",
+    "volume_current_m3": "Volume atual (m³)",
+    "capacity_m3": "Capacidade total (m³)",
+    "downstream_population": "População a jusante",
+    "people_affected": "Pessoas possivelmente afetadas",
+    "socioeconomic_impact": "Impacto socioeconômico",
+    "instrumentation": "Instrumentação",
+    "spillway": "Confiabilidade do extravasor",
+    "percolation": "Percolação",
+    "deformation": "Deformações e recalques",
+    "slope_deterioration": "Deterioração dos taludes",
+    "project_docs": "Documentação de projeto",
+    "safety_team": "Equipe de segurança",
+    "pae_status": "PAE",
+    "pae_copies": "Cópias do PAEBM entregues à Defesa Civil",
+    "dce_finished": "Finalização da DCE",
+    "dce_reason": "Motivo de envio da DCE",
+    "decom_phase": "Fase do projeto de descaracterização",
+    "decom_solution": "Solução de descaracterização",
+    "decom_works_start": "Início das obras de descaracterização",
+    "decom_works_end": "Conclusão das obras",
+    "will_operate_again": "Voltará a operar?",
+    "active_monitoring_start": "Início do monitoramento ativo"
+  },
+  "categorical_note": "CRI e DPA são categorias de classificação (Baixa/Média/Alta) definidas pela fonte. Não são volume, probabilidade nem prioridade da LexIA.",
+  "excluded_personal_fields": [
+    "RT/Declaração",
+    "RT/Empreendimento"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "voz": "pt-BR-FranciscaNeural",
+  "velocidade": "+18%",
+  "cenas": [
+    {
+      "id": "abertura",
+      "legenda": "Fonte oficial → artigo → vigência → ativo → decisão",
+      "fala": "Normas mudam por partes, e a empresa descobre tarde. A LexIA liga cada fonte oficial ao artigo, à vigência, ao ativo e a quem decide, em quatro frentes."
+    },
+    {
+      "id": "anonima",
+      "legenda": "Denúncia anônima: sem conta, com código",
+      "fala": "Quem não quer criar conta faz a denúncia anônima: nenhum dado da pessoa é guardado, e um código permite acompanhar a resposta."
+    },
+    {
+      "id": "cidadao_assunto",
+      "legenda": "Cidadão: escolha o assunto",
+      "fala": "Começo pelo cidadão. Ele escolhe o assunto da denúncia: barragem, energia, água, mina, trabalho ou radiação."
+    },
+    {
+      "id": "cidadao_mapa",
+      "legenda": "Mapa com o número oficial de cada estrutura",
+      "fala": "No mapa, vê o que está perto, com o número oficial e o responsável. A localização não é gravada."
+    },
+    {
+      "id": "cidadao_relato",
+      "legenda": "O cidadão conta como uma história",
+      "fala": "E conta o que aconteceu como uma história, do jeito dele: semana passada, voltando da escola, viu um cabo caído soltando faísca."
+    },
+    {
+      "id": "cidadao_organizada",
+      "legenda": "Relato formal · normas · quanto pode custar",
+      "fala": "A IA transforma a história num relato formal. As regras apontam quais normas podem não estar sendo cumpridas e o que isso pode custar à empresa, com a base legal da multa."
+    },
+    {
+      "id": "cidadao_envio",
+      "legenda": "Só sai com a confirmação de quem denuncia",
+      "fala": "Nada sai sem a confirmação dele. Como essa empresa usa a LexIA, a denúncia chega direto ao compliance."
+    },
+    {
+      "id": "ia_cidadao",
+      "legenda": "Cidadão pergunta à IA: resposta simples, com fonte",
+      "fala": "O cidadão também pode perguntar à IA. A resposta vem em linguagem simples, com a fonte oficial e o que fazer em seguida."
+    },
+    {
+      "id": "empresa_visao",
+      "legenda": "Visão Executiva: mudanças, prazos e decisões",
+      "fala": "Agora, a empresa. A Visão Executiva junta as mudanças nas normas, os prazos e o que espera decisão."
+    },
+    {
+      "id": "impacto",
+      "legenda": "Vigência calculada por dispositivo",
+      "fala": "No Laboratório de Impacto, a vigência é calculada por dispositivo: artigo vigente, futuro ou ainda a conferir."
+    },
+    {
+      "id": "radar_kpis",
+      "legenda": "Radar de abandono · dados reais ANM e ANA",
+      "fala": "Em mineração, o radar de abandono cruza dados reais da ANM e da ANA: das 902 barragens de mineração, 163 estão em atenção crítica ou alta."
+    },
+    {
+      "id": "radar_orfas",
+      "legenda": "7.937 barragens sem dono identificado",
+      "fala": "E encontra 7.937 barragens sem dono identificado, 1.223 em atenção crítica ou alta. Cada sinal mostra o critério e a fonte."
+    },
+    {
+      "id": "fechamento_minas",
+      "legenda": "Fechamento de minas · SIGMINE + SIGBM",
+      "fala": "O radar de fechamento acompanha os títulos de lavra do SIGMINE: minas paralisadas ou em fechamento, e 276 barragens perto delas."
+    },
+    {
+      "id": "energia_outorgas",
+      "legenda": "Energia · 1.916 usinas reais da ANEEL",
+      "fala": "No perfil Energia, a plataforma muda junto: 1.916 usinas reais da ANEEL avaliadas pela outorga, 28 críticas, com outorga vencida no cadastro."
+    },
+    {
+      "id": "denuncia_recebida",
+      "legenda": "Dossiê para a empresa: caminhos para resolver",
+      "fala": "A empresa recebe um dossiê: relato formal, normas, implicações e os caminhos para resolver, cada um com responsável e prazo sugerido. A equipe marca o que já fez, e fica na trilha."
+    },
+    {
+      "id": "triagem",
+      "legenda": "Triagem: não é da sua área? Repasse",
+      "fala": "E se chega a quem não é da área, a triagem repassa com um clique, aqui para a engenharia, com uma nota. A área é avisada e o repasse fica na trilha."
+    },
+    {
+      "id": "outras_frentes",
+      "legenda": "Saneamento e nuclear no mesmo núcleo",
+      "fala": "O mesmo núcleo atende saneamento: 1.583 barragens de abastecimento humano avaliadas, 418 em atenção crítica. E nuclear: locais com material radioativo, com a autoridade nuclear junto."
+    },
+    {
+      "id": "extrator",
+      "legenda": "Norma → obrigação · uma pessoa confirma",
+      "fala": "Do texto da norma saem obrigações com prazo, responsável e evidência, presas ao trecho literal. Uma pessoa confirma."
+    },
+    {
+      "id": "sistemas_portfolio",
+      "legenda": "Norma muda → sistemas afetados no portfólio",
+      "fala": "E quando a norma muda no código? Em Impacto em sistemas, a LexIA cruza o portfólio, aqui 2.140 aplicações fictícias, e acha em milissegundos as afetadas pela vigência escalonada da Resolução 220."
+    },
+    {
+      "id": "sistemas_codigo",
+      "legenda": "Arquivo, linha e alteração · uma pessoa aprova",
+      "fala": "Nos repositórios conectados, aponta o arquivo, a linha e a alteração de código. Uma pessoa aprova, e vira tarefa para a equipe dona do sistema."
+    },
+    {
+      "id": "equipe",
+      "legenda": "Equipe e acessos · checklist por pessoa",
+      "fala": "Em Equipe e acessos, a gestão cadastra funcionários e marca o que cada um vê. Desmarcar ou revogar vale na hora. E cada frente baixa o próprio relatório."
+    },
+    {
+      "id": "ia_juridico",
+      "legenda": "Mesma pergunta, jurídico: artigos, vigência e próximo passo",
+      "fala": "A mesma pergunta, feita pelo jurídico, volta com artigos, datas de vigência e o próximo passo da função dele. As fontes e a certeza são as mesmas: muda só a linguagem."
+    },
+    {
+      "id": "fechamento",
+      "legenda": "",
+      "fala": "Quarenta e cinco fontes oficiais, quatro frentes no mesmo núcleo, IA verificada e prova de cada decisão. LexIA: da mudança regulatória à decisão executável."
+    }
+  ]
+}

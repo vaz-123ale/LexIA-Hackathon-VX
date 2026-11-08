@@ -1,0 +1,22 @@
+{
+  "snapshot_id": "snisb-setores-20261107T195426",
+  "connector": "ANA_SNISB_SETORES",
+  "fetched_at": "2026-11-07T19:54:26+00:00",
+  "service": "https://portal1.snirh.gov.br/server/rest/services/SRE/Barragens_SNISB/MapServer/0",
+  "user_agent": "Torre360-monitor/0.4 (hackathon; coleta de dados abertos)",
+  "recortes": {
+    "energia": {
+      "filter": "ORG_NM_ORGANIZACAO LIKE '%Energia El%'",
+      "raw": 1629,
+      "accepted": 1629,
+      "sha256": "6a5970e3820c087e2af4081c9a48e04fc00dd9ca0feada57c643c671d0fc96a4"
+    },
+    "abastecimento": {
+      "filter": "USO_PRINCIPAL = 'Abastecimento humano'",
+      "raw": 2565,
+      "accepted": 2565,
+      "sha256": "2d21ec87422b1805eee13abe75f2095e9a907c6f6144154445dbd47b817237c3"
+    }
+  },
+  "privacy": "Nome do empreendedor só quando pessoa jurídica/órgão público."
+}

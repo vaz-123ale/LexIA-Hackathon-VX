@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>LexIA — Visão geral</title>
+<style>
+@font-face{font-family:Inter;src:url('../../web/fonts/InterVariable.woff2') format('woff2');font-weight:100 900}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:#1B2A36;font-size:9.2pt;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;padding:11mm 14mm 14mm;position:relative;overflow:hidden;page-break-after:always;background:#FFFDF8}
+.page:last-child{page-break-after:auto}
+p,li{text-align:justify;hyphens:auto}
+.top{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #0A2540;padding-bottom:3.5mm;margin-bottom:4mm}
+.top img{height:15mm}
+.top .tag{text-align:right}.top .tag b{display:block;font-size:13pt;color:#0A2540}.top .tag span{color:#6A7680;font-size:8.6pt}
+h2{font-size:11.5pt;color:#0A2540;margin:4mm 0 2mm;display:flex;align-items:center;gap:2.5mm}
+h2::before{content:"";width:4mm;height:4mm;border-radius:1mm;background:#F2C14E;display:inline-block}
+.dor{background:#0A2540;color:#fff;border-radius:4mm;padding:4mm 5.5mm;display:grid;grid-template-columns:1.35fr 1fr;gap:6mm;align-items:center}
+.dor p{margin:0;color:#DCE6F2}.dor b{color:#fff}
+.dor .big{font-size:11.5pt;line-height:1.35;color:#fff;font-weight:700}.dor .big em{color:#F2C14E;font-style:normal}
+.cadeia{display:flex;flex-wrap:wrap;gap:1.6mm;margin-top:3mm}
+.cadeia span{background:#ffffff1a;border:1px solid #ffffff33;border-radius:10mm;padding:1mm 2.6mm;font-size:8pt;color:#fff}
+.cadeia span.g{background:#F2C14E;color:#0A2540;border-color:#F2C14E;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.card{background:#fff;border:1px solid #E3DFD2;border-radius:3mm;padding:2.3mm 3mm;border-top:3px solid #0A2540}
+.card p{text-align:left!important}
+.card b{display:block;color:#0A2540;font-size:9.6pt;margin-bottom:1mm}
+.card p{margin:0;font-size:8.2pt;color:#3D4B55;line-height:1.35}
+.card.g{border-top-color:#C9A227}
+.nums{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;margin-top:1mm}
+.nums div{background:#F4EFE0;border-radius:3mm;padding:2mm 1.6mm;text-align:center}
+.nums b{display:block;font-size:13pt;color:#0A2540;line-height:1.1}.nums span{font-size:7.4pt;color:#55626B;display:block;margin-top:.8mm;line-height:1.25}
+.foto{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:3mm}
+.foto img{width:100%;height:46mm;object-fit:cover;object-position:top;border-radius:2.5mm;border:1px solid #E3DFD2;display:block}
+.foto figcaption{font-size:7.6pt;color:#6A7680;margin-top:1mm;text-align:center}
+.foot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;justify-content:space-between;font-size:7.6pt;color:#8A949B;border-top:1px solid #E3DFD2;padding-top:2mm}
+.ia{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.ia .col{border-radius:3.5mm;padding:3.2mm 4mm}
+.ia .sim{background:#0A2540;color:#fff}.ia .nao{background:#fff;border:1.5px solid #0A2540}
+.ia h3{margin:0 0 2.5mm;font-size:10.5pt;display:flex;align-items:center;gap:2mm}
+.ia .sim h3{color:#F2C14E}.ia .nao h3{color:#0A2540}
+.ia ul{margin:0;padding-left:4mm}.ia li{margin:.9mm 0;font-size:8.3pt;line-height:1.35}
+.ia .sim li{color:#E6EDF6}.ia .sim li b{color:#fff}
+.lema{margin:2.5mm 0 0;text-align:center;font-weight:800;color:#0A2540;font-size:10.5pt;letter-spacing:.2px}
+.lema span{background:#F2C14E;padding:1mm 3mm;border-radius:2mm}
+.aws{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.aws .card{border-top-color:#FF9900}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.lista{margin:0;padding-left:4mm}.lista li{margin:.8mm 0;font-size:8.3pt;line-height:1.35}
+.teste{background:#FFF7DA;border:1.5px solid #C9A227;border-radius:3.5mm;padding:3mm 4.5mm;display:grid;grid-template-columns:1.1fr 1fr;gap:5mm}
+.teste h3{margin:0 0 2mm;color:#0A2540;font-size:11pt}
+.teste code{background:#0A2540;color:#F2C14E;padding:.5mm 1.8mm;border-radius:1.2mm;font-size:8.4pt;font-family:Consolas,monospace}
+.teste p,.teste li{text-align:left!important}
+.teste ol{margin:0;padding-left:4.5mm}.teste li{margin:1.1mm 0;font-size:8.6pt}
+.real{font-size:8pt;color:#3D4B55;margin:2mm 0 0}
+</style></head><body>
+
+<section class="page">
+  <div class="top"><img src="../../web/img/brand/logo-lexia-v6.png" alt="LexIA"><div class="tag"><b>Da mudança regulatória à decisão executável</b><span>Risco, conformidade e manutenção · Hackathon VX 2026 · Desafio 02</span></div></div>
+
+  <div class="dor">
+    <div><p class="big">A norma muda por partes, em vários órgãos ao mesmo tempo, e <em>ninguém liga a mudança ao ativo, à pessoa, ao sistema e à prova.</em></p>
+      <div class="cadeia"><span>Fonte oficial</span><span>Artigo</span><span>Vigência</span><span>Ativo</span><span>Responsável</span><span>Sistema</span><span class="g">Decisão + prova</span></div></div>
+    <p>Uma única resolução pode valer em três datas diferentes, conforme o artigo. Some dezenas de normas, várias frentes de operação e milhares de sistemas. Do outro lado, a denúncia chega desorganizada, sem norma, sem responsável e sem caminho para resolver. O resultado é <b>retrabalho, prazo perdido e multa</b>.</p>
+  </div>
+
+  <h2>O que a LexIA oferece</h2>
+  <div class="grid">
+    <div class="card"><b>Mudança por dispositivo</b><p>Vigência calculada artigo por artigo, na data que o usuário escolher.</p></div>
+    <div class="card"><b>Radares com dados oficiais</b><p>Barragens, minas, fechamento, usinas, outorgas, abastecimento e locais radiológicos.</p></div>
+    <div class="card"><b>Alerta para a pessoa certa</b><p>Base legal, prazo e responsável por papel; escalado quando o papel está vazio.</p></div>
+    <div class="card g"><b>Denúncia que vira dossiê</b><p>Com conta ou anônima. Relato formal, normas, faixa de multa e checklist de caminhos para a empresa.</p></div>
+    <div class="card g"><b>Triagem entre áreas</b><p>Não é da sua área? Um clique repassa para a função certa, com aviso e trilha.</p></div>
+    <div class="card g"><b>Norma → sistema → código</b><p>Obrigações extraídas do texto e impacto no portfólio até o arquivo e a linha.</p></div>
+    <div class="card"><b>Equipe e acessos</b><p>Convite por e-mail ou planilha, checklist por módulo e revogação imediata.</p></div>
+    <div class="card"><b>Prova e auditoria</b><p>Decisão humana registrada, evidência com hash e relatório da empresa em PDF.</p></div>
+    <div class="card"><b>Cidadão e Transparência</b><p>Linguagem simples, mapa da região e quantas denúncias foram respondidas.</p></div>
+  </div>
+
+  <h2>Dados oficiais reais, quatro frentes no mesmo núcleo</h2>
+  <div class="nums">
+    <div><b>902</b><span>barragens de mineração (ANM/SIGBM)</span></div>
+    <div><b>18.899</b><span>títulos de lavra (ANM/SIGMINE)</span></div>
+    <div><b>7.937</b><span>barragens sem dono identificado (ANA/SNISB)</span></div>
+    <div><b>25.046</b><span>usinas (ANEEL/SIGA) e 175 reservatórios (ONS)</span></div>
+    <div><b>45</b><span>fontes normativas catalogadas e monitoradas</span></div>
+  </div>
+  <p class="real">Mineração, energia, saneamento e nuclear usam o mesmo motor: muda só a configuração (ativos, normas e papéis). As empresas, os ativos e o portfólio de sistemas da demonstração são <b>fictícios</b> e sinalizados em cada tela; os dados públicos acima são <b>reais</b>, com data e hash.</p>
+
+  <div class="foto">
+    <figure style="margin:0"><img src="../screenshots/lexia_dossie_empresa.jpg" alt=""><figcaption>A denúncia chega à empresa como dossiê, com relato formal</figcaption></figure>
+    <figure style="margin:0"><img src="../screenshots/lexia_impacto_sistemas.jpg" alt=""><figcaption>A norma muda: arquivo, linha e alteração de código, com aprovação humana</figcaption></figure>
+  </div>
+  <div class="foot"><span>LexIA · visão geral</span><span>1 / 2</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><img src="../../web/img/brand/logo-lexia-v6.png" alt="LexIA"><div class="tag"><b>Onde a IA está — e onde não está</b><span>A IA só entra onde muda o resultado, sempre com um verificador atrás</span></div></div>
+
+  <div class="ia">
+    <div class="col sim"><h3>✦ A IA entra aqui</h3><ul>
+      <li><b>Denúncia:</b> entende a história do cidadão e redige o relato formal. O verificador recusa número, data ou nome que não esteja no relato.</li>
+      <li><b>Perguntas sobre normas:</b> responde só com citação; sem base, diz que não sabe.</li>
+      <li><b>Linguagem por perfil:</b> simples para o cidadão, técnica para o jurídico, com as mesmas fontes e a mesma certeza.</li>
+      <li><b>Norma → obrigação:</b> propõe obrigações presas ao trecho literal; uma pessoa confirma.</li>
+      <li><b>Código:</b> sugere pontos afetados, aceitos só se o trecho existir no arquivo.</li>
+      <li><b>Filtro em português:</b> "inativas sem projeto em MG" vira filtro conferível.</li></ul></div>
+    <div class="col nao"><h3>⚙ Aqui é regra versionada</h3><ul>
+      <li>Vigência por dispositivo e datas de cada artigo.</li>
+      <li>Radares de risco e níveis de atenção sobre os dados oficiais.</li>
+      <li>Quais normas se aplicam ao setor e ao tipo de ativo.</li>
+      <li>Faixas de multa: texto legal, com fonte e nível de verificação.</li>
+      <li>Roteamento de alertas, triagem, permissões e checklist do dossiê.</li>
+      <li>Cruzamento do portfólio de sistemas e diffs dos detectores.</li></ul></div>
+  </div>
+  <p class="lema"><span>A IA propõe · regras verificam · uma pessoa decide</span></p>
+
+  <h2>Medido, barato e confiável</h2>
+  <div class="nums">
+    <div><b>60–83%</b><span>das consultas resolvidas sem IA paga (regras e cache)</span></div>
+    <div><b>≈ R$ 0,02</b><span>por consulta, com teto diário de chamadas</span></div>
+    <div><b>65 / 65</b><span>casos da avaliação da IA, aberta na plataforma</span></div>
+    <div><b>314</b><span>testes automáticos passando</span></div>
+    <div><b>ms</b><span>para cruzar 2.140 aplicações com uma mudança de norma</span></div>
+  </div>
+
+  <h2>AWS só onde agrega valor</h2>
+  <div class="aws">
+    <div class="card"><b>Amazon Bedrock</b><p>A IA generativa roda na conta do cliente, sem os documentos saírem da empresa.</p></div>
+    <div class="card"><b>S3 com Object Lock</b><p>Cofre de provas: o que foi decidido e quando não pode ser alterado.</p></div>
+    <div class="card"><b>Amazon SES</b><p>Leva a denúncia e o convite à pessoa certa, com registro.</p></div>
+  </div>
+  <p class="real">Na demonstração, a IA generativa usa o Google Gemini, e o caminho AWS já está no código e liga por configuração. Sem nenhuma chave, a plataforma funciona inteira em modo controlado.</p>
+
+  <div class="two">
+    <div><h2>Escala por configuração</h2><ul class="lista">
+      <li><b>Novo setor</b> entra com ativos, normas e papéis, sem projeto novo.</li>
+      <li><b>Portfólio grande:</b> o cruzamento é por domínio regulatório; 2 mil ou 20 mil aplicações levam o mesmo tempo.</li>
+      <li><b>Pessoas:</b> cada empresa e cada frente com acesso por módulo.</li>
+      <li><b>Custo:</b> cresce devagar, porque a IA só entra onde precisa.</li></ul></div>
+    <div><h2>Mercado e modelo</h2><ul class="lista">
+      <li><b>301</b> empresas com barragem na ANM; <b>89</b> contas atendíveis em mineração (cenário-base).</li>
+      <li>Mercado B2B de cerca de <b>R$ 28 milhões/ano</b> nas quatro frentes (cenário do estudo).</li>
+      <li>Assinatura de <b>R$ 36 a 60 mil/ano</b>; equilíbrio com <b>13 clientes</b>.</li>
+      <li>Entrada por piloto de 30 dias com mineradoras médias.</li></ul></div>
+  </div>
+
+  <h2>Como testar</h2>
+  <div class="teste">
+    <div><h3>Rodar em 2 minutos</h3><ol>
+      <li>Python 3.10+ · <code>python -m app.server</code></li>
+      <li>Abrir <code>http://localhost:8765</code></li>
+      <li>Entrar pelo cartão <b>Acesso rápido</b> · senha <code>LexIA2026demo</code></li></ol></div>
+    <div><h3>Vídeo de 3 min 48 s</h3><p style="margin:0;font-size:8.6pt">Mostra cada área e onde clicar: <b>docs/video/LexIA_demo.mp4</b>. O passo a passo completo está no README, na seção <b>COMO TESTAR A PLATAFORMA</b>.</p></div>
+  </div>
+  <div class="foot"><span>LexIA · avaliação preliminar, não é parecer jurídico nem certificação</span><span>2 / 2</span></div>
+</section>
+</body></html>

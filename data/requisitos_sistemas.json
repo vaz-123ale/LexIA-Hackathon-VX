@@ -1,0 +1,128 @@
+{
+ "aviso": "Cada mudança aponta para um dispositivo do catálogo (data/provisions.json). Os detectores são regras versionadas: acham o trecho de código ou configuração que depende da regra e propõem a alteração. Uma pessoa aprova antes de virar tarefa.",
+ "mudancas": [
+  {
+   "id": "ANM220-vigencia",
+   "provisao": [
+    "ANM245-art1",
+    "ANM220-arts76-77",
+    "ANM220-geral",
+    "ANM220-art7-p1"
+   ],
+   "norma": "Resolução ANM 220/2025 (art. 87 com redação da Res. ANM 245/2026)",
+   "titulo": "Vigência escalonada por dispositivo",
+   "vigencia": "2027-04-22",
+   "mudanca": "A Resolução 220/2025 deixou de ter uma data única: arts. 76 e 77 em 22/04/2027, demais dispositivos em 02/08/2027 e o §1º do art. 7º em 26/12/2029.",
+   "dominios": [
+    "barragens.vigencia",
+    "normas.vigencia"
+   ],
+   "detectores": [
+    {
+     "arquivo": "*.py",
+     "padrao": "^(?P<ind>\\s*)VIGENCIA_RES_220\\s*=\\s*date\\(2026,\\s*12,\\s*26\\).*$",
+     "tipo": "alteracao",
+     "novo": "{ind}VIGENCIA_RES_220 = {{  # Res. ANM 245/2026, art. 1º: vigência por dispositivo\n{ind}    'arts_76_77': date(2027, 4, 22),\n{ind}    'demais': date(2027, 8, 2),\n{ind}    'art_7_par_1': date(2029, 12, 26),\n{ind}}}",
+     "explica": "Data única de vigência: com o escalonamento, cada dispositivo tem a sua data. A função que usa esta constante também precisa receber o dispositivo."
+    },
+    {
+     "arquivo": "*.py",
+     "padrao": "^(?P<ind>\\s*)def res_220_vigente\\(hoje: date\\) -> bool:\\s*$",
+     "tipo": "alteracao",
+     "novo": "{ind}def res_220_vigente(hoje: date, dispositivo: str = 'demais') -> bool:",
+     "explica": "A função precisa saber de qual dispositivo se trata para usar a data certa."
+    },
+    {
+     "arquivo": "*.py",
+     "padrao": "^(?P<ind>\\s*)return hoje >= VIGENCIA_RES_220\\s*$",
+     "tipo": "alteracao",
+     "novo": "{ind}return hoje >= VIGENCIA_RES_220.get(dispositivo, VIGENCIA_RES_220['demais'])",
+     "explica": "A verificação passa a considerar o dispositivo (arts. 76-77, §1º do art. 7º ou demais)."
+    },
+    {
+     "arquivo": "*.yaml",
+     "padrao": "^(?P<ind>\\s*)vigencia: \"2026-12-26\"\\s*$",
+     "tipo": "alteracao",
+     "contexto": "resolucao_anm_220_2025",
+     "novo": "{ind}arts_76_77: \"2027-04-22\"   # Res. ANM 245/2026, art. 1º\n{ind}demais: \"2027-08-02\"\n{ind}art_7_par_1: \"2029-12-26\"",
+     "explica": "A tabela de vigência tem uma data só para a Resolução 220; o correto agora é uma data por dispositivo."
+    }
+   ]
+  },
+  {
+   "id": "NR1-psicossocial",
+   "provisao": [
+    "NR1-1.5-PSICO@2026"
+   ],
+   "norma": "NR-1 (MTE), capítulo 1.5 — GRO/PGR",
+   "titulo": "Riscos psicossociais no PGR",
+   "vigencia": "2026-05-26",
+   "mudanca": "O PGR passou a ter de identificar, avaliar e controlar também os fatores de risco psicossociais relacionados ao trabalho.",
+   "dominios": [
+    "sst.pgr",
+    "sst.inventario"
+   ],
+   "detectores": [
+    {
+     "arquivo": "*.ts",
+     "padrao": "^(?P<ind>\\s*)export const CATEGORIAS_RISCO = \\[(?P<lista>[^\\]]*)\\];\\s*$",
+     "tipo": "alteracao",
+     "novo": "{ind}export const CATEGORIAS_RISCO = [{lista}, 'psicossocial'];  // NR-1, cap. 1.5 (vigência 26/05/2026)",
+     "explica": "A lista de categorias do inventário de riscos não tem a categoria psicossocial exigida pela NR-1."
+    },
+    {
+     "arquivo": "*.sql",
+     "padrao": "^(?P<ind>\\s*)categoria VARCHAR\\(20\\) NOT NULL,\\s*$",
+     "tipo": "alteracao",
+     "novo": "{ind}categoria VARCHAR(20) NOT NULL,  -- inclui 'psicossocial' (NR-1, cap. 1.5)\n{ind}fator_psicossocial TEXT,          -- ex.: sobrecarga, assédio, metas excessivas (descrição livre)",
+     "explica": "O inventário precisa registrar o fator psicossocial avaliado. Sugestão de coluna; a migração real deve ser escrita pela equipe dona do banco."
+    }
+   ]
+  },
+  {
+   "id": "EIR-prazo-excepcional",
+   "provisao": [
+    "ANM-EIR-PRORROG-2026",
+    "ANM95-art21"
+   ],
+   "norma": "Resolução ANM 95/2022, art. 21 + aviso ANM de 16/04/2026",
+   "titulo": "Prazo excepcional do EIR",
+   "vigencia": "2026-04-16",
+   "mudanca": "Para inspeções de 16 a 31/03/2026, o prazo de envio do EIR passou, excepcionalmente, de 15/04/2026 para 23/04/2026.",
+   "dominios": [
+    "barragens.inspecao"
+   ],
+   "detectores": [
+    {
+     "arquivo": "*.py",
+     "padrao": "^(?P<ind>\\s*)return date\\(ano, mes, PRAZO_EIR_DIA\\)\\s*$",
+     "tipo": "alteracao",
+     "novo": "{ind}if date(2026, 3, 16) <= fim_ciclo <= date(2026, 3, 31):  # aviso ANM de 16/04/2026 (prazo excepcional)\n{ind}    return date(2026, 4, 23)\n{ind}return date(ano, mes, PRAZO_EIR_DIA)",
+     "explica": "O cálculo usa sempre o dia 15; para as inspeções de 16 a 31/03/2026 o prazo foi 23/04/2026."
+    }
+   ]
+  },
+  {
+   "id": "NR20-tanques",
+   "provisao": [
+    "NR20-AIII-2.1.1@2025"
+   ],
+   "norma": "NR-20 (MTE), Anexo III, item 2.1.1 (Portaria MTE 60/2025)",
+   "titulo": "Tanques de consumo de geradores",
+   "vigencia": "2025-01-22",
+   "mudanca": "A Portaria MTE 60/2025 alterou as alíneas d e f do item 2.1 do Anexo III, sobre tanques de consumo separados ou integrados a grupos geradores.",
+   "dominios": [
+    "combustiveis.tanques",
+    "energia.geradores"
+   ],
+   "detectores": [
+    {
+     "arquivo": "*.java",
+     "padrao": "^(?P<ind>\\s*)if \\(t\\.integradoAoGerador\\(\\)\\) \\{\\s*$",
+     "tipo": "revisar",
+     "explica": "A regra de classificação separa tanques integrados e separados. Como a redação das alíneas d e f mudou, a equipe deve conferir esta regra com o texto oficial. A LexIA não propõe valor: só aponta o ponto do código."
+    }
+   ]
+  }
+ ]
+}

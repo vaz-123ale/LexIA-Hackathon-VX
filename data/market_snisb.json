@@ -1,0 +1,33 @@
+{
+  "source": "ANA · SNISB (serviço ArcGIS público)",
+  "service": "https://portal1.snirh.gov.br/server/rest/services/SRE/Barragens_SNISB/MapServer/0",
+  "collected_at": "2026-11-07T03:10:00+00:00",
+  "method": "Consultas returnCountOnly e outStatistics (contagem agrupada). Nenhum nome armazenado.",
+  "total_dams": 28625,
+  "dams_with_owner": 20688,
+  "dams_without_owner": 7937,
+  "pnsb_dams": 7041,
+  "pnsb_distinct_owners": 2929,
+  "by_use_all": {
+    "Irrigação": 9692,
+    "Dessedentação Animal": 4738,
+    "Regularização de vazão": 4412,
+    "Abastecimento humano": 2565,
+    "Aquicultura": 1802,
+    "Hidroelétrica": 1628,
+    "Paisagismo": 1141,
+    "Recreação": 775,
+    "Contenção de rejeitos de mineração": 611
+  },
+  "by_use_pnsb": {
+    "Irrigação": 2227,
+    "Abastecimento humano": 1373,
+    "Hidroelétrica": 879,
+    "Dessedentação Animal": 516,
+    "Regularização de vazão": 514,
+    "Contenção de rejeitos de mineração": 342,
+    "Aquicultura": 323,
+    "Paisagismo": 222,
+    "Recreação": 182
+  }
+}

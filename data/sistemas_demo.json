@@ -1,0 +1,22 @@
+{
+  "aviso": "Portfólio de sistemas FICTÍCIO para demonstração: nomes, equipes e códigos não pertencem a nenhuma empresa real. As normas e datas citadas são reais e vêm do catálogo da LexIA.",
+  "total_portfolio": 2140,
+  "nucleo": [
+    {"id": "sgb-inspecoes", "nome": "SGB · Inspeções de barragens", "area": "Geotecnia", "criticidade": "A", "dominios": ["barragens.inspecao", "barragens.vigencia"], "stack": "Python", "equipe": "Engenharia de barragens", "repo": "sgb-inspecoes"},
+    {"id": "regras-vigencia", "nome": "Motor de regras de vigência", "area": "Compliance", "criticidade": "A", "dominios": ["barragens.vigencia", "normas.vigencia"], "stack": "YAML", "equipe": "Compliance digital", "repo": "regras-vigencia"},
+    {"id": "portal-sst", "nome": "Portal SST · PGR", "area": "Segurança do trabalho", "criticidade": "A", "dominios": ["sst.pgr", "sst.inventario"], "stack": "TypeScript + SQL", "equipe": "SESMT digital", "repo": "portal-sst"},
+    {"id": "app-geradores", "nome": "Gestão de geradores e tanques", "area": "Manutenção", "criticidade": "B", "dominios": ["combustiveis.tanques", "energia.geradores"], "stack": "Java", "equipe": "Manutenção industrial", "repo": "app-geradores"},
+    {"id": "sigbm-integracao", "nome": "Integração SIGBM", "area": "Geotecnia", "criticidade": "A", "dominios": ["barragens.inspecao", "barragens.cadastro"], "stack": "Python", "equipe": "Engenharia de barragens"},
+    {"id": "painel-dce", "nome": "Painel de DCE e revisões periódicas", "area": "Geotecnia", "criticidade": "B", "dominios": ["barragens.vigencia", "barragens.cadastro"], "stack": "Power BI", "equipe": "Engenharia de barragens"},
+    {"id": "rh-saude-ocupacional", "nome": "RH · Saúde ocupacional", "area": "Recursos humanos", "criticidade": "B", "dominios": ["sst.inventario", "rh.saude"], "stack": "SAP", "equipe": "RH corporativo"},
+    {"id": "app-treinamentos", "nome": "Treinamentos e capacitação", "area": "Recursos humanos", "criticidade": "C", "dominios": ["sst.pgr", "rh.treinamento"], "stack": ".NET", "equipe": "RH corporativo"},
+    {"id": "mobile-inspecao", "nome": "App de inspeção em campo", "area": "Operação", "criticidade": "B", "dominios": ["barragens.inspecao", "sst.inventario"], "stack": "Flutter", "equipe": "Operação digital"},
+    {"id": "inventario-combustiveis", "nome": "Inventário de combustíveis", "area": "Suprimentos", "criticidade": "C", "dominios": ["combustiveis.tanques"], "stack": "SAP", "equipe": "Suprimentos"}
+  ],
+  "areas_geradas": [
+    ["Financeiro", ["financeiro"]], ["Comercial", ["comercial"]], ["Logística", ["logistica"]], ["TI e infraestrutura", ["ti.infra"]],
+    ["Manutenção", ["manutencao", "energia.geradores", "combustiveis.tanques"]], ["Meio ambiente", ["meio_ambiente", "agua.qualidade"]],
+    ["Geotecnia", ["barragens.cadastro", "barragens.inspecao", "barragens.vigencia"]], ["Segurança do trabalho", ["sst.inventario", "sst.pgr"]],
+    ["Recursos humanos", ["rh.saude", "rh.treinamento"]], ["Jurídico", ["normas.vigencia"]], ["Operação", ["manutencao", "barragens.inspecao"]]
+  ]
+}

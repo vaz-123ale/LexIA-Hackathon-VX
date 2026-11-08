@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="theme-color" content="#14315C"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="description" content="LexIA — da mudança regulatória à decisão empresarial executável"/>
+  <title>LexIA</title>
+  <link rel="manifest" href="/manifest.webmanifest"/>
+  <link rel="icon" href="/img/brand/favicon.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="/icons/icon-192.png"/>
+  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="/reference.css"/>
+  <link rel="stylesheet" href="/precision.css"/>
+  <link rel="stylesheet" href="/radar_ia.css"/>
+  <link rel="stylesheet" href="/brand.css?v=nt74"/>
+  <link rel="stylesheet" href="/content-layout.css?v=1"/>
+</head>
+<body class="mode-public">
+  <a class="skip" href="#content">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho do site público -->
+  <header class="site-head" id="site-head">
+    <a class="brand-site lx" href="#/inicio" aria-label="LexIA — início"><img src="/img/brand/logo-lexia-v6.png" alt="LexIA"></a>
+    <nav class="site-nav" aria-label="Site"><a href="#/inicio" data-r="inicio">Início</a><a href="#/transparencia" data-r="transparencia">Transparência</a><a href="#/denuncia-anonima" data-r="denuncia-anonima">Denúncia anônima</a><a href="#/sobre" data-r="sobre">Sobre</a></nav>
+    <div class="site-actions" id="site-actions"></div>
+  </header>
+
+  <div id="app">
+    <aside class="sidebar" aria-label="Menu principal">
+      <a class="brand lx" href="#/inicio" aria-label="LexIA — início"><span class="brand-plate"><img src="/img/brand/logo-lexia-v6.png" alt="LexIA"></span><small>Risco, conformidade e manutenção</small></a>
+      <nav id="nav" aria-label="Áreas"></nav>
+      <div class="grow"></div>
+      <div class="side-mode"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><div><strong id="side-mode-t">Modo: Demonstração</strong><small id="side-mode-s">Dados oficiais + cenários controlados</small></div></div>
+      <button class="side-reset" id="reset-demo" hidden>Reiniciar estado DEMO</button>
+      <div class="side-foot">Hackathon VX · Desafio 02</div>
+    </aside>
+    <main class="main">
+      <header class="topbar" id="topbar">
+        <button class="icon-btn menu" id="menu-btn" aria-label="Abrir menu">☰</button>
+        <div id="topbar-ctx" class="topbar-ctx"></div>
+      </header>
+      <section id="content" class="workspace" tabindex="-1" aria-live="polite"><div class="loading">Carregando…</div></section>
+      <nav id="bottom-nav" class="bottom-nav" aria-label="Navegação do app"></nav>
+      <footer class="app-foot">LexIA · avaliação preliminar — não é parecer jurídico, licença, laudo, certificação de segurança nem declaração de conformidade.</footer>
+    </main>
+  </div>
+
+  <footer class="site-foot" id="site-foot">
+    <div><span style="display:inline-flex;background:#FFFDF8;border-radius:10px;padding:6px 10px"><img src="/img/brand/logo-lexia-v6.png" alt="LexIA" style="height:30px;display:block"></span><p>Projeto do Hackathon VX. Informação preliminar; não é parecer jurídico nem certificação. Dados oficiais: ANM (SIGBM), gov.br, IBGE.</p></div>
+    <nav aria-label="Rodapé"><a href="#/inicio">Início</a><a href="#/sobre">Sobre e privacidade</a><a href="#/entrar">Entrar</a><a href="#/cadastro">Criar conta</a></nav>
+  </footer>
+  <script type="module" src="/main.js?v=nt74"></script>
+</body>
+</html>

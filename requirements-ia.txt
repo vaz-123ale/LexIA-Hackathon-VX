@@ -1,0 +1,3 @@
+# Opcional: somente para ligar a IA generativa (Claude API).
+# A demo funciona sem nenhuma dependência externa.
+anthropic

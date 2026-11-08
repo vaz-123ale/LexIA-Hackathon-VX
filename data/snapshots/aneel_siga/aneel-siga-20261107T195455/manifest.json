@@ -1,0 +1,11 @@
+{
+ "snapshot_id": "aneel-siga-20261107T195455",
+ "connector": "ANEEL_SIGA",
+ "fetched_at": "2026-11-07T19:54:55+00:00",
+ "url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/11ec447d-698d-4ab8-977f-b424d5deee6a/download/siga-empreendimentos-geracao.csv",
+ "dataset_generated_at": "2026-11-01",
+ "rows": 25046,
+ "raw_sha256": "9f21aa730a5ccde82b62bad64b40ba1ceb245c84e15f05d12df718ac303e72ef",
+ "rule_version": "aneel-siga-v1",
+ "robots": "Disallow /api/ respeitado; Crawl-Delay 10 s respeitado; download pelo caminho /dataset/.../download/."
+}

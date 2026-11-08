@@ -1,0 +1,2 @@
+# Opcional: leitura local de PDFs textuais no fluxo Projeto → normas candidatas.
+pypdf>=6.0,<7

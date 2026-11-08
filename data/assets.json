@@ -1,0 +1,215 @@
+[
+  {
+    "id": "A-01",
+    "name": "Gerador e tanque em edifício",
+    "sector": "Energia e instalações",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "RJ (posição ilustrativa)",
+    "lat": -22.85,
+    "lon": -43.31,
+    "kind": "terrestrial_building",
+    "description": "Edifício fictício com gerador a diesel e tanque de consumo separado.",
+    "facts": {
+      "building": true,
+      "generator": true,
+      "fuel": "diesel",
+      "tank_config": "separate",
+      "nr20_scope": "candidate",
+      "dam": false
+    }
+  },
+  {
+    "id": "A-02",
+    "name": "Unidade auxiliar sem cadastro",
+    "sector": "Operação industrial",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "MG (posição ilustrativa)",
+    "lat": -18.6,
+    "lon": -45.6,
+    "kind": "terrestrial_building",
+    "description": "Edifício hipotético cujo tipo de combustível e tanque não foram informados.",
+    "facts": {
+      "building": true,
+      "generator": null,
+      "fuel": null,
+      "tank_config": null,
+      "nr20_scope": "unknown",
+      "dam": false
+    }
+  },
+  {
+    "id": "A-03",
+    "name": "Plataforma marítima hipotética",
+    "sector": "Petróleo e gás",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "Litoral ES (posição ilustrativa)",
+    "lat": -20.31,
+    "lon": -39.98,
+    "kind": "offshore_platform",
+    "description": "Hipótese marítima enquadrada na exclusão de escopo indicada em NR-20, 20.2.2(a).",
+    "facts": {
+      "offshore_excluded": true,
+      "nr20_scope": "excluded",
+      "dam": false,
+      "anp_regulated": true
+    }
+  },
+  {
+    "id": "A-04",
+    "name": "Centro administrativo",
+    "sector": "Serviços",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "SP (posição ilustrativa)",
+    "lat": -23.55,
+    "lon": -46.64,
+    "kind": "administrative",
+    "description": "Ativo sem vínculo documental demonstrado com a alteração da NR-20.",
+    "facts": {
+      "nr20_scope": "no_documentary_link",
+      "dam": false
+    }
+  },
+  {
+    "id": "B-01",
+    "name": "Barragem de mineração fictícia",
+    "sector": "Mineração",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "MG (posição ilustrativa)",
+    "lat": -20.14,
+    "lon": -43.74,
+    "kind": "dam",
+    "description": "Estrutura hipotética para simular a transição temporal de regras de barragens. Inspeção regular registrada em 24/03/2026 (ilustrativa).",
+    "facts": {
+      "dam": true,
+      "regulatory_body": "ANM",
+      "technical_classification": "não informada",
+      "pnsb": true,
+      "inspection_date": "2026-03-24"
+    }
+  },
+  {
+    "id": "A-05",
+    "name": "Base de apoio com gerador a biodiesel",
+    "sector": "Logística",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "BA (posição ilustrativa)",
+    "lat": -12.97,
+    "lon": -38.6,
+    "kind": "terrestrial_building",
+    "description": "Base logística fictícia com grupo gerador a biodiesel e tanque integrado à base do gerador.",
+    "facts": {
+      "building": true,
+      "generator": true,
+      "fuel": "biodiesel",
+      "tank_config": "integrated",
+      "nr20_scope": "candidate",
+      "dam": false
+    }
+  },
+  {
+    "id": "A-06",
+    "name": "Estação de bombeamento ao ar livre",
+    "sector": "Saneamento industrial",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "PR (posição ilustrativa)",
+    "lat": -25.2,
+    "lon": -50.9,
+    "kind": "outdoor_station",
+    "description": "Estação fictícia com gerador a diesel instalado fora de edificação.",
+    "facts": {
+      "building": false,
+      "generator": true,
+      "fuel": "diesel",
+      "tank_config": "separate",
+      "nr20_scope": "candidate",
+      "dam": false
+    }
+  },
+  {
+    "id": "A-07",
+    "name": "Terminal de armazenamento hipotético",
+    "sector": "Petróleo e gás",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "Litoral SE (posição ilustrativa)",
+    "lat": -10.95,
+    "lon": -37.2,
+    "kind": "terrestrial_building",
+    "description": "Terminal fictício com gerador declarado, mas sem combustível e configuração do tanque informados.",
+    "facts": {
+      "building": true,
+      "generator": true,
+      "fuel": null,
+      "tank_config": null,
+      "nr20_scope": "unknown",
+      "dam": false,
+      "anp_regulated": true
+    }
+  },
+  {
+    "id": "B-02",
+    "name": "Barragem de rejeitos fictícia",
+    "sector": "Mineração",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "PA (posição ilustrativa)",
+    "lat": -5.6,
+    "lon": -51.4,
+    "kind": "dam",
+    "description": "Segunda estrutura hipotética para demonstrar carteira de barragens com transição faseada.",
+    "facts": {
+      "dam": true,
+      "regulatory_body": "ANM",
+      "technical_classification": "não informada",
+      "pnsb": true,
+      "inspection_date": null
+    }
+  },
+  {
+    "id": "B-03",
+    "name": "Pilha de estéril fictícia",
+    "sector": "Mineração",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "GO (posição ilustrativa)",
+    "lat": -15.4,
+    "lon": -49.2,
+    "kind": "mining_pile",
+    "description": "Estrutura de mineração que NÃO é barragem: atuar em mineração não prova incidência de regras de barragens.",
+    "facts": {
+      "dam": false,
+      "nr20_scope": "no_documentary_link"
+    }
+  },
+  {
+    "id": "C-01",
+    "name": "Laboratório com fonte radioativa fictícia",
+    "sector": "Saúde e pesquisa",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "PE (posição ilustrativa)",
+    "lat": -8.05,
+    "lon": -34.95,
+    "kind": "radiative_facility",
+    "description": "Instalação radiativa hipotética cujos procedimentos citam normas pela designação antiga CNEN.",
+    "facts": {
+      "radiative": true,
+      "cites_cnen_designation": true,
+      "nr20_scope": "no_documentary_link",
+      "dam": false
+    }
+  },
+  {
+    "id": "D-01",
+    "name": "Duto terrestre hipotético",
+    "sector": "Petróleo e gás",
+    "organization": "Grupo Exemplo S.A. (fictício)",
+    "region": "SP/MG (posição ilustrativa)",
+    "lat": -21.7,
+    "lon": -47.8,
+    "kind": "pipeline",
+    "description": "Segmento de duto fictício usado para demonstrar monitoramento de texto em consulta pública.",
+    "facts": {
+      "anp_regulated": true,
+      "nr20_scope": "unknown",
+      "dam": false,
+      "building": false
+    }
+  }
+]

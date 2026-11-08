@@ -1,0 +1,7 @@
+# Tabela de vigência usada pelos sistemas de barragens (fictício, demonstração)
+resolucao_anm_95_2022:
+  vigencia: "2022-02-07"
+resolucao_anm_220_2025:
+  vigencia: "2026-12-26"
+nr_20:
+  vigencia: "2025-01-22"

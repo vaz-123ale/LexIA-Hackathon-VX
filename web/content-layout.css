@@ -1,0 +1,47 @@
+/* Somente a área de dados: preserva menu, topo e imagens de cabeçalho. */
+.mode-app .workspace .card{border-radius:16px;box-shadow:0 3px 14px #14315c08}
+.workspace .card-h{gap:12px;padding-bottom:14px;align-items:center}
+.workspace .card-h h3{line-height:1.35}
+.workspace .grid-6-6,.workspace .atv-grid,.workspace .rd-grid{gap:20px}
+.workspace .grid-6-6>*,.workspace .atv-grid>*,.workspace .rd-grid>*{min-width:0}
+.workspace .tabs{gap:6px;row-gap:8px}
+.workspace .tab{min-height:44px;line-height:1.35;border-radius:10px}
+.workspace .table th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;background:#f4f5f4}
+.workspace .table td{padding:12px;line-height:1.5;vertical-align:top}
+.workspace .table tbody tr:hover{background:#f5f7fa}
+.workspace .table-wrap{max-width:100%;overflow-x:auto}
+.workspace .kv{row-gap:10px}
+.workspace .kv dd{min-width:0;overflow-wrap:anywhere}
+.workspace .kpi{min-height:94px;padding:18px;gap:14px}
+.workspace .kpi-l{line-height:1.45}
+.workspace .atv-filtro{margin-bottom:16px;gap:14px;padding:12px;background:#fffdf8;border:1px solid #deded5;border-radius:14px}
+.workspace .atv-filtro .tabs{flex:1}
+.workspace .atv-leg{gap:10px 16px;line-height:1.6;margin-top:12px}
+.workspace .atv-leg .glyph{width:26px;height:26px}
+.workspace .rd-maph{padding:18px 20px}
+.workspace .rd-maph>b{font-size:23px;letter-spacing:-.5px}
+.workspace .rd-row{display:flex;align-items:center;gap:14px;padding:17px 18px;min-height:84px;text-align:left;background:#fffdf8}
+.workspace .rd-row:nth-child(even){background:#f9f8f3}
+.workspace .rd-row:hover{background:#edf3f8}
+.workspace .rd-row .glyph{width:38px;height:38px;flex-shrink:0}
+.workspace .rd-main{flex:1;min-width:0}
+.workspace .rd-main strong{display:block;line-height:1.4;font-size:15px}
+.workspace .rd-main small{display:block;margin-top:5px;line-height:1.5;color:#526174}
+.workspace .rd-row>.tag,.workspace .rd-row>.lx-chip{flex-shrink:0;font-size:12px;white-space:nowrap}
+.workspace .atv-panel{background:#fffdf8;border:1px solid #deded5;border-radius:16px;padding:22px}
+.workspace .atv-panel h4{margin-top:24px;padding-top:16px;border-top:1px solid #e2e5e8}
+.workspace .atv-scale{padding:12px 18px;font-size:12px;line-height:1.5;color:#526174;background:#fffdf8}
+.workspace .atv-lbl{font-weight:650;paint-order:stroke;stroke:#fffdf8;stroke-width:4px;stroke-linejoin:round;fill:#14315c}
+body .workspace .atv-svg .asset-symbol path,body .workspace .atv-svg .asset-symbol circle,body .workspace .atv-svg .asset-symbol rect{vector-effect:none;filter:none}
+body .workspace .atv-svg .asset-symbol g path,body .workspace .atv-svg .asset-symbol g circle{stroke:inherit;stroke-width:1.8;fill:none}
+body .workspace .atv-svg .asset-symbol-bg{stroke-width:2.2}
+.workspace .atv-pt:focus-visible .asset-symbol-bg{stroke:#14315c;stroke-width:4}
+.workspace :is(button,a,input,select,summary):focus-visible{outline:3px solid #2367ae;outline-offset:3px}
+@media(max-width:650px){
+ .workspace .rd-row{padding:14px 12px;gap:10px;flex-wrap:wrap}
+ .workspace .rd-row>.tag,.workspace .rd-row>.lx-chip{margin-left:48px}
+ .workspace .rd-main{flex-basis:calc(100% - 50px)}
+ .workspace .atv-panel{padding:16px}
+ .workspace .atv-filtro .tabs{flex-basis:100%}
+ .workspace .kpi{padding:14px}
+}

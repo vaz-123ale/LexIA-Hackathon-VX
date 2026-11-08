@@ -1,0 +1,690 @@
+{
+ "versao": "eval-v5",
+ "criado_em": "2026-11-07",
+ "aviso": "Gabarito de referência anotado pela equipe do projeto a partir do catálogo conferido (Lei 12.334/2010, Res. ANM 95/2022, CNEN NN 4.01 etc.). NÃO foi validado por especialista externo: em produção, cada cliente substitui/complementa com exemplos revisados pelo seu jurídico e engenharia. Métricas medem os componentes que respondem (regras + verificadores), sem chamar IA paga.",
+ "relevancia_filtros": [
+  {
+   "q": "barragens órfãs em Minas Gerais",
+   "espera": {
+    "dataset": "orfas",
+    "uf": [
+     "MG"
+    ]
+   }
+  },
+  {
+   "q": "barragens de dano potencial alto no Pará",
+   "espera": {
+    "uf": [
+     "PA"
+    ],
+    "dpa_high": true
+   }
+  },
+  {
+   "q": "quero ver barragens com emergência",
+   "espera": {
+    "emergency": true
+   }
+  },
+  {
+   "q": "barragens abandonadas na Bahia",
+   "espera": {
+    "uf": [
+     "BA"
+    ]
+   }
+  },
+  {
+   "q": "qual a previsão do tempo amanhã",
+   "espera_sem_filtro": true
+  },
+  {
+   "q": "me conte uma piada",
+   "espera_sem_filtro": true
+  }
+ ],
+ "normas_denuncia": [
+  {
+   "relato": "Há uma trinca grande no talude e parte da crista abateu depois da chuva.",
+   "espera": [
+    "art18",
+    "res95"
+   ],
+   "proibidas": [
+    "cnen_nn401",
+    "nr20"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "Tem água saindo na base da barragem, parece um vazamento que aumenta a cada dia.",
+   "espera": [
+    "art18",
+    "art4_iii"
+   ],
+   "proibidas": [
+    "cnen_nn401"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "A barragem está abandonada, sem manutenção há anos, ninguém cuida.",
+   "espera": [
+    "art2_iv",
+    "art17_i",
+    "art18_p3"
+   ],
+   "proibidas": [
+    "nr20"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "O rio ficou com água turva e apareceu peixe morto abaixo da barragem.",
+   "espera": [
+    "art4_iii",
+    "art18"
+   ],
+   "proibidas": [
+    "cnen_nn401"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "A lama descendo pelo vale, as pessoas estão sendo evacuadas agora.",
+   "espera": [
+    "art4_iii"
+   ],
+   "proibidas": [],
+   "gravidade": "alta",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "No galpão da mineradora guardam areia monazítica e não há placa de radiação nem controle de acesso.",
+   "espera": [
+    "cnen_nn401",
+    "lei14222"
+   ],
+   "proibidas": [
+    "res95"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "mineracao",
+    "tipo": "radiativo"
+   }
+  },
+  {
+   "relato": "A sirene da comunidade nunca foi testada e ninguém conhece a rota de fuga.",
+   "espera": [
+    "res95",
+    "art18a"
+   ],
+   "proibidas": [
+    "cnen_nn401"
+   ],
+   "gravidade": "media",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "O vertedouro está transbordando com a chuva forte.",
+   "espera": [
+    "art18",
+    "res95"
+   ],
+   "proibidas": [],
+   "gravidade": "alta",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  },
+  {
+   "relato": "Gostaria de saber o horário de funcionamento do escritório.",
+   "espera": [],
+   "proibidas": [
+    "art18",
+    "res95",
+    "cnen_nn401"
+   ],
+   "gravidade": "baixa",
+   "alvo": {
+    "kind": "mineracao"
+   }
+  }
+ ],
+ "versao_vigente": [
+  {
+   "pid": "NR20-AIII-2.1.1@2024",
+   "data": "2026-11-07",
+   "status": "HISTORICA",
+   "vigente_esperada": "NR20-AIII-2.1.1@2025"
+  },
+  {
+   "pid": "NR20-AIII-2.1.1@2024",
+   "data": "2024-06-01",
+   "status": "A_CONFERIR",
+   "vigente_esperada": "NR20-AIII-2.1.1@2024"
+  },
+  {
+   "pid": "NR20-AIII-2.1.1@2025",
+   "data": "2026-11-07",
+   "status": "VIGENTE",
+   "vigente_esperada": "NR20-AIII-2.1.1@2025"
+  },
+  {
+   "pid": "ANM220-geral",
+   "data": "2026-11-07",
+   "status": "FUTURA",
+   "vigente_esperada": "ANM220-geral"
+  },
+  {
+   "pid": "ANM220-art7-p1",
+   "data": "2030-01-01",
+   "status": "VIGENTE",
+   "vigente_esperada": "ANM220-art7-p1"
+  },
+  {
+   "pid": "ANM-EIR-PRORROG-2026",
+   "data": "2026-11-07",
+   "status": "HISTORICA",
+   "vigente_esperada": "ANM-EIR-PRORROG-2026"
+  }
+ ],
+ "roteamento": [
+  {
+   "empresa": "demo-mineracao",
+   "ocorrencia": "radiologico",
+   "papeis": [
+    "radioprotecao",
+    "seguranca",
+    "compliance"
+   ],
+   "nao_recebe": [
+    "juridico"
+   ]
+  },
+  {
+   "empresa": "demo-mineracao",
+   "ocorrencia": "documento_vencido",
+   "papeis": [
+    "compliance",
+    "juridico",
+    "dono_do_documento"
+   ],
+   "nao_recebe": [
+    "engenharia"
+   ]
+  },
+  {
+   "empresa": "demo-energia",
+   "ocorrencia": "anomalia_operacional",
+   "papeis": [
+    "engenharia",
+    "seguranca"
+   ],
+   "nao_recebe": [
+    "juridico",
+    "compliance"
+   ]
+  },
+  {
+   "empresa": "demo-saneamento",
+   "ocorrencia": "documento_vencendo",
+   "papeis": [
+    "compliance",
+    "dono_do_documento"
+   ],
+   "nao_recebe": [
+    "juridico"
+   ]
+  },
+  {
+   "empresa": "demo-saneamento",
+   "ocorrencia": "denuncia_recebida",
+   "papeis": [
+    "compliance",
+    "juridico"
+   ],
+   "nao_recebe": [
+    "engenharia"
+   ]
+  },
+  {
+   "empresa": "demo-mineracao",
+   "ocorrencia": "sst",
+   "papeis": [
+    "sst",
+    "seguranca",
+    "compliance"
+   ],
+   "nao_recebe": [
+    "juridico"
+   ]
+  }
+ ],
+ "perguntas": [
+  {
+   "q": "O que mudou na NR-20 sobre tanque de gerador?",
+   "estado": "GROUNDED_DEMO",
+   "fonte_esperada": "F02"
+  },
+  {
+   "q": "qual a receita de bolo de cenoura",
+   "estado": "ABSTAIN"
+  },
+  {
+   "q": "quem vai ganhar a eleição",
+   "estado": "ABSTAIN"
+  }
+ ],
+ "alucinacao": [
+  {
+   "tipo": "resumo",
+   "texto": "A barragem está segura e em conformidade.",
+   "deve_reprovar": true
+  },
+  {
+   "tipo": "resumo",
+   "texto": "A barragem tem 999 metros de altura.",
+   "deve_reprovar": true
+  },
+  {
+   "tipo": "resumo",
+   "texto": "Próximo passo: confirmar os dados com o órgão fiscalizador.",
+   "deve_reprovar": false
+  },
+  {
+   "tipo": "normas_ia",
+   "normas_propostas": [
+    "art18",
+    "lei_inventada_123",
+    "resolucao_falsa"
+   ],
+   "aceitas_esperadas": [
+    "art18"
+   ]
+  }
+ ],
+ "setor_normas": [
+  {
+   "caso": "Usina: vertedouro transbordando",
+   "relato": "O vertedouro da usina está transbordando com a chuva forte",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "energia",
+    "tipo": "barragem"
+   },
+   "espera": [
+    "aneel_1064",
+    "art18"
+   ],
+   "proibidas": [
+    "res95",
+    "ana_236"
+   ]
+  },
+  {
+   "caso": "Mineração: vertedouro transbordando",
+   "relato": "O vertedouro está transbordando com a chuva forte",
+   "alvo": {
+    "kind": "mineracao"
+   },
+   "espera": [
+    "res95",
+    "art18"
+   ],
+   "proibidas": [
+    "aneel_1064",
+    "ana_236"
+   ]
+  },
+  {
+   "caso": "Mina com monazita sem controle",
+   "relato": "No galpão guardam areia monazítica sem placa de radiação",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "mineracao",
+    "tipo": "radiativo"
+   },
+   "espera": [
+    "cnen_nn401",
+    "lei14222"
+   ],
+   "proibidas": [
+    "res95",
+    "aneel_1064"
+   ]
+  },
+  {
+   "caso": "Saneamento: água com cor estranha",
+   "relato": "A água da torneira está com cor estranha e gosto ruim",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "saneamento",
+    "tipo": "eta"
+   },
+   "espera": [
+    "portaria_888"
+   ],
+   "proibidas": [
+    "res95",
+    "aneel_1064",
+    "nr22"
+   ]
+  },
+  {
+   "caso": "Saneamento: barragem de acumulação com trinca",
+   "relato": "Há trinca no talude da barragem de acumulação",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "saneamento",
+    "tipo": "barragem"
+   },
+   "espera": [
+    "ana_236",
+    "art18"
+   ],
+   "proibidas": [
+    "res95",
+    "aneel_1064"
+   ]
+  },
+  {
+   "caso": "Energia: risco elétrico na subestação",
+   "relato": "Tem cabo energizado solto na subestação",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "energia",
+    "tipo": "subestacao"
+   },
+   "espera": [
+    "nr10"
+   ],
+   "proibidas": [
+    "nr22",
+    "res95"
+   ]
+  },
+  {
+   "caso": "Barragem sem dono (SNISB): só normas gerais",
+   "relato": "trinca no talude",
+   "alvo": {
+    "kind": "orfa"
+   },
+   "espera": [
+    "art18"
+   ],
+   "proibidas": [
+    "res95",
+    "aneel_1064",
+    "ana_236"
+   ]
+  },
+  {
+   "caso": "Reservatório (tanque) sem norma específica → curadoria",
+   "relato": "Há trinca no reservatório",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "saneamento",
+    "tipo": "reservatorio"
+   },
+   "espera": [],
+   "proibidas": [
+    "res95",
+    "art18"
+   ],
+   "lacuna": true
+  },
+  {
+   "caso": "Nuclear: rejeito radioativo abandonado",
+   "relato": "Encontraram tambores de rejeito radioativo abandonados perto do depósito",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "nuclear",
+    "tipo": "deposito_rejeitos"
+   },
+   "espera": [
+    "cnen_nn801",
+    "lei10308",
+    "cnen_nn301"
+   ],
+   "proibidas": [
+    "res95",
+    "aneel_1064",
+    "portaria_888"
+   ]
+  },
+  {
+   "caso": "Nuclear: fonte radioativa em equipamento",
+   "relato": "O densímetro nuclear ficou sem blindagem e sem placa de radiação",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "nuclear",
+    "tipo": "fonte_radioativa"
+   },
+   "espera": [
+    "cnen_nn602",
+    "cnen_nn301"
+   ],
+   "proibidas": [
+    "res95",
+    "lei10308"
+   ]
+  },
+  {
+   "caso": "Nuclear: barragem de rejeito com urânio é ANM",
+   "relato": "O vertedouro está transbordando com a chuva forte",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "nuclear",
+    "tipo": "barragem"
+   },
+   "espera": [
+    "res95",
+    "art18"
+   ],
+   "proibidas": [
+    "aneel_1064",
+    "ana_236"
+   ]
+  },
+  {
+   "caso": "Energia não recebe norma de rejeito radioativo sem material radioativo",
+   "relato": "O vertedouro da usina está transbordando com a chuva forte",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "energia",
+    "tipo": "barragem"
+   },
+   "espera": [
+    "aneel_1064"
+   ],
+   "proibidas": [
+    "cnen_nn801",
+    "lei10308"
+   ]
+  },
+  {
+   "caso": "SST: trabalho em altura sem cinto (energia)",
+   "relato": "Funcionário trabalhando no telhado sem cinto de segurança",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "energia",
+    "tipo": "subestacao"
+   },
+   "espera": [
+    "nr35",
+    "nr1"
+   ],
+   "proibidas": [
+    "nr22",
+    "res95"
+   ]
+  },
+  {
+   "caso": "SST: riscos psicossociais (saneamento)",
+   "relato": "Tem assédio e metas abusivas, todo mundo com burnout",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "saneamento",
+    "tipo": "eta"
+   },
+   "espera": [
+    "nr1",
+    "nr17"
+   ],
+   "proibidas": [
+    "nr22",
+    "aneel_1064"
+   ]
+  },
+  {
+   "caso": "SST: caldeira sem inspeção (indústria)",
+   "relato": "A caldeira está vazando vapor e ninguém faz inspeção",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "industria",
+    "tipo": "equipamento"
+   },
+   "espera": [
+    "nr13"
+   ],
+   "proibidas": [
+    "res95",
+    "nr22"
+   ]
+  },
+  {
+   "caso": "SST: acidente na mina usa NR-22 e NR-1",
+   "relato": "Um trabalhador se acidentou na frente de lavra sem capacete",
+   "alvo": {
+    "kind": "empresa_ativo",
+    "setor": "mineracao",
+    "tipo": "mina"
+   },
+   "espera": [
+    "nr22",
+    "nr1"
+   ],
+   "proibidas": [
+    "aneel_1064"
+   ]
+  }
+ ],
+ "donos": [
+  {
+   "caso": "Papel com pessoa: vai direto",
+   "empresa": "demo-mineracao",
+   "ocorrencia": "anomalia_operacional",
+   "pessoas": [
+    "engenharia",
+    "operacao",
+    "compliance"
+   ],
+   "escalado": false
+  },
+  {
+   "caso": "Radioproteção sem pessoa, mas compliance tem: compliance é o dono e o papel vazio é sinalizado",
+   "empresa": "demo-mineracao",
+   "ocorrencia": "radiologico",
+   "pessoas": [
+    "compliance"
+   ],
+   "escalado": false,
+   "sem_pessoa": true
+  },
+  {
+   "caso": "Nenhum papel da rota com pessoa: escala para a gestão",
+   "empresa": "demo-mineracao",
+   "ocorrencia": "radiologico",
+   "pessoas": [
+    "juridico",
+    "financas"
+   ],
+   "escalado": true,
+   "para": "gestor"
+  },
+  {
+   "caso": "Empresa sem ninguém cadastrado: escala para a curadoria",
+   "empresa": "demo-energia",
+   "ocorrencia": "anomalia_operacional",
+   "pessoas": [],
+   "escalado": true,
+   "para": "curadoria"
+  },
+  {
+   "caso": "Ocorrência sem rota configurada: vai para compliance",
+   "empresa": "demo-saneamento",
+   "ocorrencia": "tipo_inexistente",
+   "pessoas": [
+    "compliance"
+   ],
+   "escalado": false
+  }
+ ],
+ "extracao": [
+  {
+   "caso": "Prazo em dias e papel",
+   "texto": "Art. 21. O empreendedor deverá enviar, por meio do SIGBM, o Extrato de Inspeção Regular no prazo de 15 (quinze) dias após a realização da inspeção.",
+   "espera_n": 1,
+   "prazo_contem": "15",
+   "papel": "compliance"
+  },
+  {
+   "caso": "Periodicidade com condição",
+   "texto": "Para as barragens com Dano Potencial Associado alto, a Declaração de Condição de Estabilidade deverá ser apresentada semestralmente.",
+   "espera_n": 1,
+   "prazo_contem": "semestralmente",
+   "condicao": true
+  },
+  {
+   "caso": "Comunicação imediata ao responsável técnico",
+   "texto": "Caso seja identificada anomalia, o responsável técnico deverá comunicar a ANM imediatamente.",
+   "espera_n": 1,
+   "prazo_contem": "imediatamente",
+   "papel": "engenharia"
+  },
+  {
+   "caso": "Texto sem obrigação não inventa",
+   "texto": "Esta resolução trata de definições gerais sobre o cadastro nacional de barragens e de seus objetivos institucionais.",
+   "espera_n": 0
+  },
+  {
+   "caso": "IA inventa trecho: verificador recusa",
+   "texto": "O titular deverá protocolar comunicação ao órgão ambiental sempre que houver alteração no processo produtivo.",
+   "ia_falsa": {
+    "obrigacao": "pagar taxa",
+    "prazo": "30 dias",
+    "papel": "juridico",
+    "evidencia": "guia",
+    "condicao": "",
+    "trecho": "o titular deverá pagar taxa em 30 dias"
+   },
+   "espera_recusa": true
+  },
+  {
+   "caso": "NR-1: PGR com psicossociais e revisão bienal",
+   "texto": "A organização deverá incluir no Programa de Gerenciamento de Riscos a identificação e a avaliação dos fatores de risco psicossociais relacionados ao trabalho. O inventário de riscos deverá ser revisado a cada 2 (dois) anos.",
+   "espera_n": 2,
+   "prazo_contem": null
+  }
+ ]
+}

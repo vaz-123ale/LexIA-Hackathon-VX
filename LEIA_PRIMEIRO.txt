@@ -1,0 +1,20 @@
+LexIA - Hackathon VX (Desafio 02)
+=================================
+
+COMO RODAR (3 passos)
+1. Instale o Python 3.10 ou mais novo (testado no 3.12).
+2. Na pasta do projeto:
+     Windows .......... clique duas vezes em iniciar_windows.bat
+     Linux / Mac ...... ./iniciar_linux_mac.sh
+     ou, em qualquer um: python -m app.server
+3. Abra http://localhost:8765
+
+COMO ENTRAR
+Na tela "Entrar" use o cartao "Acesso rapido" (um clique):
+  Cidadao: joana@demo.lexia.app
+  Empresa: ana@demo.lexia.app
+  Senha das contas de demonstracao: LexIA2026demo
+
+VIDEO QUE MOSTRA COMO TESTAR: docs/video/LexIA_demo.mp4
+Passo a passo completo: README.md (secao "COMO TESTAR A PLATAFORMA")
+Testes automaticos: python -m unittest discover -s tests

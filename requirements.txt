@@ -1,0 +1,5 @@
+# A LexIA roda só com a biblioteca padrão do Python 3.10+. Nenhum pacote é obrigatório.
+# Opcionais (instale com: pip install -r requirements.txt):
+pypdf>=6.0,<7      # ler PDF na triagem de projetos e na importação de lista de funcionários
+openpyxl>=3.1      # ler planilhas Excel na importação de lista de funcionários
+# Para a narração do vídeo (só quem for regravar o vídeo): edge-tts, imageio-ffmpeg

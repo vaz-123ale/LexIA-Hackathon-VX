@@ -1,0 +1,49 @@
+{
+ "name": "LexIA",
+ "short_name": "LexIA",
+ "description": "Da mudança regulatória à decisão empresarial executável. Avaliação preliminar; não é parecer jurídico.",
+ "lang": "pt-BR",
+ "start_url": "/#/inicio",
+ "scope": "/",
+ "display": "standalone",
+ "orientation": "any",
+ "background_color": "#F7F4EC",
+ "theme_color": "#14315C",
+ "categories": [
+  "business",
+  "productivity"
+ ],
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any maskable"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  },
+  {
+   "src": "/icons/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Visão Executiva",
+   "url": "/#/exec"
+  },
+  {
+   "name": "Atlas",
+   "url": "/#/atlas"
+  },
+  {
+   "name": "Portal do cidadão",
+   "url": "/#/cidadao"
+  }
+ ]
+}

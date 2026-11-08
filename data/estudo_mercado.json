@@ -1,0 +1,1016 @@
+{
+ "fonte": "Relatório de mercado e viabilidade econômica — Desafio 02 (revisão de 07/11/2026) e planilhas anexas",
+ "arquivo": "docs\\Novos docs\\Torre_Regulatoria_Planilhas.xlsx",
+ "aviso": "Estimativas com dados públicos e hipóteses explícitas; sem entrevistas, piloto ou cliente confirmado.",
+ "painel": {
+  "TAM B2B anual": {
+   "conservador": 13968000,
+   "base": 27984000,
+   "otimista": 46740000,
+   "leitura": "Três recortes. Cenário, não mercado nacional medido."
+  },
+  "TAM B2G anual": {
+   "conservador": 324000,
+   "base": 1140000,
+   "otimista": 2784000,
+   "leitura": "Recorte de agências expressas e UFs."
+  },
+  "SAM mineral em contas": {
+   "conservador": 45,
+   "base": 89,
+   "otimista": 136,
+   "leitura": "Organizações mapeadas, ajustadas por consolidação e aderência."
+  },
+  "SAM mineral anual": {
+   "conservador": 1620000,
+   "base": 4272000,
+   "otimista": 8160000,
+   "leitura": "Contas elegíveis × ticket anual."
+  },
+  "SOM A3 em contas": {
+   "conservador": 3,
+   "base": 8,
+   "otimista": 20,
+   "leitura": "Contas ativas ao fim do terceiro ano."
+  },
+  "SOM A3 em ARR": {
+   "conservador": 108000,
+   "base": 384000,
+   "otimista": 1200000,
+   "leitura": "Receita anual recorrente contratual de saída."
+  },
+  "SOM A5 em contas": {
+   "conservador": 6,
+   "base": 18,
+   "otimista": 43,
+   "leitura": "Contas ativas ao fim do quinto ano."
+  },
+  "SOM A5 em ARR": {
+   "conservador": 216000,
+   "base": 864000,
+   "otimista": 2580000,
+   "leitura": "Diferente da receita reconhecida no ano."
+  },
+  "Implantação A5": {
+   "conservador": 12000,
+   "base": 70000,
+   "otimista": 270000,
+   "leitura": "Receita não recorrente no quinto ano."
+  },
+  "Captura A5 em contas do SAM": {
+   "conservador": 0.13333333333333333,
+   "base": 0.20224719101123595,
+   "otimista": 0.3161764705882353,
+   "leitura": "Comparação com o SAM do respectivo cenário."
+  },
+  "Margem bruta A5": {
+   "conservador": 0.7,
+   "base": 0.7189873417721518,
+   "otimista": 0.7016260162601626,
+   "leitura": "Inclui assinatura e implantação."
+  },
+  "Resultado após reserva A5": {
+   "conservador": -107678.23360000004,
+   "base": 68256.99999999988,
+   "otimista": 580357.7500000002,
+   "leitura": "Inclui reserva tributária de planejamento, antes de dívida e giro."
+  },
+  "Capital mínimo indicativo": {
+   "conservador": 741256.1536000001,
+   "base": 658230.0000000001,
+   "otimista": 697600,
+   "leitura": "Pior déficit anual após reserva sobre receita, antes de capital de giro e contingência."
+  },
+  "Despesa laboral endereçável": {
+   "conservador": 2011392,
+   "base": 20148480,
+   "otimista": 83758080,
+   "leitura": "Método alternativo. Compartilha contas do TAM B2B."
+  },
+  "Risco evitado • cliente/ano": {
+   "conservador": 19.096844396082698,
+   "base": 2235.4091225316183,
+   "otimista": 36590.05476373107,
+   "leitura": "Valor esperado de multas, com mora e interrupção opcionais."
+  },
+  "Benefício esperado • cliente/ano": {
+   "conservador": 5203.096844396083,
+   "base": 36795.409122531615,
+   "otimista": 144110.05476373108,
+   "leitura": "Tempo liberado e risco estimado, sem extrapolar para todas as contas."
+  },
+  "Saldo esperado • cliente no ano 1": {
+   "conservador": -36796.90315560392,
+   "base": -21204.590877468385,
+   "otimista": 66110.05476373108,
+   "leitura": "Benefício menos assinatura e implantação."
+  }
+ },
+ "precos": [
+  {
+   "natureza": "Hipótese",
+   "nome": "Entrada",
+   "anual": 36000,
+   "implantacao": 6000,
+   "ano": "2026",
+   "escopo": "Oferta comercial futura, domínio delimitado e faixa de unidades. Escopo além do chat da demonstração.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Hipótese",
+   "nome": "Profissional",
+   "anual": 48000,
+   "implantacao": 10000,
+   "ano": "2026",
+   "escopo": "Monitoramento, revisão, histórico e obrigações.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Hipótese",
+   "nome": "Corporativo",
+   "anual": 60000,
+   "implantacao": 18000,
+   "ano": "2026",
+   "escopo": "Ampliação de unidades, integrações e suporte.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Hipótese",
+   "nome": "Institucional baixo",
+   "anual": 36000,
+   "implantacao": null,
+   "ano": "2026",
+   "escopo": "Recorte de modelagem B2G.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Hipótese",
+   "nome": "Institucional base",
+   "anual": 60000,
+   "implantacao": null,
+   "ano": "2026",
+   "escopo": "Recorte de modelagem B2G.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Hipótese",
+   "nome": "Institucional alto",
+   "anual": 96000,
+   "implantacao": null,
+   "ano": "2026",
+   "escopo": "Recorte de modelagem B2G.",
+   "evidencia": "Premissas"
+  },
+  {
+   "natureza": "Observado",
+   "nome": "CFMV nº 50/2025",
+   "anual": 49680,
+   "implantacao": null,
+   "ano": "2025",
+   "escopo": "12 meses de monitoramento legislativo. Openlex/Sigalei.",
+   "evidencia": "E18"
+  },
+  {
+   "natureza": "Observado",
+   "nome": "MTE nº 24/2025",
+   "anual": 62580,
+   "implantacao": null,
+   "ano": "2025",
+   "escopo": "4 licenças de SaaS, 12 meses, treinamento e suporte. Inteligov.",
+   "evidencia": "E19"
+  },
+  {
+   "natureza": "Observado",
+   "nome": "CEGÁS nº 020/2023",
+   "anual": null,
+   "implantacao": null,
+   "ano": "2026",
+   "escopo": "Valor global R$ 90.978,84 e R$ 17.100 acumulados pagos. Vigência plurianual. Sem anualização.",
+   "evidencia": "E68"
+  },
+  {
+   "natureza": "Equivalente anual histórico",
+   "nome": "ALGÁS nº 016/2022",
+   "anual": 9100,
+   "implantacao": null,
+   "ano": "2022",
+   "escopo": "R$ 45.500 por 60 meses, R$ 9.100/ano por divisão simples. Escopo e condições históricos.",
+   "evidencia": "E69"
+  }
+ ],
+ "ocorrencias": [
+  {
+   "evento": "DCE • março/2026",
+   "obrigatorias": 458,
+   "nao_enviadas": 24,
+   "sem_atestar": 18,
+   "embargos": 42,
+   "outros": null,
+   "ref": "E51 • das 458 obrigadas, 24 sem envio, 18 sem ateste; 42 embargos."
+  },
+  {
+   "evento": "DCE • setembro/2026",
+   "obrigatorias": 461,
+   "nao_enviadas": 15,
+   "sem_atestar": 19,
+   "embargos": 34,
+   "outros": null,
+   "ref": "E52 • das 461 obrigadas, 15 sem envio, 19 sem ateste; 34 embargos."
+  },
+  {
+   "evento": "DCE • setembro/2025",
+   "obrigatorias": 457,
+   "nao_enviadas": 22,
+   "sem_atestar": 14,
+   "embargos": 35,
+   "outros": null,
+   "ref": "E53 • uma das 14 sem ateste não foi embargada em razão do status de emergência."
+  },
+  {
+   "evento": "DCO • 2026",
+   "obrigatorias": 241,
+   "nao_enviadas": 9,
+   "sem_atestar": 3,
+   "embargos": 12,
+   "outros": null,
+   "ref": "E54 • DCO do plano de emergência. Nove perderam o prazo. Fora da taxa de DCE."
+  },
+  {
+   "evento": "Autos de infração da ANM em 2025",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 620,
+   "ref": "E06 • total de autos de segurança de barragens."
+  },
+  {
+   "evento": "Multas aplicadas pela ANM em 2025",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 212,
+   "ref": "E06 • total de multas, causas e pagamentos não desagregados no relatório."
+  },
+  {
+   "evento": "Autos de embargo da ANM em 2025",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 85,
+   "ref": "E06 • atos de embargo, podem incluir mais de um ato para a mesma estrutura."
+  },
+  {
+   "evento": "DCE 2026 • referência combinada",
+   "obrigatorias": 919,
+   "nao_enviadas": 39,
+   "sem_atestar": 37,
+   "embargos": 76,
+   "outros": null,
+   "ref": "E51–E52 • soma das duas campanhas. Uma mesma estrutura pode aparecer duas vezes."
+  },
+  {
+   "evento": "Proporção de não envio • DCE 2026",
+   "obrigatorias": null,
+   "nao_enviadas": 0.042437431991294884,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": null,
+   "ref": "Taxa por oportunidade de entrega. Não mede causa, risco de pagamento nem efeito da Torre."
+  },
+  {
+   "evento": "Magnesita Refratários • MG",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 75128.42,
+   "ref": "E59 • AI 89.138/2016, multa mantida pela FEAM. Pagamento não verificado."
+  },
+  {
+   "evento": "AVG • MG",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 72791.43,
+   "ref": "E58 • AI 71.291/2014, multa mantida em decisão, com infrações combinadas."
+  },
+  {
+   "evento": "AVG • valor atualizado alegado",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 120109.1,
+   "ref": "E58 • montante relatado pela recorrente com juros e atualização. Diferença não é só mora. Pagamento não verificado."
+  },
+  {
+   "evento": "Nacional Grafite • MG",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 10648.8,
+   "ref": "E60 • conversão de advertência; parecer recursal recomenda revertê-la após localizar o protocolo."
+  },
+  {
+   "evento": "ANM • percentual de referência VI-2",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 0.001125,
+   "ref": "E55 • Anexo I-A, incide sobre o valor da produção mineral no método I."
+  },
+  {
+   "evento": "ANM • piso setorial da simulação",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 2324.3,
+   "ref": "E56 • Resolução 230/2026, Anexo II. Não é valor típico."
+  },
+  {
+   "evento": "ANM • teto setorial da simulação",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": 1162150484.27,
+   "ref": "E56 • Resolução 230/2026, Anexo II. Não é valor típico."
+  },
+  {
+   "evento": "Onde consultar multas e processos",
+   "obrigatorias": null,
+   "nao_enviadas": null,
+   "sem_atestar": null,
+   "embargos": null,
+   "outros": null,
+   "ref": "E61 • Portal da Transparência orientado pela ANM. Procure o processo, decisão e comprovante separadamente."
+  }
+ ],
+ "equilibrio": [
+  {
+   "clientes": 4,
+   "receita": 262000,
+   "custos": 536943.0000000001,
+   "resultado": -274943.0000000001
+  },
+  {
+   "clientes": 5,
+   "receita": 310000,
+   "custos": 553743.0000000001,
+   "resultado": -243743.00000000012
+  },
+  {
+   "clientes": 6,
+   "receita": 358000,
+   "custos": 570543.0000000001,
+   "resultado": -212543.00000000012
+  },
+  {
+   "clientes": 7,
+   "receita": 406000,
+   "custos": 587343.0000000001,
+   "resultado": -181343.00000000012
+  },
+  {
+   "clientes": 8,
+   "receita": 454000,
+   "custos": 604143.0000000001,
+   "resultado": -150143.00000000012
+  },
+  {
+   "clientes": 9,
+   "receita": 502000,
+   "custos": 620943.0000000001,
+   "resultado": -118943.00000000012
+  },
+  {
+   "clientes": 10,
+   "receita": 550000,
+   "custos": 637743.0000000001,
+   "resultado": -87743.00000000012
+  },
+  {
+   "clientes": 11,
+   "receita": 598000,
+   "custos": 654543.0000000001,
+   "resultado": -56543.00000000012
+  },
+  {
+   "clientes": 12,
+   "receita": 646000,
+   "custos": 671343.0000000001,
+   "resultado": -25343.000000000116
+  },
+  {
+   "clientes": 13,
+   "receita": 694000,
+   "custos": 688143.0000000001,
+   "resultado": 5856.999999999884
+  },
+  {
+   "clientes": 14,
+   "receita": 742000,
+   "custos": 704943.0000000001,
+   "resultado": 37056.99999999988
+  },
+  {
+   "clientes": 15,
+   "receita": 790000,
+   "custos": 721743.0000000001,
+   "resultado": 68256.99999999988
+  },
+  {
+   "clientes": 16,
+   "receita": 838000,
+   "custos": 738543.0000000001,
+   "resultado": 99456.99999999988
+  },
+  {
+   "clientes": 17,
+   "receita": 886000,
+   "custos": 755343.0000000001,
+   "resultado": 130656.99999999988
+  },
+  {
+   "clientes": 18,
+   "receita": 934000,
+   "custos": 772143.0000000001,
+   "resultado": 161856.99999999988
+  },
+  {
+   "clientes": 19,
+   "receita": 982000,
+   "custos": 788943.0000000001,
+   "resultado": 193056.99999999988
+  },
+  {
+   "clientes": 20,
+   "receita": 1030000,
+   "custos": 805743.0000000001,
+   "resultado": 224256.99999999988
+  },
+  {
+   "clientes": 21,
+   "receita": 1078000,
+   "custos": 822543.0000000001,
+   "resultado": 255456.99999999988
+  },
+  {
+   "clientes": 22,
+   "receita": 1126000,
+   "custos": 839343.0000000001,
+   "resultado": 286656.9999999999
+  },
+  {
+   "clientes": 23,
+   "receita": 1174000,
+   "custos": 856143.0000000001,
+   "resultado": 317856.9999999999
+  },
+  {
+   "clientes": 24,
+   "receita": 1222000,
+   "custos": 872943.0000000001,
+   "resultado": 349056.9999999999
+  },
+  {
+   "clientes": 25,
+   "receita": 1270000,
+   "custos": 889743.0000000001,
+   "resultado": 380256.9999999999
+  }
+ ],
+ "retorno": {
+  "Economia laboral anual": {
+   "conservador": 5184,
+   "base": 34560,
+   "otimista": 107520,
+   "leitura": "Horas × custo-hora × 12 × fração líquida."
+  },
+  "Saldo após assinatura": {
+   "conservador": -30796.90315560392,
+   "base": -11204.590877468385,
+   "otimista": 84110.05476373108,
+   "leitura": "Horas poupadas e risco evitado, menos a assinatura."
+  },
+  "Saldo no primeiro ano": {
+   "conservador": -36796.90315560392,
+   "base": -21204.590877468385,
+   "otimista": 66110.05476373108,
+   "leitura": "Subtrai também implantação, antes de custos internos."
+  },
+  "ROI primeiro ano": {
+   "conservador": -0.8761167418000934,
+   "base": -0.3655963944391101,
+   "otimista": 0.847564804663219,
+   "leitura": "Saldo primeiro ano ÷ assinatura e implantação."
+  },
+  "Horas mensais para paridade recorrente": {
+   "conservador": 166.57825535001814,
+   "base": 105.93655295710275,
+   "otimista": 34.836228030162104,
+   "leitura": "MAX(0, assinatura menos risco evitado) ÷ (custo-hora × fração × 12)."
+  },
+  "Horas mensais para paridade no ano 1": {
+   "conservador": 194.3560331277959,
+   "base": 129.0847011052509,
+   "otimista": 61.62194231587639,
+   "leitura": "MAX(0, assinatura e implantação menos risco evitado) ÷ (custo-hora × fração × 12)."
+  },
+  "Contribuição recorrente anual": {
+   "conservador": 22400,
+   "base": 31200,
+   "otimista": 38000,
+   "leitura": "Preço líquido da reserva sobre receita, menos o custo direto recorrente."
+  },
+  "Margem recorrente": {
+   "conservador": 0.6222222222222222,
+   "base": 0.65,
+   "otimista": 0.6333333333333333,
+   "leitura": "Contribuição ÷ ticket."
+  },
+  "Payback de CAC em meses": {
+   "conservador": 4.285714285714286,
+   "base": 4.615384615384615,
+   "otimista": 5.684210526315789,
+   "leitura": "CAC variável ÷ contribuição recorrente mensal."
+  },
+  "LTV simples": {
+   "conservador": 186666.6666666667,
+   "base": 312000,
+   "otimista": 475000,
+   "leitura": "Contribuição anual ÷ churn. Sem desconto ou limite temporal."
+  },
+  "LTV sobre CAC variável": {
+   "conservador": 23.333333333333336,
+   "base": 26,
+   "otimista": 26.38888888888889,
+   "leitura": "Métrica sensível a churn e CAC plenamente carregado."
+  },
+  "Contribuição em 3 anos": {
+   "conservador": 67200,
+   "base": 93600,
+   "otimista": 114000,
+   "leitura": "Sem desconto ou churn. Não equivale a previsão de retenção."
+  }
+ },
+ "matriz": [
+  {
+   "oferta": "Ius CAL",
+   "monitora": "C",
+   "contexto": "C",
+   "obrigacoes": "C",
+   "prazos": "P",
+   "historico": "P",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Aplicabilidade e obrigações documentadas.",
+   "evidencia": "E20 E40"
+  },
+  {
+   "oferta": "Ambipar SOGI LIRA",
+   "monitora": "C",
+   "contexto": "C",
+   "obrigacoes": "C",
+   "prazos": "P",
+   "historico": "P",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Alterações, ação e evidência.",
+   "evidencia": "E21"
+  },
+  {
+   "oferta": "Sigalei",
+   "monitora": "C",
+   "contexto": "C",
+   "obrigacoes": "P",
+   "prazos": "C",
+   "historico": "P",
+   "trilha": "C",
+   "encaminha": "P",
+   "obs": "IA e revisão humana, escopo por ativo a confirmar.",
+   "evidencia": "E22"
+  },
+  {
+   "oferta": "Inteligov",
+   "monitora": "C",
+   "contexto": "P",
+   "obrigacoes": "NI",
+   "prazos": "P",
+   "historico": "P",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Clipping legislativo e acompanhamento.",
+   "evidencia": "E23"
+  },
+  {
+   "oferta": "Jusbrasil Jus IA",
+   "monitora": "NI",
+   "contexto": "P",
+   "obrigacoes": "NI",
+   "prazos": "NI",
+   "historico": "NI",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Pesquisa jurídica com fontes verificadas.",
+   "evidencia": "E24"
+  },
+  {
+   "oferta": "SoftExpert",
+   "monitora": "NI",
+   "contexto": "P",
+   "obrigacoes": "P",
+   "prazos": "P",
+   "historico": "NI",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Fluxo de GRC; camada de inteligência normativa a verificar.",
+   "evidencia": "E25"
+  },
+  {
+   "oferta": "Target GEDWeb",
+   "monitora": "NI",
+   "contexto": "NI",
+   "obrigacoes": "NI",
+   "prazos": "NI",
+   "historico": "NI",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Acesso a acervo técnico.",
+   "evidencia": "E45"
+  },
+  {
+   "oferta": "Enhesa",
+   "monitora": "C",
+   "contexto": "C",
+   "obrigacoes": "C",
+   "prazos": "P",
+   "historico": "C",
+   "trilha": "C",
+   "encaminha": "NI",
+   "obs": "Histórico por artigo e revisão de especialistas.",
+   "evidencia": "E26"
+  },
+  {
+   "oferta": "CUBE RegPlatform",
+   "monitora": "C",
+   "contexto": "C",
+   "obrigacoes": "C",
+   "prazos": "P",
+   "historico": "P",
+   "trilha": "C",
+   "encaminha": "NI",
+   "obs": "Ciclo de mudanças e obrigações documentado.",
+   "evidencia": "E27"
+  },
+  {
+   "oferta": "ServiceNow RCM",
+   "monitora": "P",
+   "contexto": "C",
+   "obrigacoes": "P",
+   "prazos": "C",
+   "historico": "P",
+   "trilha": "C",
+   "encaminha": "P",
+   "obs": "Tarefa após avaliação de aplicabilidade.",
+   "evidencia": "E28"
+  },
+  {
+   "oferta": "OneSumX",
+   "monitora": "C",
+   "contexto": "P",
+   "obrigacoes": "P",
+   "prazos": "NI",
+   "historico": "P",
+   "trilha": "P",
+   "encaminha": "NI",
+   "obs": "Feed vinculado a biblioteca de regras.",
+   "evidencia": "E29"
+  },
+  {
+   "oferta": "Torre Regulatória",
+   "monitora": "PL",
+   "contexto": "PL",
+   "obrigacoes": "PL",
+   "prazos": "PL",
+   "historico": "PL",
+   "trilha": "PL",
+   "encaminha": "PL",
+   "obs": "Planejada no recorte. Não houve demonstração observada neste estudo.",
+   "evidencia": "E01 E02"
+  }
+ ],
+ "concorrentes": [
+  {
+   "nome": "Ius CAL",
+   "pais": "Brasil",
+   "categoria": "Requisitos legais e compliance",
+   "publico": "SGI, EHS e indústria",
+   "recursos": "Monitoramento, aplicabilidade e obrigações personalizadas. IA não confirmada para o fluxo específico.",
+   "preco": "Sob consulta. Extrato ALGÁS informa R$ 45.500 em 60 meses. Contratação histórica com escopo próprio.",
+   "fonte": "E20 E40 E69"
+  },
+  {
+   "nome": "Ambipar SOGI LIRA",
+   "pais": "Brasil",
+   "categoria": "Compliance EHS",
+   "publico": "Indústria, EHS e SGI",
+   "recursos": "Levantamento de requisitos, alterações, obrigações, ação e evidências.",
+   "preco": "Comercial sob consulta; preço não identificado.",
+   "fonte": "E21"
+  },
+  {
+   "nome": "Sigalei",
+   "pais": "Brasil",
+   "categoria": "Inteligência regulatória",
+   "publico": "Jurídico, regulatório e assuntos públicos",
+   "recursos": "IA semântica, validação humana, DOU, diários, agências e referência.",
+   "preco": "Preço corporativo sob consulta. CFMV contratou por R$ 49.680/ano em monitoramento legislativo.",
+   "fonte": "E22 E18"
+  },
+  {
+   "nome": "Inteligov",
+   "pais": "Brasil",
+   "categoria": "Monitoramento legislativo",
+   "publico": "Relações governamentais e equipes institucionais",
+   "recursos": "Acompanhamento legislativo e dados governamentais.",
+   "preco": "MTE contratou por R$ 62.580/ano por 4 licenças, suporte e treinamento.",
+   "fonte": "E23 E19"
+  },
+  {
+   "nome": "Jusbrasil Jus IA",
+   "pais": "Brasil",
+   "categoria": "LegalTech IA",
+   "publico": "Advogados e jurídico",
+   "recursos": "Assistência com fontes verificadas e respostas sujeitas a imprecisão.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E24"
+  },
+  {
+   "nome": "SoftExpert",
+   "pais": "Brasil",
+   "categoria": "GRC",
+   "publico": "Empresas e compliance",
+   "recursos": "Conformidade em múltiplos domínios e processos corporativos.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E25"
+  },
+  {
+   "nome": "Target GEDWeb",
+   "pais": "Brasil",
+   "categoria": "Gestão de acervo técnico",
+   "publico": "Engenharia, qualidade e bibliotecas",
+   "recursos": "Acesso a normas técnicas em fonte institucional.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E45"
+  },
+  {
+   "nome": "Enhesa",
+   "pais": "Bélgica",
+   "categoria": "Inteligência EHS",
+   "publico": "EHS e empresas multinacionais",
+   "recursos": "Obrigações, escopo, guia, fonte local e histórico.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E26"
+  },
+  {
+   "nome": "CUBE RegPlatform",
+   "pais": "Reino Unido",
+   "categoria": "Inteligência regulatória",
+   "publico": "Serviços financeiros e risco",
+   "recursos": "IA e automação, aplicabilidade, obrigação, trilha e fluxo.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E27"
+  },
+  {
+   "nome": "ServiceNow RCM",
+   "pais": "Estados Unidos",
+   "categoria": "GRC e workflow",
+   "publico": "Grandes organizações e compliance",
+   "recursos": "Triagem de aplicabilidade aciona tarefas com prazo e responsável.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E28"
+  },
+  {
+   "nome": "Wolters Kluwer OneSumX",
+   "pais": "Países Baixos",
+   "categoria": "Gestão de mudanças",
+   "publico": "Compliance financeiro",
+   "recursos": "Monitoramento multiorgão, feed e vínculo a regras.",
+   "preco": "Preço comparável privado não identificado.",
+   "fonte": "E29"
+  },
+  {
+   "nome": "Processo manual ou consultoria",
+   "pais": "Brasil",
+   "categoria": "Substitutos",
+   "publico": "Jurídico, compliance e operação",
+   "recursos": "Planilha, e-mail, clipping, escritório, consultoria ou IA genérica.",
+   "preco": "Custo estimado por tarefa e despesa substituível, com sensibilidade.",
+   "fonte": "E02"
+  }
+ ],
+ "segmentos": [
+  {
+   "segmento": "Pesos",
+   "nota": 1,
+   "obs": "Soma deve ser 100%."
+  },
+  {
+   "segmento": "Mineração com barragens",
+   "nota": 4.6000000000000005,
+   "obs": "ANM e DOU. Caso verificável, unidade e prazos."
+  },
+  {
+   "segmento": "Óleo e gás",
+   "nota": 4.05,
+   "obs": "Expansão adjacente, implantação e venda exigentes."
+  },
+  {
+   "segmento": "Energia elétrica",
+   "nota": 3.8499999999999996,
+   "obs": "ANeEL e concessões. Validar contagem e concorrência."
+  },
+  {
+   "segmento": "Saúde suplementar",
+   "nota": 3.8,
+   "obs": "ANS. Operadoras médicas têm base oficial."
+  },
+  {
+   "segmento": "Saneamento",
+   "nota": 3.5,
+   "obs": "ANA, reguladores locais e contratos."
+  },
+  {
+   "segmento": "Telecomunicações",
+   "nota": 3.45,
+   "obs": "Anatel. Qualificar grupos e capacidade de pagamento."
+  },
+  {
+   "segmento": "Indústria química",
+   "nota": 3.4500000000000006,
+   "obs": "Aplicabilidade por insumo, produto e planta."
+  },
+  {
+   "segmento": "Farmacêutica",
+   "nota": 3.5,
+   "obs": "Alta especialização e integração."
+  },
+  {
+   "segmento": "Hospitais e clínicas",
+   "nota": 2.75,
+   "obs": "Licenças, qualidade e diversidade por unidade."
+  },
+  {
+   "segmento": "Transportes e logística",
+   "nota": 3.1500000000000004,
+   "obs": "Concessões, permissões, rota e território."
+  },
+  {
+   "segmento": "Serviços financeiros",
+   "nota": 3.4999999999999996,
+   "obs": "Rivalidade e implantação elevadas."
+  },
+  {
+   "segmento": "Indústria de transformação",
+   "nota": 3.7,
+   "obs": "Segmentar por operação e exposição regulatória."
+  },
+  {
+   "segmento": "Operações multiestaduais",
+   "nota": 3.5000000000000004,
+   "obs": "Recorte transversal. Evitar dupla contagem."
+  },
+  {
+   "segmento": "Órgãos públicos",
+   "nota": 2.9,
+   "obs": "Compra e governança próprias."
+  },
+  {
+   "segmento": "Consultorias e jurídico terceirizado",
+   "nota": 3.1500000000000004,
+   "obs": "Possível canal por carteira ou equipe."
+  }
+ ],
+ "mercado": [
+  {
+   "etapa": "Contas minerais",
+   "conservador": 130,
+   "base": 162,
+   "otimista": 195,
+   "fonte": "INT(217 organizações × parcela de contas distintas). E57."
+  },
+  {
+   "etapa": "Contas de saúde suplementar",
+   "conservador": 199,
+   "base": 333,
+   "otimista": 466,
+   "fonte": "INT(operadoras médicas × filtro). E12."
+  },
+  {
+   "etapa": "Contas de saneamento",
+   "conservador": 59,
+   "base": 88,
+   "otimista": 118,
+   "fonte": "INT(empresas privadas × filtro). E13."
+  },
+  {
+   "etapa": "Contas B2B modeladas",
+   "conservador": 388,
+   "base": 583,
+   "otimista": 779,
+   "fonte": "Soma com possível sobreposição residual de grupo."
+  },
+  {
+   "etapa": "Ticket B2B anual",
+   "conservador": 36000,
+   "base": 48000,
+   "otimista": 60000,
+   "fonte": "Preço hipotético."
+  },
+  {
+   "etapa": "TAM B2B bottom-up",
+   "conservador": 13968000,
+   "base": 27984000,
+   "otimista": 46740000,
+   "fonte": "Contas B2B × ticket. Três segmentos."
+  },
+  {
+   "etapa": "Contas B2G modeladas",
+   "conservador": 9,
+   "base": 19,
+   "otimista": 29,
+   "fonte": "INT((agências expressas + UFs) × filtro). E04/E17."
+  },
+  {
+   "etapa": "Ticket B2G anual",
+   "conservador": 36000,
+   "base": 60000,
+   "otimista": 96000,
+   "fonte": "Preço hipotético."
+  },
+  {
+   "etapa": "TAM B2G bottom-up",
+   "conservador": 324000,
+   "base": 1140000,
+   "otimista": 2784000,
+   "fonte": "Recorte institucional × ticket."
+  },
+  {
+   "etapa": "SAM contas minerais",
+   "conservador": 45,
+   "base": 89,
+   "otimista": 136,
+   "fonte": "INT(contas minerais × aderência operacional)."
+  },
+  {
+   "etapa": "SAM B2B anual",
+   "conservador": 1620000,
+   "base": 4272000,
+   "otimista": 8160000,
+   "fonte": "Contas SAM × ticket B2B. Produto pós-demo."
+  },
+  {
+   "etapa": "Trabalho elegível anual por conta",
+   "conservador": 25920,
+   "base": 115200,
+   "otimista": 268800,
+   "fonte": "Horas × custo-hora × 12."
+  },
+  {
+   "etapa": "Despesa laboral endereçável por conta",
+   "conservador": 5184,
+   "base": 34560,
+   "otimista": 107520,
+   "fonte": "Trabalho anual × fração endereçável."
+  },
+  {
+   "etapa": "TAM B2B por despesa laboral",
+   "conservador": 2011392,
+   "base": 20148480,
+   "otimista": 83758080,
+   "fonte": "Despesa endereçável × contas B2B. Compartilha a base."
+  },
+  {
+   "etapa": "Sensibilidade ANS por despesa",
+   "conservador": 1589293.08095,
+   "base": 4767879.24285,
+   "otimista": 9535758.4857,
+   "fonte": "Despesa administrativa do setor × fração hipotética."
+  },
+  {
+   "etapa": "Compras públicas adjacentes observadas",
+   "conservador": 112260,
+   "base": 112260,
+   "otimista": 112260,
+   "fonte": "Soma E18/E19; amostra de dois objetos, sem extrapolação."
+  }
+ ]
+}

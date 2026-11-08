@@ -1,0 +1,18 @@
+{
+  "aviso": "Obrigações CADASTRADAS pela organização fictícia \"Grupo Exemplo S.A. (fictício)\" para demonstração. Datas e periodicidades internas são da empresa; não são prazos legais inferidos pela LexIA.",
+  "organizacao": "demo",
+  "itens": [
+    {"id": "OB-B01-EIR-2026-03", "ativo": "B-01", "tipo": "eir", "titulo": "EIR do ciclo de inspeções 16–31/03/2026", "vencimento": "2026-04-23", "ultimo_documento": null,
+     "evidencia": null, "responsavel": "geotecnia", "base": ["res95", "aviso_eir"], "seguranca": false, "origem": "Aviso ANM de 16/04/2026 (prazo excepcional)"},
+    {"id": "OB-B01-RPSB", "ativo": "B-01", "tipo": "rpsb", "titulo": "Revisão Periódica de Segurança de Barragem", "vencimento": "2026-09-10", "ultimo_documento": "2021-09-10",
+     "evidencia": null, "responsavel": "geotecnia", "base": ["res95", "art4_iii"], "seguranca": true, "origem": "Periodicidade cadastrada pela empresa conforme a classificação da estrutura"},
+    {"id": "OB-B02-LO", "ativo": "B-02", "tipo": "licenca", "titulo": "Licença de Operação (órgão ambiental estadual)", "vencimento": "2026-12-01", "ultimo_documento": "2022-12-01",
+     "evidencia": null, "responsavel": "meio_ambiente", "base": ["condicionante"], "seguranca": false, "origem": "Condicionante da própria licença (cadastro da empresa)"},
+    {"id": "OB-B02-PAEBM", "ativo": "B-02", "tipo": "pae", "titulo": "Atualização do PAEBM e entrega das cópias à Defesa Civil", "vencimento": "2026-11-20", "ultimo_documento": "2024-05-15",
+     "evidencia": null, "responsavel": "compliance", "base": ["res95", "art18_p2"], "seguranca": true, "origem": "Rotina interna de atualização anual (cadastro da empresa)"},
+    {"id": "OB-B01-DCE-2027-03", "ativo": "B-01", "tipo": "dce", "titulo": "Declaração de Condição de Estabilidade — campanha de março/2027", "vencimento": "2027-03-31", "ultimo_documento": "2026-09-28",
+     "evidencia": "Protocolo da campanha de setembro/2026 anexado", "responsavel": "geotecnia", "base": ["res95", "res223"], "seguranca": true, "origem": "Calendário de campanhas da ANM"},
+    {"id": "OB-A01-NR20", "ativo": "A-01", "tipo": "documento", "titulo": "Prontuário da instalação (NR-20)", "vencimento": "2027-02-15", "ultimo_documento": "2026-02-15",
+     "evidencia": "Prontuário revisado em 15/02/2026", "responsavel": "engenharia", "base": ["nr20"], "seguranca": false, "origem": "Rotina interna (cadastro da empresa)"}
+  ]
+}

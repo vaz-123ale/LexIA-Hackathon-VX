@@ -1,0 +1,109 @@
+{
+  "snapshot_id": "sigbm-20261106T195313",
+  "connector": "ANM_SIGBM",
+  "fetched_at": "2026-11-06T19:53:13+00:00",
+  "sha256": "6aa5f152db495348d9e22abbc0bcdc4cba17fc6f4070772b279f445b18ee574a",
+  "bytes": 3386460,
+  "source_url": "https://dadosabertos.anm.gov.br/SIGBM/Barragens.csv",
+  "listing_entry": {
+    "listed_at": "11/6/2026  6:18 AM",
+    "bytes": "3386460",
+    "href": "/SIGBM/Barragens.csv",
+    "name": "Barragens.csv"
+  },
+  "http_last_modified": "Fri, 06 Nov 2026 09:18:44 GMT",
+  "user_agent": "Torre360-demo/0.3 (hackathon; coleta manual de dados abertos)",
+  "quality": {
+    "rows_read": 908,
+    "accepted": 902,
+    "rejected": 6,
+    "duplicates": 0,
+    "rejected_rows": [
+      {
+        "line": 10,
+        "official_id": "9540",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      },
+      {
+        "line": 31,
+        "official_id": "9171",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      },
+      {
+        "line": 179,
+        "official_id": "9051",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      },
+      {
+        "line": 181,
+        "official_id": "9050",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      },
+      {
+        "line": 293,
+        "official_id": "10256",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      },
+      {
+        "line": 365,
+        "official_id": "9818",
+        "reasons": [
+          "coordenada inválida na fonte (fora do formato sGG°MM'SS.SSS'' ou minutos/segundos ≥ 60)"
+        ]
+      }
+    ],
+    "duplicate_rows": [],
+    "encoding_detected": "cp1252",
+    "delimiter_detected": ",",
+    "columns_total": 124,
+    "columns_mapped": 51,
+    "columns_unmapped": 73,
+    "metadata_divergence": [
+      "delimitador declarado ';' ≠ detectado ','"
+    ],
+    "missing_values": {
+      "mine_name": 527,
+      "dce_risr": 447,
+      "dce_rpsb": 489,
+      "dco": 637,
+      "main_ore": 347,
+      "build_method": 41,
+      "op_start": 54,
+      "cyanide": 347,
+      "height_project_m": 20,
+      "height_current_m": 40,
+      "volume_project_m3": 17,
+      "volume_current_m3": 40,
+      "capacity_m3": 64,
+      "downstream_population": 40,
+      "people_affected": 721,
+      "socioeconomic_impact": 40,
+      "instrumentation": 40,
+      "project_docs": 16,
+      "safety_team": 3,
+      "pae_status": 7,
+      "pae_copies": 393,
+      "decom_phase": 761,
+      "decom_solution": 761,
+      "decom_works_start": 790,
+      "decom_works_end": 849,
+      "will_operate_again": 818,
+      "active_monitoring_start": 855
+    },
+    "personal_data": {
+      "owner_docs_hidden_cpf": 102
+    },
+    "schema_version": "2026-11-07b"
+  },
+  "records_schema_version": "2026-11-07b"
+}

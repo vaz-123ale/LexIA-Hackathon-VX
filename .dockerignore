@@ -1,0 +1,7 @@
+.env
+var/
+**/__pycache__/
+*.pyc
+docs/screenshots/
+e2e_out/
+.git/

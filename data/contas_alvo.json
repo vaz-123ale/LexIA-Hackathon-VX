@@ -1,0 +1,11 @@
+{
+  "aviso": "Lista informada pela equipe em 07/11/2026. Relação comercial: CONTA-ALVO (prospecção) até haver contrato e autorização expressa para uso do nome. Os números abaixo são dados públicos da ANM encontrados por correspondência EXATA de nome; não há inferência de grupo econômico (subsidiárias com outro nome não entram) e a razão social/CNPJ deve ser confirmada antes de qualquer abordagem.",
+  "contas": [
+    {"id": "seldro", "nome": "Seldro Mineração", "padrao": "SELDRO", "relacao": "alvo"},
+    {"id": "jmendes", "nome": "Grupo J. Mendes", "padrao": "J\\.? ?MENDES", "relacao": "alvo"},
+    {"id": "belmonte", "nome": "Belmonte Agregados", "padrao": "BELMONTE", "relacao": "alvo"},
+    {"id": "morro-ipe", "nome": "Mineração Morro do Ipê", "padrao": "MORRO DO IPE", "relacao": "alvo"},
+    {"id": "itaminas", "nome": "Itaminas", "padrao": "^ITAMINAS", "relacao": "alvo"},
+    {"id": "jaguar", "nome": "Jaguar Mining", "padrao": "JAGUAR MINING", "relacao": "alvo"}
+  ]
+}

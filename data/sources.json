@@ -1,0 +1,452 @@
+[
+ {
+  "id": "F01",
+  "title": "MTE — Normas Regulamentadoras vigentes",
+  "verification": "C",
+  "notes": "Catálogo oficial para localizar textos, anexos e portarias. Não houve auditoria integral de todas as NRs.",
+  "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F02",
+  "title": "MTE — NR-20, texto atualizado em 2025",
+  "verification": "T",
+  "notes": "Conferidos: abrangência 20.2; itens 20.10.6 e 20.10.6.1; Anexo III, 2.1.1 e 4. Inclui Portaria MTE 60/2025; não é auditoria de toda a NR.",
+  "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-20-atualizada-2025.pdf",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F03",
+  "title": "ANP — Resoluções e Procedimentos de Segurança Operacional",
+  "verification": "C",
+  "notes": "Índice oficial com resoluções e regulamentos técnicos; atualização indicada em 21/09/2026.",
+  "url": "https://www.gov.br/anp/pt-br/assuntos/exploracao-e-producao-de-oleo-e-gas/seguranca-operacional/resolucoes-procedimentos",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F04",
+  "title": "ANP — Consulta e Audiência Públicas nº 21/2026",
+  "verification": "T",
+  "notes": "Página oficial lida: consulta de 07/10/2026 a 05/01/2027; seção Documentos relacionados e informações do evento. Conteúdo da minuta não auditado.",
+  "url": "https://www.gov.br/anp/pt-br/acesso-a-informacao/agenda-eventos/consulta-e-audiencia-publicas-no-21-2026",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F05",
+  "title": "Petrobras — Catálogo de Padronização",
+  "verification": "T",
+  "notes": "Página lida; acesso às NTPs públicas, minutas e requisitos. O catálogo NORTEC exige JavaScript; NTPs individuais não auditadas.",
+  "url": "https://canalfornecedor.petrobras.com.br/pt/regras-de-contratacao/catalogo-de-padronizacao",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F06",
+  "title": "Petrobras — Lei das Estatais e histórico do RLCP",
+  "verification": "T",
+  "notes": "Histórico indica revisão 6 e vigência em 16/04/2025. O arquivo vinculado foi aberto, mas contém marca INTERNA; confirmar classificação e uso antes de indexar.",
+  "url": "https://canalfornecedor.petrobras.com.br/pt/regras-de-contratacao/conheca-lei-das-estatais",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F07",
+  "title": "Petrobras — Compliance para fornecedores",
+  "verification": "I",
+  "notes": "Repositório corporativo de política, programa e guia ético; confirmar versão de cada arquivo.",
+  "url": "https://canalfornecedor.petrobras.com.br/compliance/compliance",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F08",
+  "title": "Petrobras — Governança Corporativa e Compliance",
+  "verification": "I",
+  "notes": "Documentos corporativos públicos; não representa acesso aos procedimentos internos.",
+  "url": "https://petrobras.com.br/sustentabilidade/governanca-corporativa",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F09",
+  "title": "ANM — Legislação de barragens",
+  "verification": "C",
+  "notes": "Localiza Lei 12.334/2010, Resolução 95/2022 e alterações, entre outros atos.",
+  "url": "https://www.gov.br/anm/pt-br/assuntos/barragens/legislacao/",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F10",
+  "title": "ANM — Perguntas frequentes sobre barragens",
+  "verification": "C",
+  "notes": "Fonte explicativa auxiliar. Datas confrontadas com o art. 1º da Resolução ANM 245/2026 (F40), que altera o art. 87 da 220/2025.",
+  "url": "https://www.gov.br/anm/pt-br/acesso-a-informacao/perguntas-frequentes/barragens",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F11",
+  "title": "Vale — Ética e Compliance",
+  "verification": "T",
+  "notes": "Página lida; links para código, princípios para terceiros, política anticorrupção e conflitos de interesse.",
+  "url": "https://www.vale.com/pt/esg/etica-e-compliance",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F12",
+  "title": "Gerdau Brasil — Sou um fornecedor",
+  "verification": "I",
+  "notes": "Conteúdo oficial localizado no índice de busca; abertura direta retornou 403. Arquivos individuais pendentes de validação.",
+  "url": "https://www2.gerdau.com.br/sou-um-fornecedor/",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F13",
+  "title": "Gerdau — Código de Ética e Conduta",
+  "verification": "T",
+  "notes": "PDF de identidade Gerdau conferida: introdução e índice. Substitui URL anterior cujo conteúdo aberto não correspondia à organização. Data de vigência corporativa não confirmada.",
+  "url": "https://www2.gerdau.com.br/wp-content/uploads/2025/07/codigo-de-etica-e-conduta-gerdau.pdf",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F14",
+  "title": "MAPA — Legislação de agrotóxicos",
+  "verification": "C",
+  "notes": "Lista oficial da legislação federal; atualização indicada em 2026. Verificar compatibilidade dos atos anteriores com a nova lei.",
+  "url": "https://www.gov.br/agricultura/pt-br/assuntos/insumos-agropecuarios/insumos-agricolas/agrotoxicos/legislacao/legislacao",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F15",
+  "title": "Presidência — Lei nº 14.785/2023, ficha legislativa",
+  "verification": "C",
+  "notes": "Identifica a lei e registra alteração pela Lei 15.070/2024. Não substitui leitura do texto consolidado.",
+  "url": "https://legislacao.presidencia.gov.br/atos/?ano=2023&ato=f7ecXVU90MZpWT826&numero=14785&tipo=LEI",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F16",
+  "title": "Anvisa — Regulamentação de pesquisa clínica",
+  "verification": "T",
+  "notes": "Página lida, com links ao AnvisaLegis para RDCs, INs e Lei 14.874/2024. Conferência de catálogo, não de todos os artigos.",
+  "url": "https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/pesquisaclinica/regulamentacao",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F17",
+  "title": "Bayer — Supplier Code of Conduct",
+  "verification": "T",
+  "notes": "Página oficial indica versão de dezembro de 2025 e disponibiliza traduções. Confirmar incorporação contratual no caso brasileiro.",
+  "url": "https://www.bayer.com/en/about-us/supplier-information/supplier-code-of-conduct",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F18",
+  "title": "ANSN — Normas Regulatórias",
+  "verification": "T",
+  "notes": "Página lida: Resolução ANSN 1/2025 altera a denominação das normas anteriormente CNEN, preservando número e título.",
+  "url": "https://www.gov.br/ansn/pt-br/regulacao/regulacao/normas-regulatorias",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F19",
+  "title": "ANSN — Grupo 1: Instalações Nucleares",
+  "verification": "C",
+  "notes": "Inclui Norma ANSN 1.04, vinculada à Resolução ANSN 12/2026.",
+  "url": "https://www.gov.br/ansn/pt-br/regulacao/regulacao/normas-regulatorias/grupo-1-1",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F20",
+  "title": "ANSN — Grupo 3: Proteção Radiológica",
+  "verification": "C",
+  "notes": "Inclui ANSN 3.01, Resolução CNEN 344/2025, e ANSN 3.02 com publicação de 2026.",
+  "url": "https://www.gov.br/ansn/pt-br/regulacao/regulacao/normas-regulatorias/grupo-3-protecao-radiologica",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F21",
+  "title": "CNEN — Grupo 6: Instalações Radiativas",
+  "verification": "C",
+  "notes": "Catálogo identifica ANSN 6.02, Resolução CNEN 293/2022; preservar aliases na busca.",
+  "url": "https://www.gov.br/cnen/pt-br/acesso-rapido/normas/grupo-6",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F22",
+  "title": "CNEN — Base Jurídica",
+  "verification": "C",
+  "notes": "Ponto de entrada para leis, estrutura institucional e criação da ANSN pela Lei 14.222/2021.",
+  "url": "https://www.gov.br/cnen/pt-br/acesso-a-informacao/institucional/base-juridica",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F23",
+  "title": "Anatel — Institucional",
+  "verification": "I",
+  "notes": "Confirma natureza de autarquia especial e criação pela Lei 9.472/1997.",
+  "url": "https://www.gov.br/anatel/pt-br/acesso-a-informacao/institucional",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F24",
+  "title": "Anatel — Resolução nº 777/2025 (RGST)",
+  "verification": "I",
+  "notes": "Registro oficial recuperado em busca; abertura apresentou manutenção. Há notas sobre prorrogações por dispositivo.",
+  "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2025/2022-resolucao-777",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F25",
+  "title": "Anatel — Resolução nº 765/2023 (RGC)",
+  "verification": "I",
+  "notes": "Registro oficial recuperado; abertura apresentou manutenção. Retificações e decisões afetam vigência e eficácia.",
+  "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2023/1900-resolucao-765",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F26",
+  "title": "Anatel — Resolução nº 740/2020 (R-Ciber)",
+  "verification": "I",
+  "notes": "Identificador da URL é diferente do número do ato; título oficial identifica 740/2020. Não corrigir URL por adivinhação.",
+  "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2020/1497-resolucao-738",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F27",
+  "title": "Anatel — Resolução nº 767/2024",
+  "verification": "I",
+  "notes": "Altera o regulamento de segurança cibernética. Deve ser relacionada ao ato-base 740/2020.",
+  "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2024/1965-resolu-",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F28",
+  "title": "Anatel — Resolução nº 715/2019 (homologação)",
+  "verification": "I",
+  "notes": "Título e objeto localizados no catálogo oficial; URL direta em manutenção. Não foi auditada toda a cadeia de atos técnicos.",
+  "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2019/1350-resolucao-715",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F29",
+  "title": "ANPD — Regulamentações",
+  "verification": "T",
+  "notes": "Catálogo lido: resoluções 15, 18 e 19/2024, entre outras. Link do DOU para a 15/2024 retornou erro na consulta.",
+  "url": "https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F30",
+  "title": "Câmara — Lei nº 13.709/2018 (LGPD), texto atualizado",
+  "verification": "T",
+  "notes": "Texto atualizado acessível. Art. 6º conferido para orientar minimização e finalidade. Não foi avaliada a base legal de nenhum tratamento real.",
+  "url": "https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F31",
+  "title": "Câmara — Lei nº 12.846/2013, texto atualizado",
+  "verification": "T",
+  "notes": "Texto atualizado aberto em alternativa ao Planalto bloqueado. Referência geral do regime; sem análise de infração concreta.",
+  "url": "https://www2.camara.leg.br/legin/fed/lei/2013/lei-12846-1-agosto-2013-776664-normaatualizada-pl.html",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F32",
+  "title": "Câmara — Lei nº 15.190/2025",
+  "verification": "C",
+  "notes": "Ficha oficial com publicação, veto e retificações. Verificar texto consolidado, alterações e efeitos judiciais no caso concreto.",
+  "url": "https://www2.camara.leg.br/legin/fed/lei/2025/lei-15190-8-agosto-2025-797833-norma-pl.html",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F33",
+  "title": "Ibama — Legislação do licenciamento ambiental federal",
+  "verification": "C",
+  "notes": "Índice temático; completar com órgão estadual/municipal competente e condicionantes de cada licença.",
+  "url": "https://www.gov.br/ibama/pt-br/assuntos/laf/legislacao/legislacao",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F34",
+  "title": "ICMBio — Manifestações para licenciamento ambiental",
+  "verification": "C",
+  "notes": "Registra LGLA em vigor desde 04/02/2026, Lei 15.300/2025 e atualização de procedimentos em 2026.",
+  "url": "https://www.gov.br/icmbio/pt-br/servicos/servicos-do-icmbio-no-gov.br/autorizacoes/licenciamento-ambiental-ala",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F35",
+  "title": "Gov.br — Acessar o Diário Oficial da União",
+  "verification": "C",
+  "notes": "Rota oficial para atos, edições extras e retificações; não foi construído um coletor ou feed neste trabalho.",
+  "url": "https://www.gov.br/pt-br/servicos/acessar-o-diario-oficial-da-uniao",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F36",
+  "title": "ABNT — Catálogo: ISO 37301:2021, Emenda 1:2024",
+  "verification": "I",
+  "notes": "Metadados localizados. Texto integral não consultado nem incluído; verificar licença para qualquer uso no RAG.",
+  "url": "https://www.abntcatalogo.com.br/sebrae/norma.aspx?Q=U2lMaW1ZbXFHalNKUGZlNW14WStaUzVuL0VMQ3VGWVBhTFJaY3loOGF3Zz0%3D",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F37",
+  "title": "Petrobras — Atendimento ao Fornecedor",
+  "verification": "I",
+  "notes": "Canal público para assuntos de fornecedores; não equivale a canal de parecer jurídico geral.",
+  "url": "https://canalfornecedor.petrobras.com.br/atendimento-ao-fornecedor",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F38",
+  "title": "ANSN — Fale Conosco",
+  "verification": "I",
+  "notes": "Canais institucionais publicados; preferir rota por assunto e confirmar competência antes de encaminhar.",
+  "url": "https://www.gov.br/ansn/pt-br/canais-de-atendimento/fale-conosco",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F39",
+  "title": "Anatel — Registrar reclamação",
+  "verification": "I",
+  "notes": "Rota específica do consumidor, com orientação de contato prévio com prestadora/ouvidoria. Não é consultoria jurídica empresarial.",
+  "url": "https://www.gov.br/anatel/pt-br/consumidor/quer-reclamar/reclamacao?hidemenu=true",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F40",
+  "title": "ANM — Resolução nº 245/2026, art. 1º",
+  "verification": "T",
+  "notes": "Ato lido no ANMlegis, repositório indicado pela agência. Altera art. 87 da Resolução 220/2025; publicação informada no DOU de 04/08/2026.",
+  "url": "https://anmlegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=8731&cod_modulo=351&link=S&numeroAto=00000245&orgao=ANM%2FMME&seqAto=000&tipo=RES&valorAno=2026",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F41",
+  "title": "MTE — Portaria nº 60/2025: alteração da NR-20",
+  "verification": "C",
+  "notes": "Ficha oficial da portaria. Alteração do Anexo III, item 2.1.1, conferida no texto consolidado de 2025 (F02).",
+  "url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/sst-portarias/2025/portaria-mte-no-60-altera-o-item-2-1-1-anexo-iii-nr-20.pdf/view",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F42",
+  "title": "MTE — NR-20, versão histórica de 2024",
+  "verification": "T",
+  "notes": "Somente para comparação histórica do Anexo III, item 2.1.1. Não usar esta cópia para representar a redação posterior à Portaria 60/2025.",
+  "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-20-atualizada-2024-1.pdf",
+  "verified_on": "2026-11-05",
+  "provenance": "Dossiê normativo revisado, Rev. 2, págs. 18–22",
+  "scope": "referência pesquisada; aplicabilidade não determinada"
+ },
+ {
+  "id": "F43",
+  "title": "ANM — Alteração de domínio do SIGBM e prorrogação do prazo para envio de EIR (aviso de 16/04/2026)",
+  "verification": "I",
+  "notes": "Aviso oficial: prazo do EIR para inspeções de 16 a 31/03/2026 passou, excepcionalmente, de 15/04 para 23/04/2026, por indisponibilidade temporária após alteração de domínio. Catalogado a partir do estudo de mercado (E09); conferir no portal antes de uso normativo.",
+  "url": "https://www.gov.br/anm/pt-br/assuntos/noticias/alteracao-de-dominio-do-sigbm-e-prorrogacao-do-prazo-para-envio-de-eir",
+  "verified_on": "2026-11-07",
+  "provenance": "Relatório de mercado e viabilidade, E09",
+  "scope": "aviso excepcional; regra recorrente inalterada"
+ },
+ {
+  "id": "F44",
+  "title": "Resolução ANM nº 95/2022 (texto consolidado) — art. 21, Extrato de Inspeção Regular (EIR)",
+  "verification": "I",
+  "notes": "Regra recorrente do EIR. Catalogada a partir do estudo de mercado (E08); conferir dispositivo e prazos no texto consolidado.",
+  "url": "https://www.gov.br/anm/pt-br/assuntos/barragens/legislacao/resolucao-no-95-2022.pdf",
+  "verified_on": "2026-11-07",
+  "provenance": "Relatório de mercado e viabilidade, E08",
+  "scope": "regra recorrente; aplicabilidade por estrutura"
+ },
+ {
+  "id": "F45",
+  "title": "MTE — NR-1 (GRO/PGR): inclusão dos riscos psicossociais (Portaria MTE 1.419/2024; vigência prorrogada pela Portaria MTE 765/2025 para 26/05/2026)",
+  "verification": "C",
+  "notes": "Capítulo 1.5 da NR-1 reescrito; inclusão dos fatores de risco psicossociais no PGR. Entrada em vigor em 26/05/2026; fiscalização inicial orientativa (dupla visita) nos 90 dias seguintes. Conferir o texto no DOU/MTE.",
+  "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes",
+  "verified_on": "2026-11-07",
+  "provenance": "Pesquisa da equipe (fontes jurídicas e de consultorias; texto oficial a conferir)",
+  "scope": "norma transversal de segurança e saúde no trabalho"
+ }
+]

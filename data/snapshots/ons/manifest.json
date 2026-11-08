@@ -1,0 +1,30 @@
+{
+ "source": "ONS \u2014 Dados Abertos (https://dados.ons.org.br), arquivos em ons-aws-prod-opendata.s3.amazonaws.com",
+ "collected_at": "2026-11-07T13:41:22Z",
+ "files": [
+  {
+   "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/reservatorio/RESERVATORIOS.csv",
+   "file": "data/snapshots/ons/raw\\RESERVATORIOS.csv",
+   "bytes": 35738,
+   "sha256": "3fe0b61bc3869a73026e20356e52540698a5e0aa3cd8f27e96ced7240e58bb63"
+  },
+  {
+   "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/dados_hidrologicos_di/DicionarioDados_DadosHidrologicosDiarios.json",
+   "file": "data/snapshots/ons/raw\\DicionarioDados_DadosHidrologicosDiarios.json",
+   "bytes": 2493,
+   "sha256": "f1833abc38638b85c754c6916f29bab836758c169f5228f1e06a407aadbbad82"
+  },
+  {
+   "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/dados_hidrologicos_di/DADOS_HIDROLOGICOS_RES_2025.csv",
+   "file": "data/snapshots/ons/raw\\DADOS_HIDROLOGICOS_RES_2025.csv",
+   "bytes": 10066293,
+   "sha256": "9aea7ef39b442a283b6087e918b323162bceb2f890333d135a7115a572b0ff7c"
+  },
+  {
+   "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/dados_hidrologicos_di/DADOS_HIDROLOGICOS_RES_2026.csv",
+   "file": "data/snapshots/ons/raw\\DADOS_HIDROLOGICOS_RES_2026.csv",
+   "bytes": 8607788,
+   "sha256": "b5c22fbbce389773fcf55ba06913885515c977c54a9f01d26ee3352f17b4aa76"
+  }
+ ]
+}

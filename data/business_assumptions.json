@@ -1,0 +1,13 @@
+{
+  "warning": "PREMISSAS DA EQUIPE para simulação de receita. Não são dados de mercado, contratos nem promessas. Editáveis na tela Negócio & Impacto.",
+  "currency": "BRL",
+  "plans": [
+    {"id": "cidadao", "name": "Cidadão", "segment": "Pessoas e comunidades a jusante", "price_month": 0, "includes": ["Barragens da região", "Alertas", "Radar de abandono", "Representação (texto para baixar)"], "role": "Valor social e aquisição: pressão pública qualificada"},
+    {"id": "essencial", "name": "Essencial", "segment": "Pequenos (até 5 barragens, cooperativas, pessoa física)", "price_month": 490, "includes": ["Monitor de normas", "Predição da próxima DCE", "Plano de contingência", "Agente com propostas"], "role": "Volume: 92% dos empreendedores de mineração"},
+    {"id": "profissional", "name": "Profissional", "segment": "Médios (6 a 30 barragens)", "price_month": 2900, "includes": ["Tudo do Essencial", "Revisão por função", "Dossiê de decisão", "Integrações"], "role": "Ticket médio"},
+    {"id": "corporativo", "name": "Corporativo", "segment": "Grandes (mais de 30 barragens) e grupos", "price_month": 12000, "includes": ["Tudo do Profissional", "Carteira multi-CNPJ", "Modelos treinados com o retorno da própria equipe", "SLA"], "role": "Receita âncora"},
+    {"id": "publico", "name": "Poder público", "segment": "Municípios, Defesa Civil, Ministério Público, órgãos fiscalizadores", "price_month": 1500, "includes": ["Radar de órfãs e abandono no território", "Fila de fiscalização priorizada", "Exportação de dados"], "role": "Impacto social e escala por convênio"}
+  ],
+  "adoption_default": {"essencial": 0.05, "profissional": 0.10, "corporativo": 0.15, "publico": 0.03},
+  "notes": "Mercado endereçável inicial = mineração (SIGBM). Expansão = demais barragens da PNSB (SNISB): hidrelétricas, abastecimento, irrigação."
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "eir",
+    "name": "Barragens · prazo excepcional do EIR",
+    "subtitle": "Aviso ANM de 16/04/2026 · Res. ANM 95/2022, art. 21",
+    "status": "Aviso publicado; ciclo encerrado em 23/04/2026",
+    "effective": "2026-04-16",
+    "regulator": "ANM",
+    "sources": [
+      "F43",
+      "F44"
+    ],
+    "provisions": [
+      "ANM95-art21",
+      "ANM-EIR-PRORROG-2026"
+    ],
+    "notes": "Caso real recomendado para a demonstração: a mesma publicação gera decisões diferentes por unidade. A regra recorrente e o aviso excepcional ficam separados.",
+    "priority": 1
+  },
+  {
+    "id": "nr20",
+    "name": "NR-20 · mudança histórica",
+    "subtitle": "Portaria MTE 60/2025 · Anexo III, item 2.1.1",
+    "status": "HISTORICAL",
+    "effective": "2025-01-22",
+    "regulator": "MTE",
+    "sources": [
+      "F02",
+      "F41",
+      "F42"
+    ],
+    "provisions": [
+      "NR20-AIII-2.1.1@2024",
+      "NR20-AIII-2.1.1@2025",
+      "NR20-20.2.2a"
+    ],
+    "notes": "Demonstração retrospectiva. Não anunciar como alteração ocorrida em 2026. A exceção é limitada e requer análise completa do caso."
+  },
+  {
+    "id": "anm",
+    "name": "Barragens · transição futura",
+    "subtitle": "Resoluções ANM 220/2025 e 245/2026",
+    "status": "FUTURE_PHASED",
+    "effective": "2027-08-02",
+    "regulator": "ANM",
+    "sources": [
+      "F09",
+      "F10",
+      "F40"
+    ],
+    "provisions": [
+      "ANM245-art1",
+      "ANM220-arts76-77",
+      "ANM220-geral",
+      "ANM220-art7-p1"
+    ],
+    "notes": "Datas diferentes por dispositivo; nunca marcar toda a norma como vigente na data de referência."
+  },
+  {
+    "id": "anp_cp21",
+    "name": "ANP · consulta pública 21/2026",
+    "subtitle": "Consulta e Audiência Públicas nº 21/2026",
+    "status": "CONSULTATION",
+    "effective": null,
+    "regulator": "ANP",
+    "sources": [
+      "F04",
+      "F03"
+    ],
+    "provisions": [
+      "ANP-CP21-2026"
+    ],
+    "notes": "Texto em consulta não gera obrigação vigente. O conteúdo da minuta não foi auditado no dossiê; apenas monitorar."
+  },
+  {
+    "id": "ansn",
+    "name": "CNEN → ANSN · redesignação",
+    "subtitle": "Resolução ANSN 1/2025 · catálogo de normas",
+    "status": "ALIAS",
+    "effective": null,
+    "regulator": "ANSN",
+    "sources": [
+      "F18",
+      "F19",
+      "F20",
+      "F21",
+      "F22"
+    ],
+    "provisions": [
+      "ANSN-RES1-2025"
+    ],
+    "notes": "Redesignação preserva número e título segundo o catálogo; edição e conteúdo precisam ser conferidos por norma."
+  }
+]

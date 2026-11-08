@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" preserveAspectRatio="none">
+  <!-- Ilustração original (vetorial) — paisagem genérica de mineração com barragem. Não representa estrutura real. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EC5F2"/><stop offset=".65" stop-color="#DCEEFB"/><stop offset="1" stop-color="#F4F9FD"/></linearGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55a4cd"/><stop offset="1" stop-color="#a0d8ec"/></linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#58a45a"/><stop offset="1" stop-color="#287d42"/></linearGradient>
+    <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b5a348"/><stop offset="1" stop-color="#8a7631"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B8FC9"/><stop offset="1" stop-color="#1F5F8F"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8EDF2"/><stop offset="1" stop-color="#AEB9C4"/></linearGradient>
+    <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#BFE3F7"/></linearGradient>
+  </defs>
+  <rect width="900" height="260" fill="url(#sky)"/>
+  <circle cx="770" cy="52" r="26" fill="#FFF6D8" opacity=".9"/>
+  <path d="M0 150 Q55 130 120 95 T190 90 L235 108 Q315 56 350 58 T450 95 Q510 64 535 69 T610 99 Q680 70 710 82 T785 100 Q840 74 870 84 L900 96 V260 H0Z" fill="url(#m1)" opacity=".75"/>
+  <path d="M0 180 Q65 153 120 132 T205 134 L245 146 Q310 112 335 116 T445 146 Q510 133 560 113 T650 124 L730 149 Q800 132 835 145 L900 130 V260 H0Z" fill="url(#m2)"/>
+  <path d="M0 170 C120 150 200 168 300 158 C380 150 420 176 470 182 L470 260 H0Z" fill="url(#m3)" opacity=".9"/>
+  <path d="M640 182 C700 160 780 160 900 150 V260 H640Z" fill="url(#m3)" opacity=".85"/>
+  <path d="M120 186 C260 168 420 172 560 184 L560 206 L120 206Z" fill="url(#water)"/>
+  <path d="M150 190 h60 M260 186 h80 M400 190 h70" stroke="#9FD1F2" stroke-width="2" opacity=".6"/>
+  <path d="M548 168 L700 162 L716 214 L532 214Z" fill="url(#wall)"/>
+  <path d="M548 168 L700 162" stroke="#7D8C99" stroke-width="3"/>
+  <g stroke="#8A98A6" stroke-width="2" opacity=".7"><path d="M566 175v36M590 174v38M614 173v39M638 172v40M662 171v41M686 170v42"/></g>
+  <path d="M596 172 h38 L640 214 H590Z" fill="url(#spill)" opacity=".95"/>
+  <path d="M520 214 H900 V260 H520Z" fill="#388e40"/>
+  <path d="M560 222 C620 216 700 230 780 222 C840 216 880 224 900 220 V236 C860 240 800 232 740 238 C680 244 620 236 560 240Z" fill="#3E86BE" opacity=".8"/>
+  <path d="M0 206 H560 V260 H0Z" fill="#4d9d40"/>
+  <g fill="#7A5638" opacity=".8"><path d="M40 214 h70 l-10 10 h-50z"/><path d="M180 222 h50 l-8 8 h-34z"/></g>
+</svg>

@@ -1,0 +1,23 @@
+# Ambiente e segredos (as chaves ficam só na máquina de quem roda)
+.env
+.env.*
+!.env.example
+
+# Banco local, quadros de vídeo, perfis de navegador e caches
+var/
+__pycache__/
+*.pyc
+**/prof/
+node_modules/
+e2e_out/
+*.log
+
+# Capturas de testes automáticos (ficam só as telas principais em docs/screenshots/*.png)
+docs/screenshots/*/
+docs/screenshots/*.txt
+
+# Material interno de trabalho e arquivos-fonte de design
+docs/interno/
+imagens/
+AGENTS.md
+planning/TAREFAS_CODEX.md

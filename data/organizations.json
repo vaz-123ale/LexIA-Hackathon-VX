@@ -1,0 +1,33 @@
+{
+ "notice": "Organizações pesquisadas em fontes públicas (dossiê de 05/11/2026). Não são clientes nem parceiras. Nenhum ativo fictício é atribuído a empresa real.",
+ "items": [
+  {"id": "demo", "name": "Grupo Exemplo S.A.", "short": "Grupo Exemplo", "nature": "FICTICIA", "kind": "Empresa fictícia (carteira de demonstração)",
+   "sector": "Multissetorial (energia, logística, mineração, petróleo, saúde)", "cnpj_root": null, "scenarios": ["eir", "nr20", "anm", "anp_cp21", "ansn"],
+   "sources": [], "data": "12 ativos sintéticos + estruturas oficiais que você adicionar à carteira",
+   "about": "Carteira de demonstração para exercitar o fluxo completo. Nenhum ativo representa instalação real."},
+  {"id": "vale", "name": "Vale S.A.", "short": "Vale", "nature": "DADOS_PUBLICOS", "kind": "Empresa pesquisada · dados públicos conectados",
+   "sector": "Mineração", "cnpj_root": "33592510", "scenarios": ["anm"], "sources": ["F11", "F09", "F10", "F40"],
+   "data": "Barragens declaradas no SIGBM/ANM com o CNPJ 33.592.510/0001-54",
+   "about": "Estruturas reais publicadas pela ANM. A LexIA não avalia segurança nem conformidade; vínculo com grupo econômico exige confirmação."},
+  {"id": "petrobras", "name": "Petrobras", "short": "Petrobras", "nature": "PESQUISADA", "kind": "Empresa pesquisada · sem ativos conectados",
+   "sector": "Petróleo e gás", "cnpj_root": null, "scenarios": ["nr20", "anp_cp21"], "sources": ["F05", "F06", "F07", "F08", "F37", "F02", "F03", "F04"],
+   "data": "Nenhum cadastro oficial de instalações conectado (adaptador ANP E&P não conectado)",
+   "about": "Normas monitoradas para o setor: NR-20 (mudança de 2025) e Consulta Pública ANP 21/2026. Para ver o fluxo, use o caso fictício do Grupo Exemplo."},
+  {"id": "gerdau", "name": "Gerdau", "short": "Gerdau", "nature": "PESQUISADA", "kind": "Empresa pesquisada · sem ativos conectados",
+   "sector": "Siderurgia e fornecedores", "cnpj_root": null, "scenarios": [], "sources": ["F12", "F13"],
+   "data": "Nenhum dado de ativos; documentos públicos para fornecedores catalogados",
+   "about": "Foco em requisitos para fornecedores. Relação contratual exige documento autorizado."},
+  {"id": "bayer", "name": "Bayer", "short": "Bayer", "nature": "PESQUISADA", "kind": "Empresa pesquisada · sem ativos conectados",
+   "sector": "Agro (produtos) e saúde", "cnpj_root": null, "scenarios": [], "sources": ["F17", "F14", "F15", "F16"],
+   "data": "Nenhum dado de produtos conectado (AGROFIT e Anvisa não conectados)",
+   "about": "Duas jornadas separadas: produtos agrícolas (MAPA/AGROFIT) e medicamentos/pesquisa clínica (Anvisa)."},
+  {"id": "cnen", "name": "CNEN / ANSN", "short": "CNEN/ANSN", "nature": "REGULADOR", "kind": "Órgão regulador (não é empresa)",
+   "sector": "Nuclear e radiativo", "cnpj_root": null, "scenarios": ["ansn"], "sources": ["F18", "F19", "F20", "F21", "F22", "F38"],
+   "data": "Catálogo de normas (redesignação CNEN → ANSN)",
+   "about": "Referência regulatória: normas antes designadas CNEN passaram a ANSN. Usado com instalação fictícia do Grupo Exemplo."},
+  {"id": "anatel", "name": "Anatel", "short": "Anatel", "nature": "REGULADOR", "kind": "Agência reguladora (não é empresa)",
+   "sector": "Telecomunicações", "cnpj_root": null, "scenarios": [], "sources": ["F23", "F24", "F25", "F26", "F27", "F28", "F39"],
+   "data": "Atos catalogados; dados de licenciamento não conectados",
+   "about": "Agência que regula o setor. Atos em manutenção no dossiê; sem respostas jurídicas detalhadas ainda."}
+ ]
+}
