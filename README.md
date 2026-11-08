@@ -16,7 +16,7 @@ O roteiro com o tempo de cada cena e onde clicar está em [docs/video/ROTEIRO.md
 
 ## 1 · Rodar (2 minutos)
 
-Precisa só do **Python 3.10 ou mais novo** (testado no 3.12). Nenhum pacote é obrigatório e não precisa de internet para a demonstração.
+Precisa só do **Python 3.10 ou mais novo** (testado no 3.12). Nenhum pacote é obrigatório e não precisa de internet para a demonstração. 
 
 ```bash
 git clone https://github.com/vaz-123ale/LexIA-Hackathon-VX.git
