@@ -123,6 +123,8 @@ infra/aws/           modelo de infraestrutura AWS
 
 ## Testes
 
+Avaliação adicional do assistente: [100 casos de coerência, evidências e limites](docs/avaliacoes/COERENCIA_100.md). O relatório distingue respostas generativas, respostas controladas, recusas e falhas do provedor; passar nos critérios não certifica ausência de alucinações.
+
 ```bash
 python -m unittest discover -s tests        # 314 testes
 node scripts/e2e_crawl.mjs saida            # varredura de todas as telas no Chrome (servidor rodando)

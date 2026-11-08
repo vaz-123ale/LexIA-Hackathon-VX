@@ -48,6 +48,22 @@ def build_corpus(provisions: list[dict], sources: list[dict]) -> list[dict[str, 
 
 
 def retrieve(question: str, corpus: list[dict[str, Any]], k: int = 4) -> list[dict[str, Any]]:
+    # Aliases mudam a recuperação, nunca criam fatos ou fontes.
+    topic = norm(question)
+    selected = None
+    if re.search(r'\beir\b|extrato de inspecao|95/2022', topic):
+        selected, question = {'F43', 'F44'}, question + ' Extrato de Inspeção Regular EIR empreendedor SIGBM'
+    elif re.search(r'\bnr[ -]?20\b|tanque|gerador|60/2025', topic):
+        selected, question = {'F02', 'F41', 'F42'}, question + ' NR-20 Portaria MTE 60/2025 tanque gerador'
+    elif re.search(r'psicossocia|saude mental|\bnr[ -]?1\b|\bpgr\b', topic):
+        selected, question = {'F45'}, question + ' NR-1 PGR fatores de risco psicossociais relacionados ao trabalho'
+    elif re.search(r'\bcnen\b|\bansn\b|radioprotecao', topic):
+        selected, question = {'F18', 'F19', 'F20', 'F21'}, question + ' redesignação ANSN CNEN Resolução 1/2025'
+    elif re.search(r'\banm\b|220/2025|245/2026|regra.{0,20}barrag', topic):
+        selected, question = {'F09', 'F10', 'F40'}, question + ' ANM 220/2025 245/2026 vigência art. 87'
+    if selected:
+        corpus = [d for d in corpus if selected.intersection(d['source_ids'])]
+        k = max(k, 6)
     q = tokens(question)
     if not q:
         return []
@@ -80,7 +96,8 @@ def llm_status() -> dict[str, Any]:
     provider = llm_provider()
     key = bool(os.environ.get('ANTHROPIC_API_KEY'))
     if provider == 'gemini':
-        enabled = bool(os.environ.get('GEMINI_API_KEY')) and os.environ.get('TORRE_LLM', '1') != '0'
+        key = bool(os.environ.get('GEMINI_API_KEY'))
+        enabled = key and os.environ.get('TORRE_LLM', '1') != '0'
     else:
         cred = key or provider == 'bedrock'  # no Bedrock, credenciais AWS padrão (perfil/papel IAM)
         enabled = pkg and cred and os.environ.get('TORRE_LLM', '1') != '0'
@@ -111,6 +128,9 @@ SYSTEM = (
     'Diferencie vigente, futura, histórica e em consulta conforme o trecho. Se os trechos não bastarem, use status ABSTAIN '
     'e liste em missing o que falta. answer_simple é para público não jurídico; answer_technical para jurídico/compliance; '
     'os dois devem conter os mesmos fatos, datas e ressalvas.'
+    ' Responda apenas ao assunto perguntado. Preserve literalmente a grafia das datas, números e intervalos do trecho; '
+    'não complete datas abreviadas. Se houver base para parte da pergunta, explique só essa parte e liste a lacuna. '
+    'Não inclua números de normas ou fatos novos nos campos missing e caveats.'
 )
 
 
@@ -129,9 +149,14 @@ def call_llm(question: str, passages: list[dict[str, Any]]) -> dict[str, Any]:
 
 def verify(proposal: dict[str, Any], passages: list[dict[str, Any]]) -> dict[str, Any]:
     """Verificador determinístico das citações propostas pela IA."""
+    if not isinstance(proposal, dict) or not isinstance(proposal.get('citations'), list):
+        return {'verdict': 'ABSTAIN', 'reason': 'Resposta do provedor fora do contrato.', 'valid': [], 'rejected': []}
     by_id = {p['chunk_id']: p for p in passages}
     valid, rejected = [], []
     for c in proposal.get('citations', []):
+        if not isinstance(c, dict):
+            rejected.append({'reason': 'Citação fora do contrato.'})
+            continue
         p = by_id.get(c.get('chunk_id'))
         quote = norm(' '.join(str(c.get('quote', '')).split()))
         if p is None:
@@ -145,16 +170,36 @@ def verify(proposal: dict[str, Any], passages: list[dict[str, Any]]) -> dict[str
         verdict = 'ABSTAIN'
         reason = 'A IA respondeu, mas nenhuma citação passou na verificação: resposta bloqueada.'
     elif answered:
-        verdict = 'VERIFIED' if not rejected else 'PARTIAL'
-        reason = 'Todas as citações conferem com os trechos.' if not rejected else 'Algumas citações foram descartadas; revisar antes de usar.'
+        verdict = 'VERIFIED' if not rejected else 'ABSTAIN'
+        reason = 'As citações conferem literalmente; inferências exigem revisão humana.' if not rejected else 'Citação inválida: texto integral bloqueado para evitar afirmações sem suporte.'
     else:
         verdict = 'ABSTAIN'
         reason = 'A IA se absteve por falta de base.'
+    if verdict == 'VERIFIED':
+        text = ' '.join(str(proposal.get(k, '')) for k in ('answer_simple', 'answer_technical'))
+        evidence = ' '.join(p['text'] + ' ' + p['title'] + ' ' + p['version'] for p in passages if any(c['chunk_id'] == p['chunk_id'] for c in valid))
+        numbers = set(re.findall(r'\d+(?:[.,/]\d+)*', evidence))
+        numbers.update(re.findall(r'\d+', evidence))
+        unsupported = set(re.findall(r'\d+(?:[.,/]\d+)*', text)) - numbers
+        if unsupported:
+            verdict, reason = 'ABSTAIN', 'Número sem suporte nos trechos citados: resposta bloqueada.'
+        elif not all(isinstance(proposal.get(k), str) and proposal[k].strip() for k in ('answer_simple', 'answer_technical')):
+            verdict, reason = 'ABSTAIN', 'Falta uma versão da resposta: contrato incompleto.'
     return {'verdict': verdict, 'reason': reason, 'valid': valid, 'rejected': rejected}
 
 
 def ask(question: str, profile: str, provisions: list[dict], sources: list[dict], llm=None) -> dict[str, Any]:
     profile = profile if profile in ('simples', 'tecnico') else 'simples'
+    from .assistant_policy import guard
+    protected = guard(question)
+    if protected:
+        from .engine import _abstain
+        state, text = protected
+        base = _abstain(profile, text)
+        if state != 'ABSTAIN':
+            base['state'] = state
+        return {**base, 'passages': [], 'trace': [{'step': 'Triagem', 'actor': 'REGRA', 'detail': state}],
+                'llm': llm_status(), 'verification': None}
     corpus = build_corpus(provisions, sources)
     passages = retrieve(question, corpus)
     status = llm_status()
@@ -181,6 +226,8 @@ def ask(question: str, profile: str, provisions: list[dict], sources: list[dict]
         return {**out, 'mode': 'ia_conectada', 'passages': [], 'trace': trace, 'llm': status, 'verification': {'verdict': 'ABSTAIN', 'reason': 'Sem trechos.', 'valid': [], 'rejected': []}}
     try:
         proposal = generator(question, passages)
+        if not isinstance(proposal, dict) or not isinstance(proposal.get('citations'), list) or not all(isinstance(proposal.get(k), list) for k in ('missing', 'caveats')):
+            raise ValueError('Resposta do provedor fora do contrato')
     except Exception as exc:  # erro de rede/provedor: degradar com segurança
         trace.append({'step': 'Geração', 'actor': 'IA', 'detail': f'Falha no provedor ({type(exc).__name__}); usando modo controlado.'})
         base = controlled_answer(question, profile, sources)
@@ -189,17 +236,27 @@ def ask(question: str, profile: str, provisions: list[dict], sources: list[dict]
     ver = verify(proposal, passages)
     trace.append({'step': 'Verificação', 'actor': 'REGRA', 'detail': ver['reason']})
     trace.append({'step': 'Decisão', 'actor': 'HUMANO', 'detail': 'Revisão humana obrigatória antes de qualquer encaminhamento.'})
+    if proposal.get('status') == 'ABSTAIN' and not ver['rejected']:
+        from .assistant_policy import curated_fallback_allowed
+        if curated_fallback_allowed(question):
+            base = controlled_answer(question, profile, sources)
+            if base['state'] != 'ABSTAIN':
+                trace.append({'step': 'Resposta', 'actor': 'REGRA', 'detail': 'O LLM se absteve; exibida síntese controlada do tema coberto, sem aceitar a proposta do modelo.'})
+                return {**base, 'passages': passages, 'trace': trace, 'llm': status, 'verification': ver,
+                        'fallback_reason': 'llm_abstained', 'caveats': ['Síntese controlada; confira o dispositivo específico antes de usar.']}
     src_ids = sorted({s for c in ver['valid'] for s in c['source_ids']})
     lookup = {s['id']: s for s in sources}
     if ver['verdict'] == 'ABSTAIN':
-        simple = technical = 'Não há base verificada suficiente para responder. ' + ('; '.join(proposal.get('missing', [])) or 'Encaminhe ao profissional competente.')
+        simple = technical = 'Não há base verificada suficiente para responder ao que foi perguntado. Informe a fonte oficial, o dispositivo e o contexto para revisão pelo profissional competente.'
         state = 'ABSTAIN'
     else:
         simple, technical = proposal['answer_simple'], proposal['answer_technical']
         state = 'AI_VERIFIED' if ver['verdict'] == 'VERIFIED' else 'AI_PARTIAL'
+    if state == 'ABSTAIN':
+        src_ids = []
     return {'state': state, 'profile': profile, 'answer': simple if profile == 'simples' else technical,
             'answer_simple': simple, 'answer_technical': technical, 'source_ids': src_ids,
-            'sources': [lookup[i] for i in src_ids if i in lookup], 'missing': proposal.get('missing', []),
-            'actions': ['Revisão humana obrigatória.'], 'caveats': proposal.get('caveats', []),
+            'sources': [lookup[i] for i in src_ids if i in lookup] if state != 'ABSTAIN' else [], 'missing': proposal.get('missing', []) if state != 'ABSTAIN' else ['Fonte e contexto suficientes para a pergunta.'],
+            'actions': ['Revisão humana obrigatória.'], 'caveats': proposal.get('caveats', []) if state != 'ABSTAIN' else ['Sem resposta normativa validada.'],
             'disclaimer': 'Resposta gerada por IA a partir de trechos curados e verificada por regra; não é parecer jurídico.',
             'mode': 'ia_conectada', 'passages': passages, 'trace': trace, 'llm': status, 'verification': ver}

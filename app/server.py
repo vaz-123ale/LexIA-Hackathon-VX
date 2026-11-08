@@ -677,6 +677,7 @@ def make_handler(store: Store, accounts: Accounts | None = None, monitor: Monito
             if route == '/api/health':
                 m = OFFICIAL['manifest']
                 return self._json({'ok': True, 'mode': 'demo', 'llm': llm_status(), 'llm_enabled': llm_status()['enabled'],
+                                   'assistant_policy': 'triagem-v1', 'revision': os.environ.get('RENDER_GIT_COMMIT'),
                                    'sources': len(load('sources.json')), 'assets': len(load('assets.json')), 'scenarios': len(SCENARIO_IDS),
                                    'as_of': AS_OF.isoformat(), 'audit_chain': store.verify_chain(),
                                    'official': {'connector': 'ANM_SIGBM', 'records': len(OFFICIAL['records']),
@@ -1700,28 +1701,17 @@ def make_handler(store: Store, accounts: Accounts | None = None, monitor: Monito
                     q = str(data.get('q', ''))[:400]
                     from . import perspectiva as _pp
                     _u = self._user()
-                    _qn = ai_tools.norm(q) if hasattr(ai_tools, 'norm') else q.lower()
-                    _normativa = re.search(r'\bnr-?\s?\d|\bnorma|resolu|portaria|\blei\b|artigo|\bart\.|vigen|mudou|obrigac|\bprazo|\bcnen\b|\bansn\b|\baneel\b|\banp\b', _qn)                         and not re.search(r'quant|lista|mostr|quais barragens|barragens? (em|no|na|de|do|da|com|sem)\b', _qn)
-                    out = {'kind': 'help'} if _normativa else ai_tools.quick(q, radar.RADAR['items'])
-                    if out['kind'] == 'help' and len(q) > 12 and (_normativa or re.search(r'\?|norma|regra|prazo|resolu|portaria', q, re.I)):
-                        a = _pp.aplicar(ask(q, _pp.perfil_padrao(_u, data.get('profile')), provs_setor(data.get('setor')), load('sources.json')), _u)
+                    from .assistant_policy import quick as quick_assistant
+                    out = quick_assistant(q, radar.RADAR['items'])
+                    if out is None:
+                        a = _pp.aplicar(ask(q, _pp.perfil_padrao(_u, data.get('profile')), load('provisions.json'), load('sources.json')), _u)
                         from .normas_setor import aviso_fora_do_setor
                         _av = aviso_fora_do_setor(q, data.get('setor'))
-                        out = {'kind': 'ask', 'answer': (_av + ' ' if _av else '') + a['answer'], 'state': a['state'], 'sources': [sx['title'] for sx in a.get('sources', [])][:3],
-                               'engine': a.get('mode'), 'chips': [], 'results': [], 'perspectiva': a.get('perspectiva')}
-                    elif out.get('kind') == 'law':
-                        out = _pp.aplicar(_pp.simplificar_lei({**out, 'state': 'LEI'}, _u), _u)
-                    elif out.get('kind') == 'filter' and not out.get('results'):
-                        # filtro vazio: tenta o nome do município citado (ex.: “tem barragem perigosa em Itabirito?”)
-                        _its = [x for x in radar.RADAR['items'] if x.get('municipio') and len(x['municipio']) > 3 and re.search(r'(?<![a-z])' + re.escape(ai_tools.norm(x['municipio'])) + r'(?![a-z])', _qn)]
-                        if _its:
-                            _ord = {'Crítica': 0, 'Alta': 1, 'Moderada': 2, 'Baixa': 3, 'Sem sinal': 4}
-                            _its.sort(key=lambda x: _ord.get(x.get('attention'), 9))
-                            _ca = sum(1 for x in _its if x.get('attention') in ('Crítica', 'Alta'))
-                            _m = f"{_its[0]['municipio']}/{_its[0].get('uf')}"
-                            out = {**out, 'results': [radar.light(x) for x in _its[:6]], 'chips': [_m],
-                                   'answer': (f"Em {_m} há {len(_its)} barragem(ns) no cadastro oficial. " + (f"{_ca} delas têm atenção crítica ou alta nos dados públicos — isso pede verificação, não quer dizer que vá romper." if _ca else 'Nenhuma está em atenção crítica ou alta nos dados públicos.')
-                                              + ' Em risco imediato, ligue 199 (Defesa Civil).')}
+                        out = {'kind': 'ask', 'answer': (_av + ' ' if _av else '') + a['answer'], 'state': a['state'],
+                               'sources': [sx['title'] for sx in a.get('sources', [])],
+                               'source_ids': a.get('source_ids', []), 'verification': a.get('verification'),
+                               'trace': a.get('trace', []), 'engine': a.get('mode'), 'chips': [], 'results': [],
+                               'perspectiva': a.get('perspectiva')}
                     return self._json(out)
                 if route == '/api/radar/plan-step':
                     u = self._require('contingency.edit')
@@ -1807,7 +1797,7 @@ def make_handler(store: Store, accounts: Accounts | None = None, monitor: Monito
                     ctx = data.get('context') if isinstance(data.get('context'), dict) else {}
                     from . import perspectiva as _pp
                     _u = self._user()
-                    res = ask(q, _pp.perfil_padrao(_u, data.get('profile')), provs_setor(data.get('setor')), load('sources.json'))
+                    res = ask(q, _pp.perfil_padrao(_u, data.get('profile')), load('provisions.json'), load('sources.json'))
                     res = _pp.aplicar(res, _u)
                     res['setor_filtro'] = data.get('setor') or None
                     from .normas_setor import aviso_fora_do_setor

@@ -10,6 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict, field
 from datetime import date
 from typing import Any
+import re
 
 AS_OF = date(2026, 11, 6)
 
@@ -223,7 +224,8 @@ def analyze(asset: dict[str, Any], scenario: str, as_of: date | str | None = Non
 
 def answer(question: str, profile: str, sources: list[dict]) -> dict[str, Any]:
     """Respostas controladas verificáveis (modo sem LLM)."""
-    q = question.lower().strip()
+    import unicodedata
+    q = ''.join(c for c in unicodedata.normalize('NFKD', question.lower().strip()) if not unicodedata.combining(c))
     profile = profile if profile in ('simples', 'tecnico') else 'simples'
     source_lookup = {s['id']: s for s in sources}
 
@@ -235,9 +237,18 @@ def answer(question: str, profile: str, sources: list[dict]) -> dict[str, Any]:
 
     if any(k in q for k in ('multa', 'sanção', 'sancao', 'penalidade', 'autuação', 'autuacao')):
         return _abstain(profile, 'A base não contém fonte curada que permita calcular multa, sanção ou penalidade. Não estimamos valores nem prevemos autuações.')
+    if re.search(r'\beir\b|extrato de inspecao|95/2022', q):
+        recurring = 'O empreendedor envia pelo SIGBM o Extrato de Inspeção Regular (EIR) de cada barragem, conforme o ciclo do art. 21 da Resolução ANM 95/2022. A base não contém prazo numérico geral validado para todos os ciclos.'
+        exceptional = ' Para inspeções de 16 a 31/03/2026, o aviso ANM de 16/04/2026 prorrogou excepcionalmente o envio de 15/04/2026 para 23/04/2026. Esse prazo já terminou na data-base de novembro de 2026 e não altera os demais ciclos.'
+        return build(['F43', 'F44'], recurring + exceptional, recurring + exceptional,
+                     ['Data da inspeção, ciclo e protocolo de envio'], ['Conferir o ciclo e o protocolo com o responsável técnico.'],
+                     'Resumo curado, sujeito a conferência da fonte original e revisão humana; não é parecer jurídico.')
+    if any(k in q for k in ('psicossocia', 'saude mental', 'nr-1 ', 'nr-1?', 'pgr')):
+        text = 'O resumo curado da NR-1 inclui fatores de risco psicossociais relacionados ao trabalho no PGR. Isso não permite concluir a situação de uma empresa nem substitui a avaliação do SESMT. Confira a versão e o dispositivo na fonte oficial.'
+        return build(['F45'], text, text, ['Atividade, contexto e versão aplicável'], ['Solicitar revisão do SESMT.'], 'Síntese curada, não parecer jurídico.')
     if any(k in q for k in ('anm', 'barragem', '220/2025', '245/2026')):
         return build(['F09', 'F10', 'F40'],
-            'Existe uma nova regulamentação publicada para barragens, mas a implementação ocorre em etapas. Não é correto tratar todos os dispositivos como exigíveis em novembro de 2026. Primeiro precisamos saber que tipo de estrutura está em análise.',
+            'A Resolução ANM 220/2025, alterada pela ANM 245/2026, começa em etapas: arts. 76 e 77 em 22/04/2027; regra geral em 02/08/2027; §1º do art. 7º em 26/12/2029. Não é correto tratar todos os dispositivos como exigíveis em novembro de 2026. Precisamos confirmar o tipo de estrutura e a versão da norma.',
             'Para a Resolução ANM 220/2025, com art. 87 modificado pela Resolução ANM 245/2026, a vigência é escalonada: arts. 76 e 77 (22/04/2027), demais artigos ressalvadas exceções (02/08/2027) e §1º do art. 7º (26/12/2029). Aplicabilidade depende de enquadramento técnico-jurídico.',
             ['Dados de enquadramento da estrutura e dispositivos pertinentes'], ['Agendar análise documental da transição; decisão humana obrigatória.'],
             'Síntese demonstrativa baseada no dossiê, não parecer jurídico nem consulta à norma em tempo real.')
