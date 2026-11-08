@@ -1,7 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { state } from '../web/js/core.js';
-import { denunciaPage, denunciaAnonimaPage } from '../web/js/ws_denuncia.js';
+import { denunciaPage, denunciaAnonimaPage, streetMap } from '../web/js/ws_denuncia.js';
+
+test('mapa mostra exemplo distante identificado pela API', () => {
+  const html = streetMap([{ id: 'DEMO-ETA', n: 1, nome: 'ETA fictícia', numero: 'ETA', lat: -22.9, lon: -47.06, real: false, longe: true }],
+    { lat: -20.253, lon: -43.803 }, null);
+  assert.match(html, /data-pick="DEMO-ETA"/);
+});
 
 test('endereço disponível e enviado nos fluxos público e autenticado', async () => {
   globalThis.location = { hash: '' };

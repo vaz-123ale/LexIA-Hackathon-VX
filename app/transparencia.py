@@ -207,7 +207,17 @@ def proximos_categoria(lat: float, lon: float, categoria: str, *, radar_items, r
     for c in cands:
         c['nome'] = re.sub(r'\s+', ' ', str(c.get('nome') or '')).strip(' -')
     cands.sort(key=lambda c: c['km'])
-    out = cands[:k]
+    # Evita que várias barragens próximas ocultem minas, usinas e outros tipos.
+    varied, seen = [], set()
+    for c in cands:
+        family = str(c.get('tipo_raw') or c.get('tipo') or '').lower().split(' · ')[0]
+        if family not in seen:
+            varied.append(c)
+            seen.add(family)
+    selected = varied[:k]
+    selected_ids = {c['id'] for c in selected}
+    selected += [c for c in cands if c['id'] not in selected_ids][:max(0, k - len(selected))]
+    out = sorted(selected, key=lambda c: c['km'])
     if not any(not c['real'] for c in out):  # demonstração: o ativo fictício mais próximo da categoria, mesmo longe, para mostrar o envio direto à empresa
         demo = []
         for a in ativos_demo:
@@ -220,5 +230,5 @@ def proximos_categoria(lat: float, lon: float, categoria: str, *, radar_items, r
             out = out[:k - 1] + [min(demo, key=lambda c: c['km'])]
     for i, c in enumerate(out, 1):
         c['n'] = i
-    return {'categoria': cat, 'categoria_nome': CATEGORIAS[cat], 'items': out, 'rule_version': 'proximos-v2',
+    return {'categoria': cat, 'categoria_nome': CATEGORIAS[cat], 'items': out, 'rule_version': 'proximos-v3-tipos',
             'vazio': None if out else 'Nada deste tipo num raio de 150 km nos cadastros públicos. Você pode descrever o local no relato.'}

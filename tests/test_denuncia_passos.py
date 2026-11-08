@@ -109,6 +109,31 @@ class ProximosCategoriaTests(unittest.TestCase):
         self.assertEqual(r['items'], [])
         self.assertTrue(r['vazio'])
 
+    def test_minas_nao_sao_ocultadas_por_muitas_barragens(self):
+        dams = [{**self.kw['radar_items'][0], 'id': f'SIGBM-{i}', 'lat': -20.0} for i in range(20)]
+        r = proximos_categoria(-20.0, -43.9, 'mineracao', **{**self.kw, 'radar_items': dams})
+        self.assertIn('ANM-1', [x['id'] for x in r['items']])
+        self.assertLessEqual(len(r['items']), 8)
+
+    def test_todas_categorias_com_ativos_demo_do_setor(self):
+        import json
+        from pathlib import Path
+        companies = json.loads((Path(__file__).resolve().parents[1] / 'data/empresas_demo.json').read_text(encoding='utf8'))['empresas']
+        demos = [{**a, 'id': f"ATIVO:{company['id']}:{a['id']}", 'tipo_raw': a['tipo'], 'setor': company['setor']}
+                 for company in companies for a in company['ativos'] if a.get('lat') is not None]
+        sectors = {'energia': 'energia', 'saneamento': 'saneamento', 'radiacao': 'nuclear', 'mineracao': 'mineracao', 'trabalho': 'saneamento', 'outro': 'energia', 'barragem': 'mineracao'}
+        for cat, sector in sectors.items():
+            with self.subTest(categoria=cat):
+                example = next(a for a in demos if a['setor'] == sector)
+                r = proximos_categoria(example['lat'], example['lon'], cat,
+                    **{**self.kw, 'ativos_demo': demos, 'radar_items': [], 'minas': [], 'usinas': [], 'snisb_setores': {}})
+                self.assertTrue(r['items'])
+                self.assertTrue(all(not a['real'] for a in r['items']))
+                if cat == 'saneamento':
+                    self.assertTrue(any(a['tipo_raw'] == 'eta' for a in r['items']))
+                if cat == 'radiacao':
+                    self.assertTrue(any(a['tipo_raw'] == 'instalacao_radiativa' for a in r['items']))
+
 
 if __name__ == '__main__':
     unittest.main()

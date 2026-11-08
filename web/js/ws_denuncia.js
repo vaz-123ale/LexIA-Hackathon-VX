@@ -13,6 +13,14 @@ const CATS = [
   ['outro', 'Outro assunto', '📝', 'Descreva com suas palavras'],
 ];
 const EXEMPLO = { lat: -20.253, lon: -43.803, nome: 'Itabirito/MG (local de exemplo)' };
+// Coordenadas dos ativos fictícios já presentes em empresas_demo.json.
+const EXEMPLOS = {
+  energia: { lat: -25.55, lon: -52.1, nome: 'Exemplo de energia · coordenada ilustrativa/PR' },
+  saneamento: { lat: -22.9, lon: -47.06, nome: 'Exemplo de saneamento · coordenada ilustrativa/SP' },
+  mineracao: { lat: -20.12, lon: -43.92, nome: 'Exemplo de mineração · coordenada ilustrativa/MG' },
+  radiacao: { lat: -14.08, lon: -42.4, nome: 'Exemplo radiológico · coordenada ilustrativa/BA' },
+  trabalho: { lat: -19.95, lon: -44.0, nome: 'Exemplo de trabalho · coordenada ilustrativa/MG' },
+};
 const QUANDO = [['', 'Quando foi?'], ['hoje', 'Hoje'], ['ontem', 'Ontem'], ['anteontem', 'Anteontem'], ['semana passada', 'Semana passada'], ['data', 'Escolher a data'], ['nao lembro', 'Não lembro']];
 let ANON = false;
 const DS = () => (ANON ? (state.denA = state.denA || { anon: true, cat: '', near: null, me: null, sel: null, relato: '', quando: '', data: '', ev: [], current: null, an: null, destino: null, editando: true }) : (state.den = state.den || { cat: '', near: null, me: null, sel: null, relato: '', quando: '', data: '', ev: [], current: null, an: null, destino: null, editando: true }));
@@ -24,10 +32,10 @@ const TILE = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_
 const W = 760, H = 380;
 const merc = (lat, lon, z) => { const n = 256 * 2 ** z, r = (lat * Math.PI) / 180; return [((lon + 180) / 360) * n, ((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * n]; };
 export function streetMap(items, me, selId) {
-  const pts = items.filter((x) => !x.longe);
+  const pts = items.filter((x) => Number.isFinite(x.lat) && Number.isFinite(x.lon));
   const all = [...pts.map((x) => [x.lat, x.lon]), ...(me ? [[me.lat, me.lon]] : [])];
   let z = 15;
-  for (; z > 4; z--) {
+  for (; z > 2; z--) {
     const xy = all.map(([la, lo]) => merc(la, lo, z));
     const dx = Math.max(...xy.map((p) => p[0])) - Math.min(...xy.map((p) => p[0])), dy = Math.max(...xy.map((p) => p[1])) - Math.min(...xy.map((p) => p[1]));
     if (dx < W * 0.82 && dy < H * 0.78) break;
@@ -68,14 +76,14 @@ function passo2(st) {
     <p class="hint" id="dn-address-hint">Informe o local da ocorrência, mesmo que seja diferente de onde você está. O endereço será incluído na denúncia para revisão; não é localizado automaticamente no mapa. Evite informar seu endereço pessoal se não for necessário.</p>
     <button class="btn mt8" id="dn-address-use" type="button">Usar endereço informado e continuar</button>
     <div class="row gap wrap"><button class="btn primary" id="dn-geo" type="button">${icon('pin')} Usar minha localização</button>
-      <button class="btn" id="dn-ex" type="button">Usar local de exemplo (Itabirito/MG)</button>
+      <button class="btn" id="dn-ex" type="button">Usar local de exemplo · ${e(c[1])}</button>
       <button class="btn ghost" id="dn-skip" type="button">Não sei / vou descrever o local</button></div>
     <p class="hint">Sua localização serve só para esta busca: não é gravada nem enviada à empresa.</p>
     ${!N ? '' : !N.items.length ? `<p class="warn-note">${e(N.vazio || 'Nada encontrado perto.')}</p>` : `
     <div class="dn-mapwrap">${streetMap(N.items, st.me, st.sel?.id)}
       <ol class="dn-list">${N.items.map((x) => `<li><button type="button" class="dn-li ${st.sel?.id === x.id ? 'on' : ''}" data-pick="${e(x.id)}"><span class="dm-n ${x.real ? 'real' : 'demo'}">${x.n}</span>
-        <span><b>${e(x.nome)}</b><small>${e(x.numero)} · ${e(x.tipo)} · ${kmTxt(x.km)}${x.longe ? ' (fora do mapa)' : ''}</small></span></button></li>`).join('')}</ol></div>
-    <p class="hint">Toque no número para ver a estrutura. Números em azul: dado oficial público. Em dourado: empresa fictícia da demonstração que usa a LexIA.</p>
+        <span><b>${e(x.nome)}</b><small>${e(x.numero)} · ${e(x.tipo)} · ${kmTxt(x.km)}${x.longe ? ' (exemplo distante)' : ''}</small></span></button></li>`).join('')}</ol></div>
+    <p class="hint">Toque no número para ver o tipo e a fonte da estrutura deste assunto. Em azul: dado oficial público. Em dourado: ativo fictício de demonstração. Exemplos distantes também aparecem no mapa e são identificados na lista; não representam uma ocorrência perto de você.</p>
     ${detalhe(st.sel)}`}
     ${st.sel === false ? '<p class="sm"><b>Sem estrutura escolhida:</b> descreva o local no relato (rua, bairro, ponto de referência).</p>' : ''}</section>`;
 }
@@ -168,7 +176,7 @@ function mountDen(root, ctx) {
         (err) => { toast(err.code === 1 ? 'Permissão de localização negada. Use o local de exemplo ou descreva o local.' : 'Não foi possível obter a localização.', 'err'); ctx.rerender(); },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
     });
-    root.querySelector('#dn-ex')?.addEventListener('click', () => { keep(); buscar(EXEMPLO.lat, EXEMPLO.lon, EXEMPLO.nome); });
+    root.querySelector('#dn-ex')?.addEventListener('click', () => { keep(); const ex = EXEMPLOS[st.cat] || EXEMPLO; buscar(ex.lat, ex.lon, ex.nome); });
     root.querySelector('#dn-address')?.addEventListener('input', (ev) => { st.endereco = ev.target.value; });
     root.querySelector('#dn-address-use')?.addEventListener('click', () => {
       keep();
