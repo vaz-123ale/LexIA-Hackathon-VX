@@ -11,7 +11,7 @@
 
 ### **[▶ ABRIR O VÍDEO — docs/video/LexIA_demo.mp4](docs/video/LexIA_demo.mp4)**
 
-Se o player não abrir no navegador, use o link direto: [baixar o vídeo (MP4, 47 MB)](https://github.com/vaz-123ale/LexIA-Hackathon-VX/raw/main/docs/video/LexIA_demo.mp4).
+Versão leve (9 MB, 720p), mais rápida de abrir: [docs/video/LexIA_demo_leve.mp4](docs/video/LexIA_demo_leve.mp4) · Download direto do vídeo completo: [LexIA_demo.mp4 (47 MB)](https://github.com/vaz-123ale/LexIA-Hackathon-VX/raw/main/docs/video/LexIA_demo.mp4).
 O roteiro com o tempo de cada cena e onde clicar está em [docs/video/ROTEIRO.md](docs/video/ROTEIRO.md). Há também um [vídeo de 40 s](docs/video/LexIA_40s.mp4), sem áudio.
 
 ## 1 · Rodar (2 minutos)
